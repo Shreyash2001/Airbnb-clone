@@ -1,0 +1,164 @@
+.host {
+    display: flex;
+}
+
+.host__form {
+    flex: 0.4;
+    padding: 30px;
+    padding-bottom: 35px;
+    left: 90px;
+}
+
+.host__contentButton {
+    color: white !important;
+    background-color: #ff7779 !important;
+    text-transform: inherit !important;
+    width: 73%;
+}
+
+.host__contentButton:hover {
+    color: #ff7779 !important;
+    background-color: white !important;
+}
+
+.host__contentDisabledButton {
+    color: white !important;
+    background-color: #6d6b6b !important;
+    text-transform: inherit !important;
+    width: 73%;
+}
+
+.host__contentDisabledButton:hover {
+    cursor:not-allowed
+}
+
+
+.host__content {
+    display: flex;
+    flex-direction: column;
+}
+
+.host__content > input {
+    height: 39px;
+    border: 1px solid lightgray;
+    margin-bottom: 10px;
+    outline-width: 0;
+    width: 72%;
+}
+
+.host__content > label {
+    color: #6d6b6b;
+    margin-bottom: 10px;
+}
+
+.host__right {
+    flex: 0.6;
+}
+
+.host__right > textarea {
+    height: 31px;
+    border: 1px solid lightgray;
+    margin-bottom: 10px;
+    outline-width: 0;
+    width: 85%;
+    padding: 10px;
+}
+
+.host__right > input {
+    height: 39px;
+    border: 1px solid lightgray;
+    margin-bottom: 10px;
+    outline-width: 0;
+    width: 85%;
+}
+
+
+.host__cards {
+    display: flex;
+}
+
+.host__cards > .MuiTouchRipple-root {
+    position: unset !important;
+}
+
+.host__cardsRadioVacation {
+    position: absolute !important;
+    top: 47% !important;
+    right: 47% !important;
+    color: #ff7779 !important;
+}
+
+
+.host__cardsRadioBussiness {
+    position: absolute !important;
+    top: 47% !important;
+    right: 30% !important;
+    color: #ff7779 !important;
+}
+
+.host__cardsRadioParty {
+    position: absolute !important;
+    top: 47% !important;
+    right: 12% !important;
+    color: #ff7779 !important;
+}
+
+
+.host__cardsVacation {
+    object-fit: fill;
+    width: 28%;
+    min-width: 83px;
+    min-height: 200px;
+    padding: 10px;
+    border-radius: 62px;
+    height: 33vh;
+}
+.host__cardsBussiness {
+    object-fit: fill;
+    width: 28%;
+    min-width: 83px;
+    min-height: 200px;
+    padding: 10px;
+    border-radius: 62px;
+    height: 33vh;
+}
+.host__cardsParty {
+    object-fit: fill;
+    width: 28%;
+    min-width: 83px;
+    min-height: 200px;
+    padding: 10px;
+    border-radius: 62px;
+    height: 33vh;
+}
+
+.host__cardsVacation {
+    transition: transform 100ms ease-in;
+    cursor: pointer;
+}
+
+.host__cardsVacation:hover {
+    transform: scale(1.07);
+    opacity: 0.6;
+}
+.host__cardsBussiness {
+    transition: transform 100ms ease-in;
+    cursor: pointer;
+}
+
+.host__cardsBussiness:hover {
+    transform: scale(1.07);
+    opacity: 0.6;
+}
+.host__cardsParty {
+    transition: transform 100ms ease-in;
+    cursor: pointer;
+}
+
+.host__cardsParty:hover {
+    transform: scale(1.07);
+    opacity: 0.6;
+}
+
+
+
