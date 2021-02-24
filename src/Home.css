@@ -1,4 +1,9 @@
 .home__section {
     display: flex;
-    padding: 30px;
+    padding-left: 100px;
+    padding-top: 20px;
+    flex-wrap: wrap;
 }
+
+
+

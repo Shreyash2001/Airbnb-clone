@@ -37,9 +37,7 @@ function Host() {
     setOpen(true);
   };
     const submitHandler = () => {
-       
-
-        dispatch(hostAddPlace(title, image, price, description, country, address, rules, season))
+        dispatch(hostAddPlace(title, image, price, description, country, address, rules, season, selectedValue))
     }
 
     useEffect(() => {

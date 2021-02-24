@@ -1,0 +1,171 @@
+.hostedPlaceDetails__image > img {
+    width: 100%;
+    height: 54vh;
+    object-fit: fill;
+}
+
+.hostedPlaceDetails__content {
+    display: flex;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+.hostedPlaceDetails__left {
+    flex: 0.6;
+    padding: 10px;
+}
+
+.hostedPlaceDetails__left > h1 {
+    font-size: 46px;
+    color: #322b2be0;
+}
+
+.hostedPlaceDetails__left > h3 {
+    margin-bottom: 20px;
+    color: #565353;
+    font-size: 18px;
+    font-weight: lighter;
+}
+
+.hostedPlaceDetails__left > h5 {
+    color: rgb(90 195 183 / 79%);
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid lightgray;
+}
+
+.hostedPlaceDetails__leftGeneralInfo {
+    display: flex;
+    margin-bottom: 40px;
+    align-items: center;
+}
+
+
+.hostedPlaceDetails__leftGeneralInfo > p {
+    margin-right: 80px;
+    color: #565353;
+}
+
+.hostedPlaceDetails__leftGeneralInfo > .MuiSvgIcon-root {
+    color: #565353;
+}
+
+.hostedPlaceDetails__leftRules {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid lightgray;
+}
+
+.hostedPlaceDetails__leftCancellation > h5 {
+    color: rgb(90 195 183 / 79%);
+    padding-top: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid lightgray;
+}
+
+.hostedPlaceDetails__leftReviews {
+    display: flex;
+    align-items: center;
+}
+
+.hostedPlaceDetails__leftReviews > h2 {
+    padding-bottom: 10px;
+    padding-right: 10px;
+    color: #565353;
+}
+
+.hostedPlaceDetails__right {
+    flex: 0.4;
+    border: 1px solid lightgray;
+    padding: 10px;
+    margin-top: 10px;
+    height: 60vh;
+}
+
+.hostedPlaceDetails__rightContentGuests > button {
+    color: white !important;
+    background-color: #ff7779 !important;
+    text-transform: inherit !important;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.hostedPlaceDetails__rightContentGuests > button:hover {
+    color: #ff7779 !important;
+    background-color: white !important;
+}
+
+.hostedPlaceDetails__rightContentGuests > p {
+    align-self: center;
+    font-size: 12px;
+    margin-top: 10px;
+    color: #565353;
+}
+
+.hostedPlaceDetails__rightContentGuests {
+    padding-bottom: 20px;
+    border-bottom: 1px solid lightgray;
+}
+
+.hostedPlaceDetails__rightContent {
+    padding: 10px;
+}
+
+.hostedPlaceDetails__rightContentPrice {
+    display: flex;
+}
+
+.hostedPlaceDetails__rightContentPrice > span {
+    padding-top: 20px;
+    font-size: 10px;
+    padding-left: 4px;
+    color: #565353;
+}
+
+.hostedPlaceDetails__rightContentReviews {
+    display: flex;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid lightgray;
+}
+
+.hostedPlaceDetails__rightContentReviews > h3 {
+    padding-bottom: 10px;
+    color: #565353;
+}
+
+.hostedPlaceDetails__rightContentDetails > .MuiGrid-container {
+   flex-wrap: nowrap;
+}
+
+.hostedPlaceDetails__rightContentGuests {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.hostedPlaceDetails__rightContentGuests > label {
+    margin-bottom: 10px;
+    color: #565353;
+}
+
+.hostedPlaceDetails__rightContentGuests > input {
+    height: 30px;
+    outline-width: 0;
+    border: 1px solid lightgray;
+}
+
+.hostedPlaceDetails__rightContentDetailsInfo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hostedPlaceDetails__rightContentDetailsInfo > img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    margin-top: 10px;
+}
