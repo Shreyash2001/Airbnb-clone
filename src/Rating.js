@@ -25,7 +25,7 @@ function Rating({ value, text, color }) {
     )
 }
 Rating.defaultProps = {
-    color:"#f8e825"
+    color:"rgb(90 195 183)"
 }
 
 export default Rating

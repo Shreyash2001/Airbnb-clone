@@ -1,6 +1,6 @@
 .hostedPlaceDetails__image > img {
     width: 100%;
-    height: 54vh;
+    height: 64vh;
     object-fit: fill;
 }
 
@@ -27,8 +27,9 @@
     font-weight: lighter;
 }
 
+
 .hostedPlaceDetails__left > h5 {
-    color: rgb(90 195 183 / 79%);
+    color: rgb(90 195 183);
     margin-bottom: 20px;
     padding-bottom: 20px;
     border-bottom: 1px solid lightgray;
@@ -50,10 +51,70 @@
     color: #565353;
 }
 
+.hostedPlaceDetails__leftCustomerReviews {
+    display: flex;
+    flex-direction: column;
+}
+
+.hostedPlaceDetails__leftCustomerReviews > h2 {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.hostedPlaceDetails__leftCustomerReviews > label {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.hostedPlaceDetails__leftCustomerReviews > input {
+    height: 39px;
+    border: 1px solid lightgray;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    outline-width: 0;
+}
+
+.hostedPlaceDetails__leftCustomerReviews > p {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+
+.hostedPlaceDetails__leftCustomerReviews > button {
+    color: white !important;
+    background-color: #ff7779 !important;
+    text-transform: inherit !important;
+    width: 25%;
+    margin-bottom: 20px;
+    align-self: center;
+}
+
+.hostedPlaceDetails__leftCustomerReviews > button:hover {
+    color: #ff7779 !important;
+    background-color: white !important;
+}
+
 .hostedPlaceDetails__leftRules {
     margin-bottom: 20px;
     padding-bottom: 20px;
     border-bottom: 1px solid lightgray;
+}
+
+.hostedPlaceDetails__leftRules > p {
+    margin-bottom: 10px;
+}
+
+.hostedPlaceDetails__leftAmenities {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid lightgray;
+    display: flex;
+}
+
+.hostedPlaceDetails__leftAmenitiesList {
+    display: flex;
+    flex-wrap: wrap;
+    width: 49%;
 }
 
 .hostedPlaceDetails__leftCancellation > h5 {
@@ -67,6 +128,9 @@
 .hostedPlaceDetails__leftReviews {
     display: flex;
     align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid lightgray;
 }
 
 .hostedPlaceDetails__leftReviews > h2 {
@@ -168,4 +232,9 @@
     height: 30px;
     object-fit: contain;
     margin-top: 10px;
+}
+
+.read-more-less--more,
+.read-more-less--less {
+  color: rgb(90 195 183);;
 }

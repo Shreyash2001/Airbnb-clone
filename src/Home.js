@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { hostGetPlaces } from './actions/hostActions'
 import { CircularProgress, Snackbar } from '@material-ui/core'
 import MuiAlert from '@material-ui/lab/Alert';
-import { Link, useParams } from 'react-router-dom'
+
 
 function Home() {
       const [open, setOpen] = useState(false);
@@ -37,7 +37,7 @@ function Home() {
         <div className="home">
             <Banner />
             <div className="home__section">
-            {loading && <CircularProgress />}
+            {loading && <CircularProgress style={{width:"120px", height:"120px", margin:"100px 500px 400px 600px", color:"#ff7779"}}/>}
             {error && <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}><Alert severity="error">{error}</Alert></Snackbar>}
             {allHostPlaces && allHostPlaces.map(allHostPlace => (
               
@@ -48,7 +48,7 @@ function Home() {
                   description={allHostPlace.description.substring(0, 75)}
                   price={allHostPlace.price}
                   country={allHostPlace.country}
-                  value={allHostPlace.reviews.length} />
+                  value={allHostPlace.rating} />
                   
             ))}
             

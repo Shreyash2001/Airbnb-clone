@@ -25,6 +25,10 @@
     padding-left: 20px;
 }
 
+.searchResult > button {
+    position: absolute;
+}
+
 .searchResult__heart {
     position: absolute;
     top: 20px;
