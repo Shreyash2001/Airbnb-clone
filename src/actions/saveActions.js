@@ -1,32 +1,33 @@
 import axios from "axios";
-import { SAVE_GET_FAIL, SAVE_GET_REQUEST, SAVE_GET_SUCCESS } from "../constants/saveConstants";
+import { REMOVE_HOSTEDPLACE, SAVE_HOSTEDPLACE } from "../constants/saveConstants";
 
 export const saveAddPlace = (id) => async (dispatch, getState) => {
-    try {
-        dispatch({ type: SAVE_GET_REQUEST });
+   const { data } = await axios.get(`/host/${id}`)
 
-        const {userLogin: {userInfo}} = getState()
-        const config = {
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${userInfo.token}`
-            }
-        }
+   dispatch({
+       type:SAVE_HOSTEDPLACE,
+       payload: {
+           placeId: data._id,
+           title: data.title,
+           image: data.image,
+           description: data.description,
+           country: data.country,
+           rating: data.rating,
+           numReviews: data.numReviews,
+           price: data.price
+       }
+   })
 
-        const { data } = await axios.post("/save", { id }, config)
+   localStorage.setItem("saveHostedPlaceItems", JSON.stringify(getState().savePlace.saveHostedPlaceItems))
+}
 
-        dispatch({
-            type: SAVE_GET_SUCCESS,
-            payload: data
-        })
+export const removePlace = (id) => async (dispatch, getState) => {
 
-        localStorage.setItem("savePlaceInfo", JSON.stringify(data))
+   dispatch({
+       type:REMOVE_HOSTEDPLACE,
+       payload: id
+   })
 
-    } catch (error) {
-        dispatch({
-            type:SAVE_GET_FAIL,
-            payload: error.response && error.response.data.message ? error.response.data.message : error.message
-        })
-    }
+   localStorage.setItem("saveHostedPlaceItems", JSON.stringify(getState().savePlace.saveHostedPlaceItems))
 }
 

@@ -57,3 +57,10 @@
     color: #ff7779;
     background-color: white;
 }
+
+.header__rightButtonExpand {
+    color: #ff7779 !important; 
+    text-transform: inherit !important;
+    border-bottom: 1px solid lightgray !important;
+}
+

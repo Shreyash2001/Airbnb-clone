@@ -1,4 +1,4 @@
-import { CircularProgress, IconButton } from '@material-ui/core';
+import { Button, CircularProgress, IconButton } from '@material-ui/core';
 import { Favorite, FavoriteBorderOutlined } from '@material-ui/icons'
 import React, { useEffect } from 'react'
 import ReactReadMoreReadLess from "react-read-more-read-less";
@@ -6,28 +6,31 @@ import { Link } from 'react-router-dom';
 import {useDispatch, useSelector} from "react-redux"
 import Rating from './Rating';
 import "./SearchResult.css"
-import { saveAddPlace } from './actions/saveActions';
-function SearchResult({ img, location, title, description, star, price, total, value, id, numReviews }) {
+import { removePlace, saveAddPlace } from './actions/saveActions';
+
+function SearchResult({ img, location, title, description, price, total, value, id, numReviews }) {
     const dispatch = useDispatch()
 
    const savePlace = useSelector(state => state.savePlace)
-   const {loading, success, savePlaceInfo} = savePlace
+   const { saveHostedPlaceItems} = savePlace
 
-
-   useEffect(() => {
-
-   }, [dispatch, success])
 
     const handleClick = () => {
         dispatch(saveAddPlace(id))
     }
+    const handleRemoveClick = () => {
+        dispatch(removePlace(id))
+    }
 
+    
     return (
         <div className="searchResult">
             <img src={img} alt="hotel" />
-            {loading && <CircularProgress style={{color:"#ff7779"}}/>}
-         {id === savePlaceInfo?.hostPlaceId ? <Favorite /> :    <IconButton className="searchResult__heart" onClick={handleClick}><FavoriteBorderOutlined  style={{color:"#ff7779"}} /></IconButton>  }
-              
+            {saveHostedPlaceItems?.map(saveHostedPlaceItem => (
+                id === saveHostedPlaceItem.placeId
+            ) && <><IconButton className="searchResult__heart"><Favorite style={{color:"#ff7779"}}/> </IconButton> <Button className="searchResult__removeButton" onClick={handleRemoveClick}>Remove from favorite</Button></>)}
+            
+            <IconButton className="searchResult__heart" onClick={handleClick}><FavoriteBorderOutlined  style={{color:"#ff7779"}} /></IconButton>
 
             <div className="searchResult__info">
                 <div className="searchResult__infoTop">

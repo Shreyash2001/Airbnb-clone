@@ -2,6 +2,15 @@
     padding: 20px;
 }
 
+.searchPage__info > input {
+    border: 1px solid #c7c7c7;
+    border-radius: 40px;
+    width: 180px;
+    padding: 10px;
+    outline-width: 0;
+    margin-left: 4px;
+}
+
 .searchPage__info > p {
     margin-bottom: 10px;
     font-size: 14px;
@@ -16,3 +25,15 @@
     text-transform: inherit;
     margin: 5px;
 }
+
+.searchPage__infoSeason {
+    position: absolute;
+    right: 533px;
+    top: 185px;
+}
+
+@media only screen and (max-width: 1300px) {
+    .searchPage__infoSeason {
+        position: inherit;
+    }
+  }

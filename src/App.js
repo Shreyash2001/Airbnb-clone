@@ -8,6 +8,7 @@ import Host from './Host';
 import LoginPage from './LoginPage';
 import Register from './Register';
 import HostedPlaceDetails from './HostedPlaceDetails';
+import Favorites from './Favorites';
 
 function App() {
   return (
@@ -23,6 +24,10 @@ function App() {
 
       <Route path="/login">
       <LoginPage />
+      </Route>
+
+      <Route path="/favorites">
+      <Favorites />
       </Route>
 
       <Route path="/host/:id">
