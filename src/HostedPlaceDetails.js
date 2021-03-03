@@ -101,7 +101,7 @@ function HostedPlaceDetails() {
             </div>
             <div className="hostedPlaceDetails__content">
                 <div className="hostedPlaceDetails__left">
-                    <h1>Welcome To The Amazing & Auspicious {placeDetails?.title}</h1>
+                    <h1>Welcome To The Amazing & Auspicious <span style={{color:"#ff7779"}}>{placeDetails?.title}</span> </h1>
                     <p style={{color:"#322b2be0", marginBottom: "15px", marginTop:"5px"}}>{placeDetails?.country}</p>
                     <div className="hostedPlaceDetails__leftGeneralInfo">
                     <Cloud style={{ color: '#ff7779', marginRight:"5px" }}/>
@@ -221,7 +221,7 @@ function HostedPlaceDetails() {
                 <div className="hostedPlaceDetails__right">
                     <div className="hostedPlaceDetails__rightContent">
                         <div className="hostedPlaceDetails__rightContentPrice">
-                        <h1>₹{placeDetails?.price}</h1>
+                        <h1>₹{new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 3 }).format(placeDetails?.price)}</h1>
                         <span>per night</span>
                         </div>
                         <div className="hostedPlaceDetails__rightContentReviews">
@@ -268,7 +268,7 @@ function HostedPlaceDetails() {
                             <p>You won't be charged yet</p>
                         </div>
                         <div className="hostedPlaceDetails__rightContentDetailsInfo">
-                            <h4>This place is on peoples minds.</h4>
+                            <h4>This place is on people's minds.</h4>
                             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Light_Bulb_or_Idea_Flat_Icon_Vector.svg/857px-Light_Bulb_or_Idea_Flat_Icon_Vector.svg.png" alt="" />
                         </div>
                         <p style={{marginBottom:"20px"}}>This place is viewed by most of the people & shown lots of love.</p>

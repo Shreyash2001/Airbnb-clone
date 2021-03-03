@@ -25,14 +25,14 @@
 
 .loginPage__content > button {
     color: white !important;
-    background-color: #e6e6e6 !important;
+    background-color: #ff7779 !important;
     text-transform: inherit !important;
     width: 32%;
     align-self: center;
 }
 
 .loginPage__content > button:hover {
-    color: #ff7779 !important;
+    color:  #ff7779!important;
     background-color: white !important;
 }
 

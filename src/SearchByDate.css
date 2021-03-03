@@ -1,4 +1,4 @@
-.searchResult {
+.searchByDate {
     display: flex;
     position: relative;
     padding: 20px;
@@ -7,18 +7,18 @@
     cursor: pointer;
 }
 
-.searchResult:hover {
+.searchByDate:hover {
     opacity: 0.8;
 }
 
-.searchResult > img {
+.searchByDate > img {
     height: 200px;
     width: 350px;
     border-radius: 10px;
     overflow: hidden;
 }
 
-.searchResult__removeButton {
+.searchByDate__removeButton {
     color: #ff7779 !important;
     border: 1px solid #ff7779 !important;
     text-transform: inherit !important;
@@ -27,62 +27,59 @@
     right: 7px;
 }
 
-.searchResult__removeButton:hover {
+.searchByDate__removeButton:hover {
     color: white !important;
     background-color: #ff7779 !important;
 }
 
-.searchResult__info {
+.searchByDate__info {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding-left: 20px;
 }
 
-.searchResult > button {
+.searchByDate > button {
     position: absolute;
 }
 
-.searchResult__heart {
+.searchByDate__heart {
     position: absolute;
     top: 20px;
     right: 160px;
 }
 
-.searchResult__infoTop {
+.searchByDate__infoTop {
     width: 40vw;
 }
 
-.searchResult__infoTop > h3 {
+.searchByDate__infoTop > h3 {
     font-weight: 400;
     margin-top: 10px;
 }
 
-.searchResult__infoTop > p {
+.searchByDate__infoTop > p {
     margin-top: 10px;
     font-size: 13px;
     color: gray;
 }
 
-.searchResult__infoBottom {
+.searchByDate__infoBottom {
     display: flex;
     justify-content: space-between;
 }
 
-.searchResult__star {
-    color: red;
-}
 
-.searchResult__stars {
+.searchByDate__stars {
     display: flex;
     align-items: center;
 }
 
-.searchResult__price > p {
+.searchByDate__price > p {
     text-align: right;
 }
 
-.searchResult__price {
+.searchByDate__price {
     position: absolute;
     bottom: 20px;
     right: 30px;

@@ -2,7 +2,7 @@ import { createStore, combineReducers, applyMiddleware } from "redux"
 import thunk from "redux-thunk"
 import { composeWithDevTools } from "redux-devtools-extension"
 import { userLoginReducer, userRegisterReducer } from "./reducers/userReducer";
-import { hostAddReducer, hostedPlaceDetailsReducer, hostedPlaceRatingReducer, hostedPlaceTopRatedReducer, hostGetReducer } from "./reducers/hostReducers";
+import { hostAddReducer, hostedPlaceDetailsReducer, hostedPlaceRatingReducer, hostedPlaceSearchResultsForDatesReducer, hostedPlaceTopRatedReducer, hostGetReducer } from "./reducers/hostReducers";
 import { saveReducer } from "./reducers/saveReducer";
 
 const reducer = combineReducers({
@@ -13,6 +13,7 @@ const reducer = combineReducers({
     hostedPlaceDetails: hostedPlaceDetailsReducer,
     hostedPlaceRating: hostedPlaceRatingReducer,
     hostedPlaceTopRated: hostedPlaceTopRatedReducer,
+    hostedPlaceSearch: hostedPlaceSearchResultsForDatesReducer,
     savePlace: saveReducer,
 
 });

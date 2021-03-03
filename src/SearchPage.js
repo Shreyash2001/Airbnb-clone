@@ -59,14 +59,14 @@ function SearchPage() {
            <div className="searchPage__info">
             <h1>Stays Nearby</h1>
             <Button variant="outlined" onClick={event => handleClickClear(event)}>Clear Filter</Button>
-            <Button variant="outlined" onClick={event => dispatch(hostedPlaceGetNumberOfBedroomsDetails())}>Number Of Bedrooms</Button>
-            <Button variant="outlined" onClick={event => dispatch(hostedPlaceGetLowPriceDetails())}>Price low to high</Button>
-            <Button variant="outlined" onClick={event => dispatch(hostedPlaceGetHighPriceDetails())}>Price High to Low</Button>
+            <Button variant="outlined" onClick={() => dispatch(hostedPlaceGetNumberOfBedroomsDetails())}>Number Of Bedrooms</Button>
+            <Button variant="outlined" onClick={() => dispatch(hostedPlaceGetLowPriceDetails())}>Price low to high</Button>
+            <Button variant="outlined" onClick={() => dispatch(hostedPlaceGetHighPriceDetails())}>Price High to Low</Button>
             
             <input placeholder="search by country or city" type="text" onChange={e => dispatch(hostedPlaceGetSearchResultsDetails(e.target.value))} />
             <div className="searchPage__infoSeason">
             <FormControl variant="outlined" className={classes.formControl}>
-            <InputLabel id="demo-simple-select-outlined-label" style={{top:"-9px"}}>Season</InputLabel>
+            <InputLabel id="demo-simple-select-outlined-label" style={{top:"-9px"}}>Suited</InputLabel>
         <Select
           labelId="demo-simple-select-outlined-label"
           id="demo-simple-select-outlined"
@@ -87,13 +87,14 @@ function SearchPage() {
             {error && <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}><Alert severity="error">{error}</Alert></Snackbar>}
            {topRatedPlace?.map(topRatedPlace => (
             <SearchResult 
+                key={topRatedPlace?._id}
                img={topRatedPlace?.image}
                title={topRatedPlace?.title}
                description={topRatedPlace?.description}
                value={topRatedPlace?.rating}
                location={topRatedPlace?.country}
                price={topRatedPlace?.price}
-               total={topRatedPlace?.selectedValue} 
+               selectedValue={topRatedPlace?.selectedValue} 
                id={topRatedPlace?._id}
                numReviews={topRatedPlace?.numReviews}
            />

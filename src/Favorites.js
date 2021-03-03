@@ -5,7 +5,7 @@ import ReactReadMoreReadLess from "react-read-more-read-less";
 import "./Favorites.css"
 import Rating from './Rating'
 import { removePlace } from './actions/saveActions';
-import { Button, IconButton } from '@material-ui/core';
+import { Button } from '@material-ui/core';
 
 function Favorites() {
     const savePlace = useSelector(state => state.savePlace)
@@ -42,7 +42,7 @@ function Favorites() {
                         <h3 style={{marginRight:"8px"}}> Reviewed By {saveHostedPlaceItem.numReviews} people</h3>
                     </div>
                     <div className="favorites__price">
-                    <h2>₹{saveHostedPlaceItem.price} / night</h2>
+                    <h2>₹{new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 3 }).format(saveHostedPlaceItem.price)} / night </h2>
                     
                 </div>
                 </div>

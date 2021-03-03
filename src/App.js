@@ -9,6 +9,7 @@ import LoginPage from './LoginPage';
 import Register from './Register';
 import HostedPlaceDetails from './HostedPlaceDetails';
 import Favorites from './Favorites';
+import SearchByDate from './SearchByDate';
 
 function App() {
   return (
@@ -24,6 +25,10 @@ function App() {
 
       <Route path="/login">
       <LoginPage />
+      </Route>
+
+      <Route path="/date/search/">
+      <SearchByDate />
       </Route>
 
       <Route path="/favorites">

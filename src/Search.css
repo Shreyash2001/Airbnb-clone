@@ -2,7 +2,7 @@
     position: absolute;
     top: 35px;
     left: 25%;
-    width: 100vw;
+    z-index: 1;
 }
 
 .search > h2 {
@@ -17,19 +17,34 @@
     top: 380px;
 }
 
-.search > input {
+.search__input {
     width: 539px;
-    padding: 20px;
+    padding-bottom: 40px;
+    padding-right: 40px;
     position: absolute;
     left: 0;
     height: 30px;
     top: 420px;
-    border: none;
+    background-color: white;
+    margin-top: 5px;
 }
 
-.search > input:focus {
+.search__input > input {
+    left: 0;
+    height: 20px;
+    top: 420px;
+    border: 1px solid lightgray;
     outline-width: 0;
+    width: 537px;
+    border-radius: 25px;
+    margin-left: 10px;
 }
+
+.search__input > input[type="text"] {
+    font-size: 18px;
+    padding: 10px;
+}
+
 
 .search > button {
     position: absolute;
