@@ -1,5 +1,5 @@
 import axios from "axios";
-import { HOSTED_PLACE_DETAILS_FAIL, HOSTED_PLACE_DETAILS_REQUEST, HOSTED_PLACE_DETAILS_SUCCESS, HOSTED_PLACE_RATING_FAIL, HOSTED_PLACE_RATING_REQUEST, HOSTED_PLACE_RATING_SUCCESS, HOST_ADD_FAIL, HOST_ADD_REQUEST, HOST_ADD_SUCCESS, HOST_EMPTY, HOST_GET_FAIL, HOST_GET_REQUEST, HOST_GET_SUCCESS, HOST_GET_LOW_PRICE_FAIL, HOST_GET_LOW_PRICE_REQUEST, HOST_GET_LOW_PRICE_SUCCESS, HOST_GET_TOP_RATED_FAIL, HOST_GET_TOP_RATED_REQUEST, HOST_GET_TOP_RATED_RESET, HOST_GET_TOP_RATED_SUCCESS, HOST_GET_HIGH_PRICE_REQUEST, HOST_GET_HIGH_PRICE_SUCCESS, HOST_GET_HIGH_PRICE_FAIL, HOST_GET_NUMBER_OF_BEDROOMS_REQUEST, HOST_GET_NUMBER_OF_BEDROOMS_SUCCESS, HOST_GET_NUMBER_OF_BEDROOMS_FAIL, HOST_GET_SEARCH_RESULTS_REQUEST, HOST_GET_SEARCH_RESULTS_SUCCESS, HOST_GET_SEARCH_RESULTS_FAIL, HOST_GET_SUITED_RESULTS_REQUEST, HOST_GET_SUITED_RESULTS_SUCCESS, HOST_GET_SUITED_RESULTS_FAIL, HOST_GET_SEARCH_RESULTS_FOR_DATES_REQUEST, HOST_GET_SEARCH_RESULTS_FOR_DATES_SUCCESS, HOST_GET_SEARCH_RESULTS_FOR_DATES_FAIL } from "../constants/hostConstants";
+import { HOSTED_PLACE_DETAILS_FAIL, HOSTED_PLACE_DETAILS_REQUEST, HOSTED_PLACE_DETAILS_SUCCESS, HOSTED_PLACE_RATING_FAIL, HOSTED_PLACE_RATING_REQUEST, HOSTED_PLACE_RATING_SUCCESS, HOST_ADD_FAIL, HOST_ADD_REQUEST, HOST_ADD_SUCCESS, HOST_EMPTY, HOST_GET_FAIL, HOST_GET_REQUEST, HOST_GET_SUCCESS, HOST_GET_LOW_PRICE_FAIL, HOST_GET_LOW_PRICE_REQUEST, HOST_GET_LOW_PRICE_SUCCESS, HOST_GET_TOP_RATED_FAIL, HOST_GET_TOP_RATED_REQUEST, HOST_GET_TOP_RATED_RESET, HOST_GET_TOP_RATED_SUCCESS, HOST_GET_HIGH_PRICE_REQUEST, HOST_GET_HIGH_PRICE_SUCCESS, HOST_GET_HIGH_PRICE_FAIL, HOST_GET_NUMBER_OF_BEDROOMS_REQUEST, HOST_GET_NUMBER_OF_BEDROOMS_SUCCESS, HOST_GET_NUMBER_OF_BEDROOMS_FAIL, HOST_GET_SEARCH_RESULTS_REQUEST, HOST_GET_SEARCH_RESULTS_SUCCESS, HOST_GET_SEARCH_RESULTS_FAIL, HOST_GET_SUITED_RESULTS_REQUEST, HOST_GET_SUITED_RESULTS_SUCCESS, HOST_GET_SUITED_RESULTS_FAIL, HOST_GET_SEARCH_RESULTS_FOR_DATES_REQUEST, HOST_GET_SEARCH_RESULTS_FOR_DATES_SUCCESS, HOST_GET_SEARCH_RESULTS_FOR_DATES_FAIL, HOSTED_PLACE_BOOKING_REQUEST, HOSTED_PLACE_BOOKING_SUCCESS, HOSTED_PLACE_BOOKING_FAIL } from "../constants/hostConstants";
 
 export const hostAddPlace = (title, image, price, description, country, address, season, selectedValue, airConditioning, breakfast, food, cableTv, wifi, freeParking, selectedValueOfBed, numberOfBedrooms ) => async (dispatch, getState) => {
     try {
@@ -105,6 +105,38 @@ export const hostedPlaceRatingAction = (id, review) => async(dispatch, getState)
     } catch (error) {
         dispatch({
             type: HOSTED_PLACE_RATING_FAIL,
+            payload: error.response && error.response.data.message ? error.response.data.message : error.message
+        })
+    }
+}
+
+export const hostedPlaceBookingAction = (id, rangeOfDate, guest) => async(dispatch, getState) => {
+    console.log(rangeOfDate, guest)
+    try {
+        
+        dispatch({ type: HOSTED_PLACE_BOOKING_REQUEST })
+
+        const {userLogin: {userInfo}} = getState()
+
+    const config = {
+        headers: {
+            "Content-Type":"application/json",
+            Authorization: `Bearer ${userInfo.token}`
+            
+        }
+    }
+
+    const { data } = await axios.put(`/host/${id}/bookings`, {rangeOfDate, guest}, config)
+   
+
+    dispatch({
+        type: HOSTED_PLACE_BOOKING_SUCCESS,
+        payload: data
+    })
+    
+    } catch (error) {
+        dispatch({
+            type: HOSTED_PLACE_BOOKING_FAIL,
             payload: error.response && error.response.data.message ? error.response.data.message : error.message
         })
     }

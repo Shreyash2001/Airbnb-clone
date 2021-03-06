@@ -10,6 +10,7 @@ import Register from './Register';
 import HostedPlaceDetails from './HostedPlaceDetails';
 import Favorites from './Favorites';
 import SearchByDate from './SearchByDate';
+import Summary from './Summary';
 
 function App() {
   return (
@@ -33,6 +34,10 @@ function App() {
 
       <Route path="/favorites">
       <Favorites />
+      </Route>
+
+      <Route path="/host/summary/:id">
+      <Summary />
       </Route>
 
       <Route path="/host/:id">

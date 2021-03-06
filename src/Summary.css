@@ -1,0 +1,67 @@
+.summary {
+    display: flex;
+    align-items: center;
+}
+
+.summaryLeft {
+    flex: 0.5;
+    padding: 30px;
+    margin-left: 100px;
+}
+
+.summaryRight {
+    flex: 0.5;
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 12px;
+    padding: 10px;
+    box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
+    max-width: 450px;
+}
+
+.summaryLeft__placeInfo > img {
+ width: 500px;
+ margin-bottom: 10px;
+}
+
+.summaryLeft__placeBasicInfo {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.summaryLeft__placeInfoAddress {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.summaryLeft__placeInfoAddress > h3 {
+    font-size: 20px;
+}
+
+.summaryLeft__placeInfoAddress > p {
+    font-size: 20px;
+    margin-left: 8px;
+}
+
+.summaryRight__info {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid lightgray;
+}
+
+.summaryRight__info > h3 {
+    color:#767272;
+}
+
+.summaryRight__infoButton> button {
+    color: white !important;
+    background-color: #ff7779 !important;
+    text-transform: inherit !important;
+    width: 100%;
+}
+
+.summaryRight__infoButton > button:hover {
+    color: #ff7779 !important;
+    background-color: white !important;
+}

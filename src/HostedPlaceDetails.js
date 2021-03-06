@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useParams } from 'react-router-dom'
-import { hostedPlaceGetDetails, hostedPlaceRatingAction } from './actions/hostActions'
+import { hostedPlaceBookingAction, hostedPlaceGetDetails, hostedPlaceRatingAction } from './actions/hostActions'
 import ReactReadMoreReadLess from "react-read-more-read-less";
 import "./HostedPlaceDetails.css"
 import SingleBedIcon from '@material-ui/icons/SingleBed';
@@ -25,6 +25,7 @@ import {
 import MuiAlert from '@material-ui/lab/Alert';
 import { Avatar, Button, CircularProgress, InputLabel, MenuItem, Select, Snackbar } from '@material-ui/core'
 import { Cloud } from '@material-ui/icons'
+import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import { HOSTED_PLACE_RATING_RESET } from './constants/hostConstants';
 
 
@@ -32,13 +33,34 @@ import { HOSTED_PLACE_RATING_RESET } from './constants/hostConstants';
 
 function HostedPlaceDetails() {
 
-    const [selectedDate, setSelectedDate] = useState(new Date('2021-02-24T21:11:54'));
+    const [selectedDate, setSelectedDate] = useState(new Date());
+    const [selectedCheckoutDate, setSelectedCheckoutDate] = useState(new Date());
     const [open, setOpen] = useState(false);
     const [openRating, setOpenRating] = useState(false);
     const [rating, setRating] = useState(0)
     const [comment, setComment] = useState("")
+    const [guest, setGuest] = useState(0)
     
-  
+    
+
+    var regexStart = /\d+/;
+    var stringStart = selectedDate.toString().substring(4, 16);
+    var startDate = stringStart.match(regexStart);
+
+    const checkStartDate = Number(startDate[0])
+
+    var regexEnd = /\d+/;
+    var stringEnd = selectedCheckoutDate.toString().substring(4, 16);
+    var endDate = stringEnd.match(regexEnd);
+
+    const checkEndDate = Number(endDate[0])
+
+    function range(start, end) {
+        return Array(end - start + 1).fill().map((_, idx) => start + idx)
+      }
+      var result = range(checkStartDate, checkStartDate > checkEndDate ? 31 : checkEndDate); 
+      const rangeOfDate = result.map(res => res.toString().concat(selectedDate.toString().substring(4, 7)));
+      
     const dispatch = useDispatch()
     const match = useParams()
 
@@ -51,8 +73,14 @@ function HostedPlaceDetails() {
     const hostedPlaceRating = useSelector(state => state.hostedPlaceRating)
     const {loading: hostedPlaceRateLoder, error: hostedPlaceRateError, success} = hostedPlaceRating
 
+    const hostedPlaceSummary = useSelector(state => state.hostedPlaceSummary)
+    const {loading: loadingSummary, error: errorSummary, summaryOfPlace, success: successSummary} = hostedPlaceSummary
+
     const handleDateChange = (date) => {
         setSelectedDate(date);
+      };
+    const handleDateCheckoutChange = (date) => {
+        setSelectedCheckoutDate(date);
       };
 
       const handleClose = (event, reason) => {
@@ -177,9 +205,7 @@ function HostedPlaceDetails() {
                                                 onChange={e => setRating(e.target.value)}
                                                 style={{marginBottom:"30px"}}
                                                 >
-                                            <MenuItem value="">
-                                                <em>None</em>
-                                            </MenuItem>
+                                            
                                             <MenuItem value={"1"}>1 - Poor</MenuItem>
                                             <MenuItem value={"2"}>2 - Fair</MenuItem>
                                             <MenuItem value={"3"}>3 - Good</MenuItem>
@@ -234,7 +260,7 @@ function HostedPlaceDetails() {
                         <KeyboardDatePicker
                             disableToolbar
                             variant="inline"
-                            format="MM/dd/yyyy"
+                            format="dd-MM-yyyy"
                             margin="normal"
                             id="Check-In"
                             label="Check-In"
@@ -248,12 +274,12 @@ function HostedPlaceDetails() {
                         <KeyboardDatePicker
                             disableToolbar
                             variant="inline"
-                            format="MM/dd/yyyy"
+                            format="dd-MM-yyyy"
                             margin="normal"
                             id="Check-Out"
                             label="Check-Out"
-                            value={selectedDate}
-                            onChange={handleDateChange}
+                            value={selectedCheckoutDate}
+                            onChange={handleDateCheckoutChange}
                             KeyboardButtonProps={{
                             'aria-label': 'change date',
                             }}
@@ -263,8 +289,11 @@ function HostedPlaceDetails() {
                         
                         <div className="hostedPlaceDetails__rightContentGuests">
                             <label>Guests</label>
-                            <input type="number" placeholder="1 Guest" />
-                            <Button>Check Availability</Button>
+                            <input type="number" placeholder="1 Guest" value={guest} onChange={e => setGuest(e.target.value)} />
+                           {userInfo ?  <Button onClick={() => dispatch(hostedPlaceBookingAction(match.id, rangeOfDate, guest))} className="hostedPlaceDetails__rightContentGuestsButton">Check Availability</Button> : <Button disabled style={{backgroundColor:"grey", color:"white", padding:"10px", marginTop:"20px"}}>Sign In To Check Availability</Button>}
+                            {loadingSummary && <CircularProgress style={{color:"#ff7779", marginLeft:"200px"}}/>}
+                            {successSummary && <div style={{display:"flex", alignItems:"center", marginTop:"10px", marginBottom:"10px"}}> <CheckCircleIcon style={{color:"green"}}/> <p style={{marginLeft:"10px", color:"green"}}>Hurrayy!! enjoy your stay. Please <Link to={`/host/summary/${match.id}`}><strong style={{textDecoration:"underline"}}>click here</strong></Link> to reserve your booking and checkout the summary.</p> </div>}
+                            {errorSummary && <p style={{color:"red",fontSize:"18px"}}>{errorSummary}</p>}
                             <p>You won't be charged yet</p>
                         </div>
                         <div className="hostedPlaceDetails__rightContentDetailsInfo">

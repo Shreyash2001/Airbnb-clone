@@ -2,7 +2,6 @@
     margin: 10px;
     overflow: hidden;
     transition: transform 100ms ease-in;
-    cursor: pointer;
     flex-basis: 29.333333%
 }
 
