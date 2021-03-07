@@ -39,6 +39,7 @@ function Header() {
 
     const logoutHandler = () => {
         dispatch(logout())
+        setAnchorEl(null);
     }
 
     const handleClose = () => {
@@ -58,6 +59,10 @@ function Header() {
     const handleFavoriteClick = () => {
       history.push("/favorites")
       setOpenExpandMore(false)
+    }
+    const handleHostOnboardingClick = () => {
+      history.push("/experiences/hostonline")
+      setAnchorEl(null);
     }
       const open = Boolean(anchorEl);
       const id = open ? 'simple-popover' : undefined;
@@ -111,8 +116,10 @@ function Header() {
         }}
       >
         <Typography>
-            <div style={{padding: "20px"}}>
+            <div style={{padding: "20px", display:"flex", flexDirection:"column"}}>
+                <Button style={{textTransform: "inherit"}} onClick={handleHostOnboardingClick}>Host an Experience</Button>
                 <Button style={{textTransform: "inherit"}} onClick={logoutHandler}>SignOut</Button>
+                
             </div>
         </Typography>
       </Popover>

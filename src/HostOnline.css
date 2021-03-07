@@ -1,0 +1,148 @@
+.hostOnline__logo {
+    object-fit: contain;
+    height: 80px;
+    padding: 10px;
+}
+
+.hostOnline__headings {
+    text-align: center;
+}
+
+.hostOnline__headings > h4 {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.2857142857142858em;
+    margin-bottom: 16px;
+}
+
+.hostOnline__headings > h2 {
+    color: #333333;
+    font-size: 60px;
+    line-height: 40px;
+    letter-spacing: -1.5px;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+.hostOnline__headings > p {
+    margin-top: 16px;
+    color: #484848;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.4444444444444444em;
+}
+
+.hostOnline__headings > button {
+    background-color: #ff7779 !important;
+    margin-top: 52px !important;
+    color: white !important;
+    text-transform: inherit !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+.hostOnline__imageContainer {
+    padding: 0 60px 0 60px;
+    margin-top: 40px;
+}
+
+.hostOnline__image {
+    background-image: url("https://res.cloudinary.com/cqn/image/upload/v1615046438/4bab4990-eda1-4b94-996e-0940464575b7_ykaaes.png");   
+    background-size: contain;
+    background-repeat: no-repeat; 
+    height: 100vh;
+    margin-bottom: 70px;
+}
+
+.hostOnline__text {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 70px;
+    margin-bottom: 100px;
+}
+
+.hostOnline__text > p {
+    font-size: 24px;
+    font-weight: 400;
+    color: #484848;
+    text-align: center;
+}
+
+.hostOnline__basicInfoContainer {
+    padding: 0px 40px 0px 100px;
+    margin-top: 174px;
+}
+
+.hostOnline__basicInfo {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.hostOnline__basicInfoDetails > h3 {
+    color: #484848;
+    font-size: 24px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    line-height: 1.25em;
+}
+
+.hostOnline__basicInfoDetails > p {
+    font-size: 16px;
+    font-weight: 400;
+    color: #484848;
+    line-height: 1.75em;
+}
+
+.hostOnline__howItWorksMainContainer {
+    padding: 0 40px 0 40px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hostOnline__howItWorksContainer {
+    display: flex;
+    align-items: center;
+    margin-top: 70px;
+}
+
+.hostOnline__howItWorks > img {
+    height: 400px;
+    width: 400px;
+    padding-right: 20px;
+}
+
+.hostOnline__howItWorksInfo {
+    padding-left: 20px;
+}
+
+.hostOnline__howItWorksInfo > h2 {
+    color: #484848;
+    font-size: 24px;
+    line-height: 1.25em;
+    margin-bottom: 30px;
+}
+
+.hostOnline__howItWorksInfo > p {
+    color: #484848;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.75em;
+}
+
+.hostOnline__startWorkButton {
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.hostOnline__startWorkButton > button {
+    border: 1px solid #484848 !important;
+    text-transform: inherit !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    padding: 10px;
+}
