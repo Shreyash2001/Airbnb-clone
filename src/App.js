@@ -14,6 +14,7 @@ import Summary from './Summary';
 import Experiences from './Experiences';
 import HostOnboarding from './HostOnboarding';
 import HostOnline from './HostOnline';
+import ExperienceType from './ExperienceType';
 
 function App() {
   return (
@@ -31,6 +32,11 @@ function App() {
       <LoginPage />
       </Route>
 
+      <Route path="/experiences/experience-type">
+      <Header />
+      <ExperienceType />
+      </Route>
+
       <Route path="/experiences/host-onboarding">
       <Header />
       <HostOnboarding />
@@ -38,50 +44,58 @@ function App() {
 
       <Route path="/experiences/hostonline">
       <HostOnline />
+      <Footer />
       </Route>
 
       <Route path="/experiences/online">
       <Header />
       <Experiences />
+      <Footer />
       </Route>
 
       <Route path="/date/search/">
       <Header />
       <SearchByDate />
+      <Footer />
       </Route>
 
       <Route path="/favorites">
       <Header />
       <Favorites />
+      <Footer />
       </Route>
 
       <Route path="/host/summary/:id">
       <Header />
       <Summary />
+      <Footer />
       </Route>
 
       <Route path="/host/:id">
       <Header />
       <HostedPlaceDetails />
+      <Footer />
       </Route>
 
       <Route path="/host">
       <Header />
       <Host />
+      <Footer />
       </Route>
       
       <Route path="/search">
       <Header />
       <SearchPage />
+      <Footer />
       </Route>
 
       <Route path="/">
       <Header />
       <Home />
+      <Footer />
       </Route>
       
       </Switch>
-      <Footer />
       </Router>
     </div>
     
