@@ -15,6 +15,7 @@ import Experiences from './Experiences';
 import HostOnboarding from './HostOnboarding';
 import HostOnline from './HostOnline';
 import ExperienceType from './HostExperience/ExperienceType';
+import ExperienceLocation from './HostExperience/ExperienceLocation';
 
 
 function App() {
@@ -31,6 +32,10 @@ function App() {
 
       <Route path="/login">
       <LoginPage />
+      </Route>
+
+      <Route path="/experiences/location">
+      <ExperienceLocation />
       </Route>
 
       <Route path="/experiences/experience-type">

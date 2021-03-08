@@ -1,4 +1,4 @@
-import { EXPERIENCE_TYPE_FAIL, EXPERIENCE_TYPE_REQUEST, EXPERIENCE_TYPE_SUCCESS } from "../constants/experienceConstants";
+import { EXPERIENCE_LOCATION_FAIL, EXPERIENCE_LOCATION_REQUEST, EXPERIENCE_LOCATION_SUCCESS, EXPERIENCE_TYPE_FAIL, EXPERIENCE_TYPE_REQUEST, EXPERIENCE_TYPE_SUCCESS } from "../constants/experienceConstants";
 
 export const experienceAdd = (experience) => async (dispatch) => {
     try {
@@ -13,6 +13,28 @@ export const experienceAdd = (experience) => async (dispatch) => {
     } catch (error) {
         dispatch({
             type:EXPERIENCE_TYPE_FAIL,
+            payload: error.response && error.response.data.message ? error.response.data.message : error.message
+        })
+    }
+}
+
+export const experienceLocationAdd = (location) => async (dispatch) => {
+    try {
+        dispatch({ type: EXPERIENCE_LOCATION_REQUEST });
+
+         
+        dispatch({
+            type: EXPERIENCE_TYPE_SUCCESS,
+            payload: {location}
+        })
+
+        dispatch({
+            type: EXPERIENCE_LOCATION_SUCCESS,
+        })
+
+    } catch (error) {
+        dispatch({
+            type:EXPERIENCE_LOCATION_FAIL,
             payload: error.response && error.response.data.message ? error.response.data.message : error.message
         })
     }

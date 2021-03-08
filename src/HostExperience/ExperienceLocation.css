@@ -1,71 +1,79 @@
-.experienceTypeOriginal {
+.experienceLocation {
     display: flex;
 }
 
-.experienceTypeOriginal__left {
+.experienceLocation__left {
     flex: 0.2;
 }
 
-.experienceTypeOriginal__right {
+.experienceLocation__right {
     flex: 0.8;
 }
 
-.experienceTypeOriginal__right > p {
+.experienceLocation__right > p {
     padding: 30px;
     color: #222222;
     font-size: 16px;
     font-weight: 600;
 }
 
-.experienceTypeOriginal__container {
+.experienceLocation__container {
     position: absolute;
     top: 149px;
     left: 538px;
-    max-width: 629px;
+    max-width: 829px;
 }
 
-.experienceTypeOriginal__containerAbout {
+.experienceLocation__containerAbout {
     margin-bottom: 60px;
 }
 
-.experienceTypeOriginal__containerAbout > h1 {
+.experienceLocation__containerAbout > h1 {
     margin-bottom: 20px;
     color: #222222;
     font-size: 35px;
 }
 
-.experienceTypeOriginal__containerAbout > p {
+.experienceLocation__containerAbout > p {
     color: #484848;
     font-size: 18px;
     line-height: 28px;
 }
 
-.experienceTypeOriginal__containerButtons {
+.experienceLocation__containerAbout > input {
+    width: 130%;
+    height: 40px;
+    outline-width: 0;
+    border: 1px solid lightgray;
+    margin-top: 20px;
+}
+
+.experienceLocation__containerButtons {
     display: flex;
 }
 
-.experienceTypeOriginal__containerButtons > button {
+.experienceLocation__containerButtons > button {
     margin-right: 20px;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.29), 0 3px 10px 0 rgba(0, 0, 0, 0.29);
     text-transform: inherit !important;
 }
 
-.experienceTypeOriginal__infoInButton > strong {
+.experienceLocation__infoInButton > strong {
     font-size: 20px;
     font-weight: 600;
 }
 
-.experienceTypeOriginal__infoInButton > p {
+.experienceLocation__infoInButton > p {
     color: #484848;
     text-align: unset !important;
 }
 
-.experienceTypeOriginal__Button {
+.experienceLocation__Button {
     border: 2px solid #222222 !important;
     transition: 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms !important;
 }
 
-.experienceTypeOriginal__footer {
+.experienceLocation__footer {
     position: absolute;
     bottom: 0px;
     padding-top: 25px;
@@ -73,14 +81,14 @@
     border-top: 1px solid lightgray;
 }
 
-.experienceTypeOriginal__footerButtons {
+.experienceLocation__footerButtons {
     display: flex;
     justify-content: space-between;
 }
 
-.experienceTypeOriginal__footerButtons > button {
+.experienceLocation__footerButtons > button {
     text-transform: inherit !important;
     padding: 5px;
     width: 80px;
-    margin: 0 30px 20px 89%;
+    margin: 0 30px 20px 30px;
 }

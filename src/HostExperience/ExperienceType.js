@@ -6,6 +6,7 @@ import GroupIcon from '@material-ui/icons/Group';
 import { Button } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
 import { experienceAdd } from '../actions/experienceActions';
+import { useHistory } from 'react-router';
 
 function ExperienceType() {
     const [around, setAround] = useState(false)
@@ -15,7 +16,7 @@ function ExperienceType() {
     const [inPersonExperience, setInPersonExperience] = useState("In-person")
 
     const dispatch = useDispatch()
-
+    const history = useHistory()
 
     const handleOnlineExperienceClick = () => {
         setAround(true)
@@ -28,6 +29,10 @@ function ExperienceType() {
         setAround(false)
         setInPersonExperience("In-person")   
         dispatch(experienceAdd(inPersonExperience))
+    }
+
+    const handleNextClick = () => {
+        history.push("/experiences/location")
     }
 
     return (
@@ -70,8 +75,7 @@ function ExperienceType() {
         </div>
         <footer className="experienceTypeOriginal__footer">
             <div className="experienceTypeOriginal__footerButtons">
-                <Button style={{border:"1px solid #222222"}}>Previous</Button>
-                <Button style={{backgroundColor:"#222222", color:"white"}}>Next</Button>
+                <Button onClick={handleNextClick} style={{backgroundColor:"#222222", color:"white"}}>Next</Button>
             </div>
         </footer>
         </div>
