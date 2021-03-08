@@ -4,6 +4,7 @@ import { composeWithDevTools } from "redux-devtools-extension"
 import { userLoginReducer, userRegisterReducer } from "./reducers/userReducer";
 import { hostAddReducer, hostedPlaceBookingReducer, hostedPlaceDetailsReducer, hostedPlaceRatingReducer, hostedPlaceSearchResultsForDatesReducer, hostedPlaceTopRatedReducer, hostGetReducer } from "./reducers/hostReducers";
 import { saveReducer } from "./reducers/saveReducer";
+import { experienceTypeReducer } from "./reducers/experienceReducers";
 
 const reducer = combineReducers({
     userLogin: userLoginReducer,
@@ -16,6 +17,7 @@ const reducer = combineReducers({
     hostedPlaceTopRated: hostedPlaceTopRatedReducer,
     hostedPlaceSearch: hostedPlaceSearchResultsForDatesReducer,
     savePlace: saveReducer,
+    experience: experienceTypeReducer
 
 });
 

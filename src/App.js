@@ -14,7 +14,8 @@ import Summary from './Summary';
 import Experiences from './Experiences';
 import HostOnboarding from './HostOnboarding';
 import HostOnline from './HostOnline';
-import ExperienceType from './ExperienceType';
+import ExperienceType from './HostExperience/ExperienceType';
+
 
 function App() {
   return (
@@ -33,7 +34,6 @@ function App() {
       </Route>
 
       <Route path="/experiences/experience-type">
-      <Header />
       <ExperienceType />
       </Route>
 

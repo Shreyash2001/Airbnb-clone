@@ -1,0 +1,70 @@
+.experienceType__left {
+    background-color: #f7f7f7;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.experienceType__logo {
+    object-fit: contain;
+    height: 80px;
+    padding: 10px;
+}
+
+.experienceType__leftContainer > h2 {
+    margin-bottom: 10px;
+    padding: 7px;
+    font-size: 34px;
+    font-weight: 500;
+    color: #222222;
+}
+
+.experienceType__info {
+    display: flex;
+    align-items: center;
+    padding: 7px;
+}
+.experienceType__info:hover {
+    background-color: #e4e1e1d8;
+    border-radius: 12px;
+    cursor: pointer;
+    padding: 7px;
+}
+
+.experienceType__infoAround {
+    display: flex;
+    align-items: center;
+    border-radius: 12px;
+    border: 2px solid #222222;
+    padding: 7px;
+    margin-top: 5px;
+}
+
+.experienceType__infoAround:hover {
+    background-color: #e4e1e1d8;
+    border-radius: 12px;
+    border: 2px solid #222222;
+    cursor: pointer;
+}
+
+.experienceType__list {
+    list-style: none;
+}
+
+.experienceType__listItems > button {
+    text-transform: inherit !important;
+    font-size: 16px;
+    border-radius: 20px;
+}
+
+.experienceType__Button {
+    text-transform: inherit !important;
+    font-size: 16px;
+    border-radius: 20px;
+    border: 2px solid #222222 !important;
+    margin-top: 4px !important;
+    transition: 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms !important;
+}
+
+.experienceType__right {
+    flex: 0.8;
+}
