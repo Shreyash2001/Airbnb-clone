@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import SideBar from '../SideBar'
-import "./ExperienceTypeOriginal.css"
 import { Button } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
 import { experienceLocationAdd } from '../actions/experienceActions';
@@ -10,6 +9,7 @@ import { useHistory } from 'react-router';
 function ExperienceLocation() {
 
     const [location, setLocation] = useState("")
+    const [show, setShow] = useState(false)
 
     const dispatch = useDispatch()
     const history = useHistory()
@@ -20,6 +20,7 @@ function ExperienceLocation() {
 
     const handleClickNext = () => {
         dispatch(experienceLocationAdd(location))
+        history.push("/experiences/themes")
     }
     const handleClickPrevious = () => {
         history.push("/experiences/experience-type")
@@ -27,7 +28,7 @@ function ExperienceLocation() {
 
     const handleChange = (e) => {
         setLocation(e.target.value)
-        
+        setShow(true)
     }
 
     return (
@@ -48,7 +49,7 @@ function ExperienceLocation() {
         <footer className="experienceLocation__footer">
             <div className="experienceLocation__footerButtons">
                 <Button onClick={handleClickPrevious} style={{border:"1px solid #222222"}}>Previous</Button>
-                <Button onClick={handleClickNext} style={{backgroundColor:"#222222", color:"white"}}>Next</Button>
+              {show ?   <Button onClick={handleClickNext} style={{backgroundColor:"#222222", color:"white"}}>Next</Button> : <Button disabled style={{backgroundColor:"#98989870"}}>Next</Button>}
             </div>
         </footer>
         </div>

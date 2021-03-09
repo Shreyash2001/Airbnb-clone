@@ -16,6 +16,9 @@ import HostOnboarding from './HostOnboarding';
 import HostOnline from './HostOnline';
 import ExperienceType from './HostExperience/ExperienceType';
 import ExperienceLocation from './HostExperience/ExperienceLocation';
+import ExperienceTheme from './HostExperience/ExperienceTheme';
+import ExperienceLanguage from './HostExperience/ExperienceLanguage';
+import ExperienceOverview from './HostExperience/ExperienceOverview';
 
 
 function App() {
@@ -32,6 +35,18 @@ function App() {
 
       <Route path="/login">
       <LoginPage />
+      </Route>
+
+      <Route path="/experiences/experience-page/overview">
+      <ExperienceOverview />
+      </Route>
+
+      <Route path="/experiences/language">
+      <ExperienceLanguage />
+      </Route>
+
+      <Route path="/experiences/themes">
+      <ExperienceTheme />
       </Route>
 
       <Route path="/experiences/location">

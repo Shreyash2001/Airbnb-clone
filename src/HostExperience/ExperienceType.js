@@ -11,6 +11,7 @@ import { useHistory } from 'react-router';
 function ExperienceType() {
     const [around, setAround] = useState(false)
     const [aroundInPerson, setAroundInperson] = useState(false)
+    const [show, setShow] = useState(false)
 
     const [onlineExperience, setOnlineExperience] = useState("Online")
     const [inPersonExperience, setInPersonExperience] = useState("In-person")
@@ -23,16 +24,19 @@ function ExperienceType() {
         setAroundInperson(false)
         setOnlineExperience("Online")
         dispatch(experienceAdd(onlineExperience))
+        setShow(true)
     }
     const handleInPersonExperienceClick = () => {
         setAroundInperson(true)
         setAround(false)
         setInPersonExperience("In-person")   
         dispatch(experienceAdd(inPersonExperience))
+        setShow(true)
     }
 
     const handleNextClick = () => {
         history.push("/experiences/location")
+        
     }
 
     return (
@@ -75,7 +79,7 @@ function ExperienceType() {
         </div>
         <footer className="experienceTypeOriginal__footer">
             <div className="experienceTypeOriginal__footerButtons">
-                <Button onClick={handleNextClick} style={{backgroundColor:"#222222", color:"white"}}>Next</Button>
+                {show ? <Button onClick={handleNextClick} style={{backgroundColor:"#222222", color:"white"}}>Next</Button> : <Button disabled style={{backgroundColor:"#98989870"}}>Next</Button>}
             </div>
         </footer>
         </div>

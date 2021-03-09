@@ -1,46 +1,47 @@
-.experienceLocation {
+.experienceTheme {
     display: flex;
 }
 
-.experienceLocation__left {
+.experienceTheme__left {
     flex: 0.2;
 }
 
-.experienceLocation__right {
+.experienceTheme__right {
     flex: 0.8;
 }
 
-.experienceLocation__right > p {
+.experienceTheme__right > p {
     padding: 30px;
     color: #222222;
     font-size: 16px;
     font-weight: 600;
 }
 
-.experienceLocation__container {
+.experienceTheme__container {
     position: absolute;
-    top: 149px;
+    top: 109px;
     left: 538px;
-    max-width: 829px;
+    max-width: 729px;
 }
 
-.experienceLocation__containerAbout {
+.experienceTheme__containerAbout {
     margin-bottom: 60px;
 }
 
-.experienceLocation__containerAbout > h1 {
+.experienceTheme__containerAbout > h1 {
     margin-bottom: 20px;
     color: #222222;
     font-size: 35px;
 }
 
-.experienceLocation__containerAbout > p {
+.experienceTheme__containerAbout > p {
     color: #484848;
     font-size: 18px;
     line-height: 28px;
+    width: 600px;
 }
 
-.experienceLocation__containerAbout > input {
+.experienceTheme__containerAbout > input {
     width: 130%;
     height: 40px;
     outline-width: 0;
@@ -48,37 +49,37 @@
     margin-top: 20px;
 }
 
-.experienceLocation__containerAbout > input[type="text"]
+.experienceTheme__containerAbout > input[type="text"]
 {
     font-size:20px;
 }
 
-.experienceLocation__containerButtons {
+.experienceTheme__containerButtons {
     display: flex;
 }
 
-.experienceLocation__containerButtons > button {
+.experienceTheme__containerButtons > button {
     margin-right: 20px;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.29), 0 3px 10px 0 rgba(0, 0, 0, 0.29);
     text-transform: inherit !important;
 }
 
-.experienceLocation__infoInButton > strong {
+.experienceTheme__infoInButton > strong {
     font-size: 20px;
     font-weight: 600;
 }
 
-.experienceLocation__infoInButton > p {
+.experienceTheme__infoInButton > p {
     color: #484848;
     text-align: unset !important;
 }
 
-.experienceLocation__Button {
+.experienceTheme__Button {
     border: 2px solid #222222 !important;
     transition: 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms !important;
 }
 
-.experienceLocation__footer {
+.experienceTheme__footer {
     position: absolute;
     bottom: 0px;
     padding-top: 25px;
@@ -86,14 +87,40 @@
     border-top: 1px solid lightgray;
 }
 
-.experienceLocation__footerButtons {
+.experienceTheme__footerButtons {
     display: flex;
     justify-content: space-between;
 }
 
-.experienceLocation__footerButtons > button {
+.experienceTheme__footerButtons > button {
     text-transform: inherit !important;
     padding: 5px;
     width: 80px;
     margin: 0 30px 20px 30px;
+}
+
+.experienceTheme__containerButtons {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.experienceTheme__containerButtons > button {
+    text-transform: inherit !important;
+    padding: 5px;
+    width: 280px;
+    box-shadow: none;
+    border: 1px solid #484848;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+
+.experienceTheme__modalButton > button {
+    width: 30%;
+    height: 70px;
+    border: 1px solid #484848;
+    text-transform: inherit !important;
+    font-size: 22px;
+    padding: 10px;
+    margin: 30px 30px 20px 0;
 }
