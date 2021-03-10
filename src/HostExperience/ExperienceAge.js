@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import SideBar from '../SideBar'
-import "./ExperienceLanguage.css"
+import "./ExperienceAge.css"
 import { Button, FormControl, InputLabel, makeStyles, Select } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
-import { experienceLanguageAdd } from '../actions/experienceActions';
+import { experienceAgeAdd } from '../actions/experienceActions';
 import { useHistory } from 'react-router';
 
-function ExperienceLanguage() {
+function ExperienceAge() {
     const useStyles = makeStyles((theme) => ({
         formControl: {
           margin: theme.spacing(1),
@@ -23,7 +23,7 @@ function ExperienceLanguage() {
             name: 'hai',
         });
 
-        const [language, setLanguage] = useState("English")
+        const [age, setAge] = useState("")
         const [show, setShow] = useState(false)
   const handleChange = (event) => {
     const name = event.target.name;
@@ -32,7 +32,7 @@ function ExperienceLanguage() {
       ...state,
       [name]: event.target.value,
     });
-    setLanguage(event.target.value)
+    setAge(event.target.value)
     setShow(true)
   };
 
@@ -42,30 +42,31 @@ function ExperienceLanguage() {
     
 
     const handleClickNext = () => {
-        dispatch(experienceLanguageAdd(language))
-        history.push("/experiences/experience-page/overview")
+        dispatch(experienceAgeAdd(age))
+        history.push("/experiences/experience-page/team-or-solo")
 
     }
     const handleClickPrevious = () => {
-        history.push("/experiences/themes")
+        history.push("/experiences/experience-page/time")
     }
 
 
     return (
-        <div className="experienceLanguage">
-        <div className="experienceLanguage__left">
+        <div className="experienceAge">
+        <div className="experienceAge__left">
         <SideBar />
         </div>
-        <div className="experienceLanguage__right">
-            <p>Language</p>
+        <div className="experienceAge__right">
+            <p>Guest requirement</p>
             
-        <div className="experienceLanguage__container">
-        <div className="experienceLanguage__containerAbout">
-            <h1>Language</h1>
-            <h3>What's your primary language?</h3>
-            <p>You should be able to read, write, and speak in this language.</p>
+        <div className="experienceAge__container">
+        <div className="experienceAge__containerAbout">
+            <h1>Who can attend your experience?</h1>
+            <p>Keep in mind that someone booking your experience might book spots for other guests. If there are strict requirements in terms of age include them here.</p>
+            <h3 style={{marginTop:"25px", paddingBottom:"10px"}}>Minimum Age</h3>
+            <p>Set age limits for guests. Minors can only attend with their legal guardian.</p>
             <FormControl variant="filled" className={classes.formControl}>
-        <InputLabel htmlFor="filled-age-native-simple">Language</InputLabel>
+        <InputLabel htmlFor="filled-age-native-simple">Age</InputLabel>
         <Select
           native
           value={state.age}
@@ -76,16 +77,20 @@ function ExperienceLanguage() {
             id: 'filled-age-native-simple',
           }}
         >
-        <option value={""} />
-          <option value={"English"}>English</option>
-          <option value={"Spanish"}>Spanish</option>
-          <option value={"Italiano"}>Italiano</option>
+          <option value={""} />
+          <option value={"2"}>02</option>
+          <option value={"5"}>05</option>
+          <option value={"10"}>10</option>
+          <option value={"13"}>13</option>
+          <option value={"16"}>16</option>
+          <option value={"18"}>18</option>
+          <option value={"21"}>21</option>
         </Select>
       </FormControl>
         </div>
         </div>
-        <footer className="experienceLanguage__footer">
-            <div className="experienceLanguage__footerButtons">
+        <footer className="experienceAge__footer">
+            <div className="experienceAge__footerButtons">
                 <Button onClick={handleClickPrevious} style={{border:"1px solid #222222"}}>Previous</Button>
                 {show ?   <Button onClick={handleClickNext} style={{backgroundColor:"#222222", color:"white"}}>Next</Button> : <Button disabled style={{backgroundColor:"#98989870"}}>Next</Button>}
             </div>
@@ -95,4 +100,4 @@ function ExperienceLanguage() {
     )
 }
 
-export default ExperienceLanguage
+export default ExperienceAge

@@ -1,0 +1,95 @@
+.experienceOverview {
+    display: flex;
+}
+
+.experienceOverview__left {
+    flex: 0.2;
+}
+
+.experienceOverview__right {
+    flex: 0.8;
+}
+
+.experienceOverview__right > p {
+    padding: 30px;
+    color: #222222;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.experienceOverview__container {
+    position: absolute;
+    top: 95px;
+    left: 638px;
+    max-width: 829px;
+}
+
+.experienceOverview__containerAbout {
+    margin-bottom: 60px;
+}
+
+.experienceOverview__containerAbout > h1 {
+    margin-bottom: 20px;
+    color: #222222;
+    font-size: 35px;
+}
+
+.experienceOverview__containerAbout > p {
+    color: #484848;
+    font-size: 18px;
+    line-height: 28px;
+}
+
+.experienceOverview__containerAboutImage {
+    background-image: url("https://res.cloudinary.com/cqn/image/upload/v1615285602/fb2bcd94-54d6-4eb8-b22b-f8755e38a733_s6rfgu.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 130%;
+    height: 40vh;
+    border-radius: 12px;
+}
+
+.experienceOverview__containerButtons {
+    display: flex;
+}
+
+.experienceOverview__containerButtons > button {
+    margin-right: 20px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.29), 0 3px 10px 0 rgba(0, 0, 0, 0.29);
+    text-transform: inherit !important;
+}
+
+.experienceOverview__infoInButton > strong {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.experienceOverview__infoInButton > p {
+    color: #484848;
+    text-align: unset !important;
+}
+
+.experienceOverview__Button {
+    border: 2px solid #222222 !important;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms !important;
+}
+
+.experienceOverview__footer {
+    position: absolute;
+    bottom: 0px;
+    padding-top: 25px;
+    width: 80%;
+    border-top: 1px solid lightgray;
+}
+
+.experienceOverview__footerButtons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.experienceOverview__footerButtons > button {
+    text-transform: inherit !important;
+    padding: 5px;
+    width: 80px;
+    margin: 0 30px 20px 30px;
+}

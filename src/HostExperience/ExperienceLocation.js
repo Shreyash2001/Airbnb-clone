@@ -13,9 +13,6 @@ function ExperienceLocation() {
 
     const dispatch = useDispatch()
     const history = useHistory()
-    // const {tempData} = useSelector(state => state.experience)
-    // const {experience, location: locationData} = tempData
-
 
 
     const handleClickNext = () => {

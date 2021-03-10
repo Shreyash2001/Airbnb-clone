@@ -13,7 +13,7 @@ import Fade from '@material-ui/core/Fade';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 
 
-function ExperienceLocation() {
+function ExperienceTheme() {
     const useStyles = makeStyles((theme) => ({
         modal: {
           display: 'flex',
@@ -323,7 +323,7 @@ function ExperienceLocation() {
         history.push("/experiences/language")
     }
     const handleClickPrevious = () => {
-        history.push("/experiences/experience-type")
+        history.push("/experiences/location")
     }
 
 
@@ -584,4 +584,4 @@ function ExperienceLocation() {
     )
 }
 
-export default ExperienceLocation
+export default ExperienceTheme

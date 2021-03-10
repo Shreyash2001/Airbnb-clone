@@ -1,0 +1,115 @@
+.experienceTitle {
+    display: flex;
+}
+
+.experienceTitle__left {
+    flex: 0.2;
+}
+
+.experienceTitle__right {
+    flex: 0.8;
+}
+
+.experienceTitle__right > p {
+    padding: 30px;
+    color: #222222;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.experienceTitle__container {
+    position: absolute;
+    top: 149px;
+    left: 538px;
+    max-width: 629px;
+}
+
+.experienceTitle__containerAbout {
+    margin-bottom: 60px;
+}
+
+.experienceTitle__containerAbout > h1 {
+    margin-bottom: 20px;
+    color: #222222;
+    font-size: 35px;
+}
+
+.experienceTitle__containerAbout > p {
+    color: #484848;
+    font-size: 18px;
+    line-height: 28px;
+}
+
+.experienceTitle__containerAbout > input {
+    width: 120%;
+    height: 40px;
+    border: 1px solid lightgray;
+    margin-top: 10px;
+    font-size:20px;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+}
+
+.experienceTitle__containerAbout > input[type=text] {
+    transition: all 0.30s ease-in-out;
+    outline: none;
+    padding: 3px 0px 3px 3px;
+    margin: 5px 1px 3px 0px;
+    border: 1px solid #DDDDDD;
+}
+
+.experienceTitle__containerAbout > input[type=text]:focus {
+    padding: 3px 0px 3px 3px;
+    margin: 5px 1px 3px 0px;
+    border: 1px solid rgb(0, 132, 137);
+}
+
+.experienceTitle__containerAbout > button {
+    text-transform: inherit !important;
+    color: red !important;
+    margin-top: 4px;
+}
+
+.experienceTitle__containerButtons {
+    display: flex;
+}
+
+.experienceTitle__containerButtons > button {
+    margin-right: 20px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.29), 0 3px 10px 0 rgba(0, 0, 0, 0.29);
+    text-transform: inherit !important;
+}
+
+.experienceTitle__infoInButton > strong {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.experienceTitle__infoInButton > p {
+    color: #484848;
+    text-align: unset !important;
+}
+
+.experienceTitle__Button {
+    border: 2px solid #222222 !important;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms !important;
+}
+
+.experienceTitle__footer {
+    position: absolute;
+    bottom: 0px;
+    padding-top: 25px;
+    width: 80%;
+    border-top: 1px solid lightgray;
+}
+
+.experienceTitle__footerButtons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.experienceTitle__footerButtons > button {
+    text-transform: inherit !important;
+    padding: 5px;
+    width: 80px;
+    margin: 0 30px 20px 30px;
+}
