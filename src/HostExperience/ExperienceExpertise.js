@@ -40,7 +40,7 @@ function ExperienceExpertise() {
     return (
         <div className="experienceExpertise">
         <div className="experienceExpertise__left">
-        <SideBar />
+        <SideBar expertise={"expertise"} />
         </div>
         <div className="experienceExpertise__right">
             <p>Expertise</p>

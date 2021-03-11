@@ -36,7 +36,7 @@ function ExperiencePrice() {
     return (
         <div className="experiencePrice">
         <div className="experiencePrice__left">
-        <SideBar />
+        <SideBar price={"price"} />
         </div>
         <div className="experiencePrice__right">
             <p>Guest pricing</p>

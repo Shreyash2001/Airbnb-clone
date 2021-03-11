@@ -42,7 +42,7 @@ function ExperienceType() {
     return (
         <div className="experienceTypeOriginal">
         <div className="experienceTypeOriginal__left">
-        <SideBar />
+        <SideBar type={"type"} />
         </div>
         <div className="experienceTypeOriginal__right">
             <p>Experience type</p>

@@ -54,7 +54,7 @@ function ExperienceAge() {
     return (
         <div className="experienceAge">
         <div className="experienceAge__left">
-        <SideBar />
+        <SideBar age={"age"} />
         </div>
         <div className="experienceAge__right">
             <p>Guest requirement</p>

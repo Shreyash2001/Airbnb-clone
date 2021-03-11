@@ -35,7 +35,7 @@ function ExperienceYourStory() {
     return (
         <div className="experienceYourStory">
         <div className="experienceYourStory__left">
-        <SideBar />
+        <SideBar story={"story"} />
         </div>
         <div className="experienceYourStory__right">
             <p>Story</p>

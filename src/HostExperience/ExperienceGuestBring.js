@@ -37,7 +37,7 @@ function ExperienceGuestBring() {
     return (
         <div className="experienceGuestBring">
         <div className="experienceGuestBring__left">
-        <SideBar />
+        <SideBar guests={"guests"} />
         </div>
         <div className="experienceGuestBring__right">
             <p>What guests should bring</p>

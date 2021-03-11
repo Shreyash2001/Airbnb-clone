@@ -46,7 +46,7 @@ function ExperienceTitle() {
     return (
         <div className="experienceTitle">
         <div className="experienceTitle__left">
-        <SideBar />
+        <SideBar title={"title"} />
         </div>
         <div className="experienceTitle__right">
             <p>Title</p>

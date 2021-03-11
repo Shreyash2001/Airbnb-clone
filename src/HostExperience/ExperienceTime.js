@@ -79,7 +79,7 @@ function ExperienceTime() {
     return (
         <div className="experienceTime">
         <div className="experienceTime__left">
-        <SideBar />
+        <SideBar time={"time"} />
         </div>
         <div className="experienceTime__right">
             <p>Duration</p>

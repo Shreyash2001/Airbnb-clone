@@ -35,7 +35,7 @@ function ExperienceSkill() {
     return (
         <div className="experienceSkill">
         <div className="experienceSkill__left">
-        <SideBar />
+        <SideBar skill={"skill"} />
         </div>
         <div className="experienceSkill__right">
             <p>Skill</p>

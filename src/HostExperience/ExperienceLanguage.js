@@ -54,7 +54,7 @@ function ExperienceLanguage() {
     return (
         <div className="experienceLanguage">
         <div className="experienceLanguage__left">
-        <SideBar />
+        <SideBar language={"language"} />
         </div>
         <div className="experienceLanguage__right">
             <p>Language</p>

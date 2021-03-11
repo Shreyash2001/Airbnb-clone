@@ -330,7 +330,7 @@ function ExperienceTheme() {
     return (
         <div className="experienceTheme">
         <div className="experienceTheme__left">
-        <SideBar />
+        <SideBar theme={"theme"} />
         </div>
         <div className="experienceTheme__right">
             <p>Your theme</p>

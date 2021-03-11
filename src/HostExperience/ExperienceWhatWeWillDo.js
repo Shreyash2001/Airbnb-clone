@@ -50,7 +50,7 @@ function ExperienceWhatWeWillDo() {
     return (
         <div className="experienceWhatWeWillDo">
         <div className="experienceWhatWeWillDo__left">
-        <SideBar />
+        <SideBar weWillDo={"weWillDo"} />
         </div>
         <div className="experienceWhatWeWillDo__right">
             <p>What we’ll do</p>

@@ -40,7 +40,7 @@ function ExperienceTeamOrSolo() {
     return (
         <div className="experienceTeamOrSolo">
         <div className="experienceTeamOrSolo__left">
-        <SideBar />
+        <SideBar working={"working"} />
         </div>
         <div className="experienceTeamOrSolo__right">
             <p>Working</p>

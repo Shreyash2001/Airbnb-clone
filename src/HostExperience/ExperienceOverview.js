@@ -18,7 +18,7 @@ function ExperienceOverview() {
     return (
         <div className="experienceOverview">
         <div className="experienceOverview__left">
-        <SideBar />
+        <SideBar overview={"overview"} />
         </div>
         <div className="experienceOverview__right">
             <p>Overview</p>

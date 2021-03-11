@@ -31,7 +31,7 @@ function ExperienceLocation() {
     return (
         <div className="experienceLocation">
         <div className="experienceLocation__left">
-        <SideBar />
+        <SideBar location={"location"} />
         </div>
         <div className="experienceLocation__right">
             <p>Location</p>
