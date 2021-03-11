@@ -1,0 +1,120 @@
+.experiences__container {
+    display: flex;
+    padding: 30px 40px 20px 40px;
+    overflow-x: scroll;
+    border-bottom: 1px solid lightslategray;
+}
+
+.experiences__container::-webkit-scrollbar { 
+    display: none;  
+}
+
+.experiences__rightArrow {
+    width: 28px;
+    border: 1px solid lightgray;
+    border-radius: 50%;
+    padding: 6px;
+    position: absolute;
+    top: 106px;
+    right: 10px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.experiences__leftArrow {
+    width: 28px;
+    border: 1px solid lightgray;
+    border-radius: 50%;
+    padding: 6px;
+    position: absolute;
+    top: 106px;
+    right: 80px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.experiences__containerImages {
+    margin-top: 20px;
+    width: 100%;
+    border-radius: 12px;
+}
+
+.experiences__containerImagesImage1 {
+    background-image: url("https://a0.muscache.com/im/pictures/ff79a19b-3a98-4b3f-87a3-4b4d4c2ce94b.jpg?im_w=720");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 50vh;
+    margin-right:20px;
+    width:700px;
+    border-radius: 12px;
+}
+.experiences__containerImagesImage2 {
+    background-image: url("https://a0.muscache.com/im/pictures/85c3da45-d574-44bf-9d10-acf62d5d2339.jpg?im_w=720");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 50vh;
+    margin-right:20px;
+    width:700px;
+    border-radius: 12px;
+}
+.experiences__containerImagesImage3 {
+    background-image: url("https://a0.muscache.com/im/pictures/283ba16d-6e2f-4042-8ce8-aa963fd46516.jpg?im_w=720");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 50vh;
+    margin-right:20px;
+    width:700px;
+    border-radius: 12px;
+}
+.experiences__containerImagesImage4 {
+    background-image: url("https://a0.muscache.com/im/pictures/bcbd20bb-1654-4ea2-a86c-2cf25666f3b6.jpg?im_w=720");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 50vh;
+    margin-right:20px;
+    width:700px;
+    border-radius: 12px;
+}
+.experiences__containerImagesImage5 {
+    background-image: url("https://a0.muscache.com/im/pictures/6047e231-0eff-493f-9e1a-59a6cb7a7616.jpg?im_w=720");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 50vh;
+    margin-right:20px;
+    width:700px;
+    border-radius: 12px;
+}
+
+.experiences__containerImagesImage1Info {
+    padding: 20px;
+}
+
+.experiences__containerImagesImage1Info > p {
+    color: #fff;
+    font-weight: 100;
+    margin-bottom: 10px;
+}
+
+.experiences__containerImagesImage1Info > h2 {
+    color: #fff;
+    max-width: 300px;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 160px;
+}
+
+.experiences__containerImagesImage1Info > button {
+    background-color: #fff !important;
+    text-transform: inherit !important;
+    color: #484848 !important;
+    width: 100px;
+    border-radius: 8px !important;
+}
+
+.experiences__containerImagesImage1Info > button:hover {
+    background-color: lightgray !important;
+}
+
+.experiences__filtersMain {
+    display: flex;
+}

@@ -117,7 +117,7 @@
 .experienceImages__previewContainerInfoImages > img {
     width: 30%;
     margin-left: 10px;
-    min-height: 20vh;
+    max-height: 30vh;
 }
 
 .experienceImages__previewContainerGeneralInfo {
