@@ -4,7 +4,7 @@ import { composeWithDevTools } from "redux-devtools-extension"
 import { userLoginReducer, userRegisterReducer } from "./reducers/userReducer";
 import { hostAddReducer, hostedPlaceBookingReducer, hostedPlaceDetailsReducer, hostedPlaceRatingReducer, hostedPlaceSearchResultsForDatesReducer, hostedPlaceTopRatedReducer, hostGetReducer } from "./reducers/hostReducers";
 import { saveReducer } from "./reducers/saveReducer";
-import { experienceTypeReducer, experienceSubmitReducer } from "./reducers/experienceReducers";
+import { experienceTypeReducer, experienceSubmitReducer, experienceGetReducer, experienceGetPopularInIndiaReducer, experienceGetCookingReducer, experienceGetLastWeekReducer, experienceGetFilteredResultReducer } from "./reducers/experienceReducers";
 
 const reducer = combineReducers({
     userLogin: userLoginReducer,
@@ -18,7 +18,12 @@ const reducer = combineReducers({
     hostedPlaceSearch: hostedPlaceSearchResultsForDatesReducer,
     savePlace: saveReducer,
     experience: experienceTypeReducer,
-    experienceSubmit: experienceSubmitReducer
+    experienceSubmit: experienceSubmitReducer,
+    newExperiences: experienceGetReducer,
+    popularExperiences: experienceGetPopularInIndiaReducer,
+    cookingExperiences: experienceGetCookingReducer,
+    lastWeekExperiences: experienceGetLastWeekReducer,
+    filteredResultExperiences: experienceGetFilteredResultReducer,
 
 });
 

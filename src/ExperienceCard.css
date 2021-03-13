@@ -1,0 +1,22 @@
+.experienceCard {
+    max-width: 50%;
+    cursor: pointer;
+    margin-right: 20px;
+    flex: 1;
+    min-width: 32.9%;
+}
+
+.experienceCard__info {
+    margin-top: 10px;
+    max-width: 100%;
+}
+
+.experienceCard__info > div > h3 {
+    color: #222222;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.experienceCard__infoPrice {
+    margin-top: 8px;
+}

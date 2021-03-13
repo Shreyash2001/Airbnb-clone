@@ -39,8 +39,8 @@ function ExperienceLocation() {
         <div className="experienceLocation__container">
         <div className="experienceLocation__containerAbout">
             <h1>Location</h1>
-            <p>Which city will you host your experience in?</p>
-            <input type="text" placeholder="Enter City" value={location} onChange={handleChange} />
+            <p>Which country will you host your experience in?</p>
+            <input type="text" placeholder="Enter country" value={location} onChange={handleChange} />
         </div>
         </div>
         <footer className="experienceLocation__footer">

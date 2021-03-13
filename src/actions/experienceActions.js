@@ -1,4 +1,4 @@
-import { EXPERIENCE_AGE_FAIL, EXPERIENCE_AGE_REQUEST, EXPERIENCE_AGE_SUCCESS, EXPERIENCE_AVAILABILITY_FAIL, EXPERIENCE_AVAILABILITY_REQUEST, EXPERIENCE_AVAILABILITY_SUCCESS, EXPERIENCE_BROADCAST_FAIL, EXPERIENCE_BROADCAST_REQUEST, EXPERIENCE_BROADCAST_SUCCESS, EXPERIENCE_DESCRIPTION_FAIL, EXPERIENCE_DESCRIPTION_REQUEST, EXPERIENCE_DESCRIPTION_SUCCESS, EXPERIENCE_IMAGES_FAIL, EXPERIENCE_IMAGES_REQUEST, EXPERIENCE_IMAGES_SUCCESS, EXPERIENCE_ISHOSTED_FAIL, EXPERIENCE_ISHOSTED_REQUEST, EXPERIENCE_ISHOSTED_SUCCESS, EXPERIENCE_ITEMS_FAIL, EXPERIENCE_ITEMS_REQUEST, EXPERIENCE_ITEMS_SUCCESS, EXPERIENCE_LANGUAGE_FAIL, EXPERIENCE_LANGUAGE_REQUEST, EXPERIENCE_LANGUAGE_SUCCESS, EXPERIENCE_LOCATION_FAIL, EXPERIENCE_LOCATION_REQUEST, EXPERIENCE_LOCATION_SUCCESS, EXPERIENCE_NUMBER_OF_HOURS_FAIL, EXPERIENCE_NUMBER_OF_HOURS_REQUEST, EXPERIENCE_NUMBER_OF_HOURS_SUCCESS, EXPERIENCE_PRICE_FAIL, EXPERIENCE_PRICE_REQUEST, EXPERIENCE_PRICE_SUCCESS, EXPERIENCE_SKILLS_FAIL, EXPERIENCE_SKILLS_REQUEST, EXPERIENCE_SKILLS_SUCCESS, EXPERIENCE_STORY_FAIL, EXPERIENCE_STORY_REQUEST, EXPERIENCE_STORY_SUCCESS, EXPERIENCE_SUBMIT_FAIL, EXPERIENCE_SUBMIT_REQUEST, EXPERIENCE_SUBMIT_SUCCESS, EXPERIENCE_THEME_FAIL, EXPERIENCE_THEME_REQUEST, EXPERIENCE_THEME_SUCCESS, EXPERIENCE_TIME_FAIL, EXPERIENCE_TIME_REQUEST, EXPERIENCE_TIME_SUCCESS, EXPERIENCE_TITLE_FAIL, EXPERIENCE_TITLE_REQUEST, EXPERIENCE_TITLE_SUCCESS, EXPERIENCE_TYPE_FAIL, EXPERIENCE_TYPE_REQUEST, EXPERIENCE_TYPE_SUCCESS, EXPERIENCE_WORKING_FAIL, EXPERIENCE_WORKING_REQUEST, EXPERIENCE_WORKING_SUCCESS } from "../constants/experienceConstants";
+import { EXPERIENCE_AGE_FAIL, EXPERIENCE_AGE_REQUEST, EXPERIENCE_AGE_SUCCESS, EXPERIENCE_AVAILABILITY_FAIL, EXPERIENCE_AVAILABILITY_REQUEST, EXPERIENCE_AVAILABILITY_SUCCESS, EXPERIENCE_BROADCAST_FAIL, EXPERIENCE_BROADCAST_REQUEST, EXPERIENCE_BROADCAST_SUCCESS, EXPERIENCE_DESCRIPTION_FAIL, EXPERIENCE_DESCRIPTION_REQUEST, EXPERIENCE_DESCRIPTION_SUCCESS, EXPERIENCE_GET_COOKING_FAIL, EXPERIENCE_GET_COOKING_REQUEST, EXPERIENCE_GET_COOKING_SUCCESS, EXPERIENCE_GET_FAIL, EXPERIENCE_GET_FILTERED_RESULT_FAIL, EXPERIENCE_GET_FILTERED_RESULT_REQUEST, EXPERIENCE_GET_FILTERED_RESULT_SUCCESS, EXPERIENCE_GET_LAST_WEEK_FAIL, EXPERIENCE_GET_LAST_WEEK_REQUEST, EXPERIENCE_GET_LAST_WEEK_SUCCESS, EXPERIENCE_GET_MAIN_FILTER_RESULT_FAIL, EXPERIENCE_GET_MAIN_FILTER_RESULT_REQUEST, EXPERIENCE_GET_MAIN_FILTER_RESULT_SUCCESS, EXPERIENCE_GET_POPULAR_IN_INDIA_FAIL, EXPERIENCE_GET_POPULAR_IN_INDIA_REQUEST, EXPERIENCE_GET_POPULAR_IN_INDIA_SUCCESS, EXPERIENCE_GET_REQUEST, EXPERIENCE_GET_SUCCESS, EXPERIENCE_IMAGES_FAIL, EXPERIENCE_IMAGES_REQUEST, EXPERIENCE_IMAGES_SUCCESS, EXPERIENCE_ISHOSTED_FAIL, EXPERIENCE_ISHOSTED_REQUEST, EXPERIENCE_ISHOSTED_SUCCESS, EXPERIENCE_ITEMS_FAIL, EXPERIENCE_ITEMS_REQUEST, EXPERIENCE_ITEMS_SUCCESS, EXPERIENCE_LANGUAGE_FAIL, EXPERIENCE_LANGUAGE_REQUEST, EXPERIENCE_LANGUAGE_SUCCESS, EXPERIENCE_LOCATION_FAIL, EXPERIENCE_LOCATION_REQUEST, EXPERIENCE_LOCATION_SUCCESS, EXPERIENCE_NUMBER_OF_HOURS_FAIL, EXPERIENCE_NUMBER_OF_HOURS_REQUEST, EXPERIENCE_NUMBER_OF_HOURS_SUCCESS, EXPERIENCE_PRICE_FAIL, EXPERIENCE_PRICE_REQUEST, EXPERIENCE_PRICE_SUCCESS, EXPERIENCE_SKILLS_FAIL, EXPERIENCE_SKILLS_REQUEST, EXPERIENCE_SKILLS_SUCCESS, EXPERIENCE_STORY_FAIL, EXPERIENCE_STORY_REQUEST, EXPERIENCE_STORY_SUCCESS, EXPERIENCE_SUBMIT_FAIL, EXPERIENCE_SUBMIT_REQUEST, EXPERIENCE_SUBMIT_SUCCESS, EXPERIENCE_THEME_FAIL, EXPERIENCE_THEME_REQUEST, EXPERIENCE_THEME_SUCCESS, EXPERIENCE_TIME_FAIL, EXPERIENCE_TIME_REQUEST, EXPERIENCE_TIME_SUCCESS, EXPERIENCE_TITLE_FAIL, EXPERIENCE_TITLE_REQUEST, EXPERIENCE_TITLE_SUCCESS, EXPERIENCE_TYPE_FAIL, EXPERIENCE_TYPE_REQUEST, EXPERIENCE_TYPE_SUCCESS, EXPERIENCE_WORKING_FAIL, EXPERIENCE_WORKING_REQUEST, EXPERIENCE_WORKING_SUCCESS } from "../constants/experienceConstants";
 import axios from "axios";
 export const experienceAdd = (experience) => async (dispatch) => {
     try {
@@ -395,7 +395,7 @@ export const experienceImagesAdd = (images) => async (dispatch) => {
 }
 
 export const experienceSubmit = (data) => async (dispatch, getState) => {
-    console.log(data)
+   
     try {
         dispatch({ type: EXPERIENCE_SUBMIT_REQUEST });
 
@@ -415,6 +415,170 @@ export const experienceSubmit = (data) => async (dispatch, getState) => {
     } catch (error) {
         dispatch({
             type:EXPERIENCE_SUBMIT_FAIL,
+            payload: error.response && error.response.data.message ? error.response.data.message : error.message
+        })
+    }
+}
+
+
+export const getNewExperiences = () => async (dispatch) => {
+   
+    try {
+        dispatch({ type: EXPERIENCE_GET_REQUEST });
+
+        
+        const config = {
+            headers: {
+                "Content-Type":"application/json"
+            }
+        }
+
+       const {data} = await axios.get("/experience", config)
+
+        dispatch({
+            type: EXPERIENCE_GET_SUCCESS,
+            payload: data
+        })
+
+    } catch (error) {
+        dispatch({
+            type:EXPERIENCE_GET_FAIL,
+            payload: error.response && error.response.data.message ? error.response.data.message : error.message
+        })
+    }
+}
+
+export const getPopularExperiences = () => async (dispatch) => {
+   
+    try {
+        dispatch({ type: EXPERIENCE_GET_POPULAR_IN_INDIA_REQUEST });
+
+        
+        const config = {
+            headers: {
+                "Content-Type":"application/json"
+            }
+        }
+
+       const {data} = await axios.get("/experience/location/india", config)
+
+        dispatch({
+            type: EXPERIENCE_GET_POPULAR_IN_INDIA_SUCCESS,
+            payload: data
+        })
+
+    } catch (error) {
+        dispatch({
+            type:EXPERIENCE_GET_POPULAR_IN_INDIA_FAIL,
+            payload: error.response && error.response.data.message ? error.response.data.message : error.message
+        })
+    }
+}
+
+export const getCookingExperiences = () => async (dispatch) => {
+   
+    try {
+        dispatch({ type: EXPERIENCE_GET_COOKING_REQUEST });
+
+        
+        const config = {
+            headers: {
+                "Content-Type":"application/json"
+            }
+        }
+
+       const {data} = await axios.get("/experience/cooking", config)
+
+        dispatch({
+            type: EXPERIENCE_GET_COOKING_SUCCESS,
+            payload: data
+        })
+
+    } catch (error) {
+        dispatch({
+            type:EXPERIENCE_GET_COOKING_FAIL,
+            payload: error.response && error.response.data.message ? error.response.data.message : error.message
+        })
+    }
+}
+
+export const getLastWeekExperiences = () => async (dispatch) => {
+   
+    try {
+        dispatch({ type: EXPERIENCE_GET_LAST_WEEK_REQUEST });
+
+        
+        const config = {
+            headers: {
+                "Content-Type":"application/json"
+            }
+        }
+
+       const {data} = await axios.get("/experience/week", config)
+
+        dispatch({
+            type: EXPERIENCE_GET_LAST_WEEK_SUCCESS,
+            payload: data
+        })
+
+    } catch (error) {
+        dispatch({
+            type:EXPERIENCE_GET_LAST_WEEK_FAIL,
+            payload: error.response && error.response.data.message ? error.response.data.message : error.message
+        })
+    }
+}
+
+export const getFilteredResultExperiences = (filter) => async (dispatch) => {
+   
+    try {
+        dispatch({ type: EXPERIENCE_GET_FILTERED_RESULT_REQUEST });
+
+        
+        const config = {
+            headers: {
+                "Content-Type":"application/json"
+            }
+        }
+
+       const {data} = await axios.post("/experience/filter", {filter}, config)
+
+        dispatch({
+            type: EXPERIENCE_GET_FILTERED_RESULT_SUCCESS,
+            payload: data
+        })
+
+    } catch (error) {
+        dispatch({
+            type:EXPERIENCE_GET_FILTERED_RESULT_FAIL,
+            payload: error.response && error.response.data.message ? error.response.data.message : error.message
+        })
+    }
+}
+
+
+export const getMainFilteredResultExperiences = (minPrice, maxPrice, language, startTime, numberOfHours) => async (dispatch) => {
+   
+    try {
+        dispatch({ type: EXPERIENCE_GET_MAIN_FILTER_RESULT_REQUEST });
+
+        
+        const config = {
+            headers: {
+                "Content-Type":"application/json"
+            }
+        }
+
+       const {data} = await axios.post("/experience/mainfilter", {minPrice, maxPrice, language, startTime, numberOfHours}, config)
+
+        dispatch({
+            type: EXPERIENCE_GET_FILTERED_RESULT_SUCCESS,
+            payload: data
+        })
+
+    } catch (error) {
+        dispatch({
+            type:EXPERIENCE_GET_MAIN_FILTER_RESULT_FAIL,
             payload: error.response && error.response.data.message ? error.response.data.message : error.message
         })
     }

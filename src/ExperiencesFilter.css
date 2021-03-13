@@ -1,0 +1,34 @@
+.experiencesFilterContainer {
+    display: flex;
+    padding: 30px 40px 20px 40px;
+}
+
+.experiencesFilterContainer > button {
+    border-radius: 20px !important;
+    margin-right: 10px;
+    box-shadow: none;
+    text-transform: inherit !important;
+}
+
+.experiencesFilter__line {
+    height: 36px;
+    width: 0;
+    margin-right: 8px;
+    border-left: 1px solid lightgray;
+}
+
+.experiencesFilter__contentContainer {
+    display: flex;
+    align-items: center;
+    overflow-x: scroll;
+    padding: 30px 40px 20px 40px;
+}
+
+.experiencesFilter__contentContainer::-webkit-scrollbar {
+    display: none;
+}
+
+.ExperiencesFilter__language {
+    display: flex;
+
+}

@@ -30,6 +30,7 @@ import ExperienceTeamOrSolo from './HostExperience/ExperienceTeamOrSolo';
 import ExperienceYourStory from './HostExperience/ExperienceYourStory';
 import ExperienceSkill from './HostExperience/ExperienceSkill';
 import ExperienceImages from './HostExperience/ExperienceImages';
+import ExperiencesFilter from './ExperiencesFilter';
 
 
 function App() {
@@ -119,6 +120,71 @@ function App() {
 
       <Route path="/experiences/hostonline">
       <HostOnline />
+      <Footer />
+      </Route>
+
+      <Route path="/experiences/online/mainfilter">
+      <Header />
+      <ExperiencesFilter />
+      <Footer />
+      </Route>
+
+      <Route path="/experiences/online/art">
+      <Header />
+      <ExperiencesFilter />
+      <Footer />
+      </Route>
+
+      <Route path="/experiences/online/fireworks">
+      <Header />
+      <ExperiencesFilter />
+      <Footer />
+      </Route>
+
+      <Route path="/experiences/online/culture">
+      <Header />
+      <ExperiencesFilter />
+      <Footer />
+      </Route>
+
+      <Route path="/experiences/online/cultural-festival">
+      <Header />
+      <ExperiencesFilter />
+      <Footer />
+      </Route>
+
+      <Route path="/experiences/online/food">
+      <Header />
+      <ExperiencesFilter />
+      <Footer />
+      </Route>
+
+      <Route path="/experiences/online/movies">
+      <Header />
+      <ExperiencesFilter />
+      <Footer />
+      </Route>
+
+      <Route path="/experiences/online/dance">
+      <Header />
+      <ExperiencesFilter />
+      <Footer />
+      </Route>
+
+      <Route path="/experiences/online/photoshoot">
+      <Header />
+      <ExperiencesFilter />
+      <Footer />
+      </Route>
+      <Route path="/experiences/online/nightlife">
+      <Header />
+      <ExperiencesFilter />
+      <Footer />
+      </Route>
+
+      <Route path="/experiences/online/family-friendly">
+      <Header />
+      <ExperiencesFilter />
       <Footer />
       </Route>
 

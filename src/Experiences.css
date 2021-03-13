@@ -2,7 +2,6 @@
     display: flex;
     padding: 30px 40px 20px 40px;
     overflow-x: scroll;
-    border-bottom: 1px solid lightslategray;
 }
 
 .experiences__container::-webkit-scrollbar { 
@@ -19,6 +18,7 @@
     right: 10px;
     background-color: #fff;
     cursor: pointer;
+    transition: transform 250ms;
 }
 
 .experiences__leftArrow {
@@ -31,6 +31,15 @@
     right: 80px;
     background-color: #fff;
     cursor: pointer;
+    transition: transform 250ms;
+}
+
+.experiences__rightArrow:hover {
+    transform: scale(1.10);
+}
+
+.experiences__leftArrow:hover {
+    transform: scale(1.10);
 }
 
 .experiences__containerImages {
@@ -115,6 +124,165 @@
     background-color: lightgray !important;
 }
 
-.experiences__filtersMain {
+.experiences__filters {
     display: flex;
+    padding: 30px 40px 20px 40px;
 }
+
+.experiences__filters > button {
+    border-radius: 20px !important;
+    margin-right: 10px;
+    box-shadow: none;
+    text-transform: inherit !important;
+}
+
+.experiences__filtersLine {
+    height: 36px;
+    width: 0;
+    margin-right: 8px;
+    border-left: 1px solid lightgray;
+}
+
+.experiences__heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 40px 20px 40px;
+}
+
+.experiences__heading > h1 {
+    color: #222222;
+    font-weight: 600;
+    font-size: 28px;
+}
+
+.experiences__ContentContainer {
+    padding: 30px 40px 20px 40px;
+    display: flex;
+    overflow-x: scroll;
+}
+
+.experiences__ContentContainer::-webkit-scrollbar { 
+    display: none;  
+}
+
+.experiences__rightArrowContent {
+    width: 28px;
+    border: 1px solid lightgray;
+    border-radius: 50%;
+    padding: 6px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: transform 250ms;
+    margin-right: 20px;
+}
+
+.experiences__leftArrowContent {
+    width: 28px;
+    border: 1px solid lightgray;
+    border-radius: 50%;
+    padding: 6px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: transform 250ms;
+}
+
+.experiences__rightArrowContent:hover {
+    transform: scale(1.10);
+}
+
+.experiences__leftArrowContent:hover {
+    transform: scale(1.10);
+}
+
+.experiences__rightArrowPopular {
+    width: 28px;
+    border: 1px solid lightgray;
+    border-radius: 50%;
+    padding: 6px;
+    background-color: #fff;
+    cursor: pointer;
+    margin-right: 20px;
+    transition: transform 250ms;
+}
+
+.experiences__rightArrowPopular:hover {
+    transform: scale(1.10);
+}
+
+.experiences__leftArrowPopular {
+    width: 28px;
+    border: 1px solid lightgray;
+    border-radius: 50%;
+    padding: 6px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: transform 250ms;
+}
+
+.experiences__leftArrowPopular:hover {
+    transform: scale(1.10);
+}
+
+.experiences__rightArrowCook {
+    width: 28px;
+    border: 1px solid lightgray;
+    border-radius: 50%;
+    padding: 6px;
+    background-color: #fff;
+    cursor: pointer;
+    margin-right: 20px;
+    transition: transform 250ms;
+}
+
+.experiences__rightArrowCook:hover {
+    transform: scale(1.10);
+}
+
+.experiences__leftArrowCook {
+    width: 28px;
+    border: 1px solid lightgray;
+    border-radius: 50%;
+    padding: 6px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: transform 250ms;
+}
+
+.experiences__leftArrowCook:hover {
+    transform: scale(1.10);
+}
+
+
+.experiences__rightArrowLastWeek {
+    width: 28px;
+    border: 1px solid lightgray;
+    border-radius: 50%;
+    padding: 6px;
+    background-color: #fff;
+    cursor: pointer;
+    margin-right: 20px;
+    transition: transform 250ms;
+}
+
+.experiences__rightArrowLastWeek:hover {
+    transform: scale(1.10);
+}
+
+.experiences__leftArrowLastWeek {
+    width: 28px;
+    border: 1px solid lightgray;
+    border-radius: 50%;
+    padding: 6px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: transform 250ms;
+}
+
+.experiences__leftArrowLastWeek:hover {
+    transform: scale(1.10);
+}
+
+
+
+
