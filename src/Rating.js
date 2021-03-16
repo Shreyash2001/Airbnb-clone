@@ -20,7 +20,7 @@ function Rating({ value, text, color }) {
             <span>
                 {value >=5 ? <StarIcon style={{color}} /> : value>=4.5 ? <StarHalfIcon style={{color}} /> : <StarOutlineIcon style={{color}} />}
             </span>
-            <span style={{padding:"10px", marginTop:"2px"}}>{text && text}</span>
+            <span style={{padding:"5px", marginTop:"2px"}}>{text && text}</span>
         </div>
     )
 }

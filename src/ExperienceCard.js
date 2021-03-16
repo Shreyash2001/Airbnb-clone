@@ -1,9 +1,12 @@
 import React from 'react'
+import { useHistory } from 'react-router'
 import "./ExperienceCard.css"
+import Rating from './Rating'
 
-function ExperienceCard({images, title, price, country, theme, typeOfExperience}) {
+function ExperienceCard({images, title, price, country, theme, typeOfExperience, id}) {
+    const history = useHistory()
     return (
-        <div className="experienceCard">
+        <div className="experienceCard" onClick={() => history.push(`/experiences/online/${id}`)} >
             <div>
             <div>
                 <div style={{backgroundImage: `url(${images})`,
@@ -30,6 +33,9 @@ function ExperienceCard({images, title, price, country, theme, typeOfExperience}
                 </div>
                 <div className="experienceCard__infoPrice">
                   <span><strong>From ₹{price}</strong>/person</span>
+                </div>
+                <div>
+                    <Rating />
                 </div>
                 </div>
             </div>

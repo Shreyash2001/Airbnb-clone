@@ -74,7 +74,7 @@ function HostedPlaceDetails() {
     const {loading: hostedPlaceRateLoder, error: hostedPlaceRateError, success} = hostedPlaceRating
 
     const hostedPlaceSummary = useSelector(state => state.hostedPlaceSummary)
-    const {loading: loadingSummary, error: errorSummary, summaryOfPlace, success: successSummary} = hostedPlaceSummary
+    const {loading: loadingSummary, error: errorSummary, success: successSummary} = hostedPlaceSummary
 
     const handleDateChange = (date) => {
         setSelectedDate(date);
@@ -149,7 +149,7 @@ function HostedPlaceDetails() {
                     </ReactReadMoreReadLess>
                     </h3>
                     }
-                    <h5>Contact Host</h5>
+                    <h5><a href={`mailto:${userInfo?.email}`}>Contact Host </a></h5>
                     <div className="hostedPlaceDetails__leftRules">
                     <h4 style={{marginBottom:"20px"}}>Address</h4>
                     <p>{placeDetails?.address}</p>

@@ -276,7 +276,10 @@ function Experiences() {
              {loading && <CircularProgress />}
              {error && <h1>{error}</h1>}
              {newExperiences?.map(newExperience => (
-                <ExperienceCard images={newExperience?.image[0]} 
+                <ExperienceCard 
+                    key={newExperience._id}
+                    id={newExperience._id}
+                    images={newExperience?.image[0]} 
                     country={newExperience.location}
                     title={newExperience.title}
                     price={newExperience.price}
@@ -304,7 +307,10 @@ function Experiences() {
              {loadingPopular && <CircularProgress />}
              {errorPopular && <h1>{error}</h1>}
              {popularExperiences?.map(popularExperience => (
-                <ExperienceCard images={popularExperience?.image[0]} 
+                <ExperienceCard 
+                    key={popularExperience._id}
+                    id={popularExperience._id}
+                    images={popularExperience.image[0]} 
                     country={popularExperience.location}
                     title={popularExperience.title}
                     price={popularExperience.price}
@@ -331,7 +337,11 @@ function Experiences() {
              {loadingCooking && <CircularProgress />}
              {errorCooking && <h1>{error}</h1>}
              {cookingExperiences?.map(cookingExperience => (
-                <ExperienceCard images={cookingExperience?.image[0]} 
+                 
+                <ExperienceCard 
+                    key={cookingExperience._id}
+                    id={cookingExperience._id}
+                    images={cookingExperience?.image[0]} 
                     country={cookingExperience.location}
                     title={cookingExperience.title}
                     price={cookingExperience.price}
@@ -340,7 +350,6 @@ function Experiences() {
                 />
              ))}
                 
-            
             </div>
 
             <div className="experiences__heading">
@@ -360,7 +369,10 @@ function Experiences() {
              {loadingLastWeek && <CircularProgress />}
              {errorLastWeek && <h1>{error}</h1>}
              {lastWeekExperiences?.map(lastWeekExperience => (
-                <ExperienceCard images={lastWeekExperience?.image[0]} 
+                <ExperienceCard 
+                    key={lastWeekExperience._id}
+                    id={lastWeekExperience?._id}
+                    images={lastWeekExperience?.image[0]} 
                     country={lastWeekExperience.location}
                     title={lastWeekExperience.title}
                     price={lastWeekExperience.price}

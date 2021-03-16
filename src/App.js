@@ -31,6 +31,7 @@ import ExperienceYourStory from './HostExperience/ExperienceYourStory';
 import ExperienceSkill from './HostExperience/ExperienceSkill';
 import ExperienceImages from './HostExperience/ExperienceImages';
 import ExperiencesFilter from './ExperiencesFilter';
+import ExperiencesDetails from './ExperiencesDetails';
 
 
 function App() {
@@ -185,6 +186,12 @@ function App() {
       <Route path="/experiences/online/family-friendly">
       <Header />
       <ExperiencesFilter />
+      <Footer />
+      </Route>
+
+      <Route path="/experiences/online/:id">
+      <Header />
+      <ExperiencesDetails />
       <Footer />
       </Route>
 

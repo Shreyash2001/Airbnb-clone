@@ -185,6 +185,8 @@ function ExperiencesFilter() {
                <>
                 
                 <ExperienceCard 
+                    key={filteredResultExperience._id}
+                    id={filteredResultExperience._id}
                     images={filteredResultExperience.image[0]}
                     country={filteredResultExperience.location}
                     title={filteredResultExperience.title}
