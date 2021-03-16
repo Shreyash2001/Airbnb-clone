@@ -3,7 +3,7 @@ import { useHistory } from 'react-router'
 import "./ExperienceCard.css"
 import Rating from './Rating'
 
-function ExperienceCard({images, title, price, country, theme, typeOfExperience, id}) {
+function ExperienceCard({images, title, price, country, theme, typeOfExperience, id, value}) {
     const history = useHistory()
     return (
         <div className="experienceCard" onClick={() => history.push(`/experiences/online/${id}`)} >
@@ -35,7 +35,7 @@ function ExperienceCard({images, title, price, country, theme, typeOfExperience,
                   <span><strong>From ₹{price}</strong>/person</span>
                 </div>
                 <div>
-                    <Rating />
+                    <Rating value={value} />
                 </div>
                 </div>
             </div>

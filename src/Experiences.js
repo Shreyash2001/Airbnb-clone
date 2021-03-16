@@ -6,7 +6,7 @@ import { Button, CircularProgress, Dialog, DialogActions, DialogContent, DialogC
 import ExperienceCard from './ExperienceCard';
 import { useDispatch, useSelector } from 'react-redux'
 import {useHistory} from "react-router-dom"
-import { getCookingExperiences, getFilteredResultExperiences, getLastWeekExperiences, getMainFilteredResultExperiences, getNewExperiences, getPopularExperiences } from './actions/experienceActions';
+import { getCookingExperiences, getFilteredResultExperiences, getLastWeekExperiences, getMainFilteredResultExperiences, getNewExperiences, getPopularExperiences, getTopRatedExperience } from './actions/experienceActions';
 import Slider from '@material-ui/core/Slider';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -48,6 +48,12 @@ function Experiences() {
     const scrollOnClickLeftLastWeek = () => { 
         sideScroll(document.getElementById("lastWeek"),'left',10,1500,20);
     }
+    const scrollOnClickRightTopRated = () => {
+        sideScroll(document.getElementById("topRated"),'right',10,1500,20); 
+    }
+    const scrollOnClickLeftTopRated = () => { 
+        sideScroll(document.getElementById("topRated"),'left',10,1500,20);
+    }
 
      const dispatch = useDispatch()
      const {newExperiences, loading, error} = useSelector(state => state.newExperiences)
@@ -55,12 +61,14 @@ function Experiences() {
      const {popularExperiences, loading: loadingPopular, error: errorPopular} = useSelector(state => state.popularExperiences)
      const {cookingExperiences, loading: loadingCooking, error: errorCooking} = useSelector(state => state.cookingExperiences)
      const {lastWeekExperiences, loading: loadingLastWeek, error: errorLastWeek} = useSelector(state => state.lastWeekExperiences)
+     const {topRatedExperience, loading:loadingTopRated, error: errorTopRated} = useSelector(state => state.getTopRated)
 
     useEffect(() => {
         dispatch(getNewExperiences())
         dispatch(getPopularExperiences())
         dispatch(getCookingExperiences())
         dispatch(getLastWeekExperiences())
+        dispatch(getTopRatedExperience())
     }, [dispatch])
 
 
@@ -259,6 +267,38 @@ function Experiences() {
 
 
             <div className="experiences__heading">
+                <h1>Top Rated</h1>
+                <div style={{display:"flex"}}>
+            <div className="experiences__rightArrowPopular" onClick={scrollOnClickLeftTopRated}>
+            <ArrowBackIosRoundedIcon  style={{color:"#484848", marginLeft:"3px", marginTop:"2px"}} />
+            </div>
+           
+            <div className="experiences__leftArrowPopular" onClick={scrollOnClickRightTopRated}>
+            <ArrowForwardIosRoundedIcon  style={{color:"#484848", marginLeft:"3px", marginTop:"2px"}} />
+                </div>
+                </div>
+            </div>
+
+
+            <div id="topRated" className="experiences__ContentContainer">
+             {loadingTopRated && <CircularProgress style={{color:"#ff7779"}} />}
+             {errorTopRated && <h1>{error}</h1>}
+             {topRatedExperience?.map(topRated => (
+                <ExperienceCard 
+                    key={topRated._id}
+                    id={topRated._id}
+                    images={topRated.image[0]} 
+                    country={topRated.location}
+                    title={topRated.title}
+                    price={topRated.price}
+                    theme={topRated.theme}
+                    typeOfExperience={topRated.typeOfExperience}
+                    value={topRated.rating}
+                />
+             ))}
+            </div>
+
+            <div className="experiences__heading">
                 <h1>New this week for you</h1>
                 <div style={{display:"flex"}}>
             <div className="experiences__rightArrowContent" onClick={scrollOnClickLeftContent}>
@@ -273,7 +313,7 @@ function Experiences() {
 
 
             <div id="content" className="experiences__ContentContainer">
-             {loading && <CircularProgress />}
+             {loading && <CircularProgress style={{color:"#ff7779"}} />}
              {error && <h1>{error}</h1>}
              {newExperiences?.map(newExperience => (
                 <ExperienceCard 
@@ -285,6 +325,7 @@ function Experiences() {
                     price={newExperience.price}
                     theme={newExperience.theme}
                     typeOfExperience={newExperience.typeOfExperience}
+                    value={newExperience.rating}
                 />
              ))}
             </div>
@@ -304,7 +345,7 @@ function Experiences() {
 
 
             <div id="popular" className="experiences__ContentContainer">
-             {loadingPopular && <CircularProgress />}
+             {loadingPopular && <CircularProgress style={{color:"#ff7779"}} />}
              {errorPopular && <h1>{error}</h1>}
              {popularExperiences?.map(popularExperience => (
                 <ExperienceCard 
@@ -316,6 +357,7 @@ function Experiences() {
                     price={popularExperience.price}
                     theme={popularExperience.theme}
                     typeOfExperience={popularExperience.typeOfExperience}
+                    value={popularExperience.rating}
                 />
              ))}
             </div>
@@ -334,7 +376,7 @@ function Experiences() {
             </div>
 
             <div id="cooking" className="experiences__ContentContainer">
-             {loadingCooking && <CircularProgress />}
+             {loadingCooking && <CircularProgress style={{color:"#ff7779"}} />}
              {errorCooking && <h1>{error}</h1>}
              {cookingExperiences?.map(cookingExperience => (
                  
@@ -347,6 +389,7 @@ function Experiences() {
                     price={cookingExperience.price}
                     theme={cookingExperience.theme}
                     typeOfExperience={cookingExperience.typeOfExperience}
+                    value={cookingExperience.rating}
                 />
              ))}
                 
@@ -366,7 +409,7 @@ function Experiences() {
             </div>
 
             <div id="lastWeek" className="experiences__ContentContainer">
-             {loadingLastWeek && <CircularProgress />}
+             {loadingLastWeek && <CircularProgress style={{color:"#ff7779"}} />}
              {errorLastWeek && <h1>{error}</h1>}
              {lastWeekExperiences?.map(lastWeekExperience => (
                 <ExperienceCard 
@@ -378,6 +421,7 @@ function Experiences() {
                     price={lastWeekExperience.price}
                     theme={lastWeekExperience.theme}
                     typeOfExperience={lastWeekExperience.typeOfExperience}
+                    value={lastWeekExperience.rating}
                 />
              ))}
                 

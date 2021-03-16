@@ -145,7 +145,7 @@ function ExperiencesDetails() {
     return (
     <>
         
-        {loadingExperienceById ? <CircularProgress style={{width:"120px", height:"120px", margin:"300px", color:"#ff7779"}}/> 
+        {loadingExperienceById ? <CircularProgress style={{width:"10%", height:"15%", margin:"10% 35% 10% 40%", color:"#ff7779"}}/> 
         :
         <div className="experiencesDetails">
             
@@ -276,7 +276,7 @@ function ExperiencesDetails() {
                                 <h2>Write Customer Review</h2>
                                 {userInfo ? (
                                         <>
-                                        <InputLabel id="demo-simple-select-filled-label">Rate the Place</InputLabel>
+                                        <InputLabel id="demo-simple-select-filled-label">Rate the Experience</InputLabel>
                                         <Select
                                                 labelId="demo-simple-select-filled-label"
                                                 id="demo-simple-select-filled"
