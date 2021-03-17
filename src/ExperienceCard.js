@@ -32,7 +32,7 @@ function ExperienceCard({images, title, price, country, theme, typeOfExperience,
                     <h3>{title}</h3>
                 </div>
                 <div className="experienceCard__infoPrice">
-                  <span><strong>From ₹{price}</strong>/person</span>
+                  <span><strong>From ₹{new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 3 }).format(price)}</strong>/person</span>
                 </div>
                 <div>
                     <Rating value={value} />

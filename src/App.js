@@ -32,6 +32,7 @@ import ExperienceSkill from './HostExperience/ExperienceSkill';
 import ExperienceImages from './HostExperience/ExperienceImages';
 import ExperiencesFilter from './ExperiencesFilter';
 import ExperiencesDetails from './ExperiencesDetails';
+import ExperienceAroundWorld from './ExperienceAroundWorld';
 
 
 function App() {
@@ -121,6 +122,11 @@ function App() {
 
       <Route path="/experiences/hostonline">
       <HostOnline />
+      <Footer />
+      </Route>
+
+      <Route path="/experiences/online/around-world">
+      <ExperienceAroundWorld />
       <Footer />
       </Route>
 

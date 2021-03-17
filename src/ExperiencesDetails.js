@@ -19,11 +19,35 @@ import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import ExperienceCard from './ExperienceCard';
+import ArrowForwardIosRoundedIcon from '@material-ui/icons/ArrowForwardIosRounded';
+import ArrowBackIosRoundedIcon from '@material-ui/icons/ArrowBackIosRounded';
 
 
 
 
 function ExperiencesDetails() {
+
+    const scrollOnClickRightPopular = () => {
+        sideScroll(document.getElementById("popular"),'right',10,1500,20); 
+    }
+    const scrollOnClickLeftPopular = () => { 
+        sideScroll(document.getElementById("popular"),'left',10,1500,20);
+    }
+
+    function sideScroll(element,direction,speed,distance,step){
+        var scrollAmount = 0;
+         var slideTimer = setInterval(function(){
+             if(direction === 'left'){
+                 element.scrollLeft -= step;
+             } else {
+                 element.scrollLeft += step;
+             }
+             scrollAmount += step;
+             if(scrollAmount >= distance){
+                 window.clearInterval(slideTimer);
+             }
+         }, speed);
+     }
 
     const useStyles = makeStyles((theme) => ({
         modal: {
@@ -159,7 +183,7 @@ function ExperiencesDetails() {
             <h1 style={{padding:"10px 0 10px 0"}}>{experienceByIdResult?.title}</h1>
 
             <div style={{display:"flex", alignItems:"center"}}>
-            <Rating color={"rgb(90 195 183)"} value={placeDetails?.rating} />
+            <Rating color={"rgb(90 195 183)"} value={experienceByIdResult?.rating} />
             <div style={{margin:"0 8px 0 8px"}}>·</div>
             <h3>{experienceByIdResult?.location}</h3>
             <div style={{margin:"0 8px 0 8px"}}>·</div>
@@ -271,58 +295,10 @@ function ExperiencesDetails() {
                     <p>There is a strict policy for Cancellations. People can cancel before checking in the hotel. Refund will be done within 24 hours.</p>
                     </div>
                    
-                    <div>
-                            <div className="experiencesDetails__leftCustomerReviews">
-                                <h2>Write Customer Review</h2>
-                                {userInfo ? (
-                                        <>
-                                        <InputLabel id="demo-simple-select-filled-label">Rate the Experience</InputLabel>
-                                        <Select
-                                                labelId="demo-simple-select-filled-label"
-                                                id="demo-simple-select-filled"
-                                                open={openRating}
-                                                onClose={handleCloseRating}
-                                                onOpen={handleOpenRating}
-                                                value={rating}
-                                                onChange={e => setRating(e.target.value)}
-                                                style={{marginBottom:"30px"}}
-                                                >
-                                            
-                                            <MenuItem value={"1"}>1 - Poor</MenuItem>
-                                            <MenuItem value={"2"}>2 - Fair</MenuItem>
-                                            <MenuItem value={"3"}>3 - Good</MenuItem>
-                                            <MenuItem value={"4"}>4 - Very Good</MenuItem>
-                                            <MenuItem value={"5"}>5 - Excellent</MenuItem>
-                                        </Select>
-                                    <label>Comment</label>
-                                    <input type="text" placeholder="  Add Your Comment" value={comment} onChange={e => setComment(e.target.value)} />
-                                    <Button onClick={handleClick}>Submit review</Button>
-                                    {loadingReview && <CircularProgress style={{width:"85px", height:"85px", margin:"100px", color:"#ff7779"}}/>}
-                                    {errorReview && <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}><Alert severity="error">{errorReview}</Alert></Snackbar>}
-                                    </>
-                                ) : <p> To add comment and review the place please <Link to="/login"> <strong style={{textDecoration:"underline"}}>sign in</strong></Link></p>} 
-                            </div>
-                            <div className="experiencesDetails__leftReviews">
-                        <h2>{experienceByIdResult?.numReviews} reviews</h2>
-                        <Rating color={"rgb(90 195 183)"} value={experienceByIdResult?.rating} />
-                    </div>
-                                    
-                        {experienceByIdResult && experienceByIdResult?.experienceReviews?.map(review => (
-                            
-                            <div key={review._id} style={{marginBottom:"20px"}}>
-                            <div style={{display:"flex", alignItems:"center"}}>
-                            <Avatar />
-                            <div style={{marginLeft:"8px", marginRight:"15px"}}>
-                            <p>{review.name}</p>
-                            <p>{review.createdAt.substring(0, 10)}</p>
-                            </div>
-                            <Rating color={"rgb(90 195 183)"} value={review.rating} />
-                            </div>
-                            <p style={{marginTop:"10px"}}>{review.comment}</p>
-                            </div>
-                        ))}
-                        
-                    </div>
+                    
+                    
+                    
+                    
                 </div>
                 <div className="experiencesDetails__right">
                     <div className="experiencesDetails__rightContent">
@@ -460,6 +436,86 @@ function ExperiencesDetails() {
                     </div>
                 </div>
             </div>
+                
+            <div style={{borderBottom:"1px solid lightgray", padding:"30px 50px 10px 50px", marginBottom:"40px"}}>
+                            <div className="experiencesDetails__leftCustomerReviews">
+                                <h2>Write Customer Review</h2>
+                                {userInfo ? (
+                                        <>
+                                        <InputLabel id="demo-simple-select-filled-label">Rate the Experience</InputLabel>
+                                        <Select
+                                                labelId="demo-simple-select-filled-label"
+                                                id="demo-simple-select-filled"
+                                                open={openRating}
+                                                onClose={handleCloseRating}
+                                                onOpen={handleOpenRating}
+                                                value={rating}
+                                                onChange={e => setRating(e.target.value)}
+                                                style={{marginBottom:"30px"}}
+                                                >
+                                            
+                                            <MenuItem value={"1"}>1 - Poor</MenuItem>
+                                            <MenuItem value={"2"}>2 - Fair</MenuItem>
+                                            <MenuItem value={"3"}>3 - Good</MenuItem>
+                                            <MenuItem value={"4"}>4 - Very Good</MenuItem>
+                                            <MenuItem value={"5"}>5 - Excellent</MenuItem>
+                                        </Select>
+                                    <label>Comment</label>
+                                    <input type="text" placeholder="  Add Your Comment" value={comment} onChange={e => setComment(e.target.value)} />
+                                    <Button onClick={handleClick}>Submit review</Button>
+                                    {loadingReview && <CircularProgress style={{width:"85px", height:"85px", margin:"100px", color:"#ff7779"}}/>}
+                                    {errorReview && <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}><Alert severity="error">{errorReview}</Alert></Snackbar>}
+                                    </>
+                                ) : <p> To add comment and review the place please <Link to="/login"> <strong style={{textDecoration:"underline"}}>sign in</strong></Link></p>} 
+                            </div>
+                            <div className="experiencesDetails__leftReviews">
+                        <h2>{experienceByIdResult?.numReviews} reviews</h2>
+                        <Rating color={"rgb(90 195 183)"} value={experienceByIdResult?.rating} />
+                    </div>
+                                    
+                        {experienceByIdResult && experienceByIdResult?.experienceReviews?.map(review => (
+                            
+                            <div key={review._id} style={{marginBottom:"20px"}}>
+                            <div style={{display:"flex", alignItems:"center"}}>
+                            <Avatar />
+                            <div style={{marginLeft:"8px", marginRight:"15px"}}>
+                            <p>{review.name}</p>
+                            <p>{review.createdAt.substring(0, 10)}</p>
+                            </div>
+                            <Rating color={"rgb(90 195 183)"} value={review.rating} />
+                            </div>
+                            <p style={{marginTop:"10px"}}>{review.comment}</p>
+                            </div>
+                        ))}
+                    </div>
+                    <div className="experiencesDetails__heading">
+                <h2>Similar Experiences</h2>
+                <div style={{display:"flex"}}>
+            <div className="experiencesDetails__rightArrowPopular" onClick={scrollOnClickLeftPopular}>
+            <ArrowBackIosRoundedIcon  style={{color:"#484848", marginLeft:"3px", marginTop:"2px"}} />
+            </div>
+           
+            <div className="experiencesDetails__leftArrowPopular" onClick={scrollOnClickRightPopular}>
+            <ArrowForwardIosRoundedIcon  style={{color:"#484848", marginLeft:"3px", marginTop:"2px"}} />
+                </div>
+                </div>
+            </div>
+
+                    <div id="popular" className="experiencesDetails__similarExperiencesBelow">
+                    {similarExperience?.length > 0 ? similarExperience?.map(experience => (
+                    <ExperienceCard 
+                    key={experience._id}
+                    id={experience._id}
+                    images={experience?.image[0]} 
+                    country={experience.location}
+                    title={experience.title}
+                    price={experience.price}
+                    theme={experience.theme}
+                    typeOfExperience={experience.typeOfExperience}
+                    value={experience.rating}
+                />
+                )) : <h3>Sorry Currently none!!</h3>}
+                </div>
 
             <Modal
         aria-labelledby="transition-modal-title"
@@ -491,6 +547,7 @@ function ExperiencesDetails() {
                     price={experience.price}
                     theme={experience.theme}
                     typeOfExperience={experience.typeOfExperience}
+                    value={experience.rating}
                 />
                 )) : <h3>Sorry Currently none!!</h3>}
             </div>

@@ -281,3 +281,49 @@
 .experiencesDetails__similarExperiences::-webkit-scrollbar {
     display: none;
 }
+
+.experiencesDetails__similarExperiencesBelow {
+    display: flex;
+    padding: 30px 30px 10px 50px;
+    overflow-x: scroll;
+}
+
+.experiencesDetails__similarExperiencesBelow::-webkit-scrollbar {
+    display: none;
+}
+
+.experiencesDetails__heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 40px 0px 40px;
+}
+
+.experiencesDetails__rightArrowPopular {
+    width: 28px;
+    border: 1px solid lightgray;
+    border-radius: 50%;
+    padding: 6px;
+    background-color: #fff;
+    cursor: pointer;
+    margin-right: 20px;
+    transition: transform 250ms;
+}
+
+.experiencesDetails__rightArrowPopular:hover {
+    transform: scale(1.10);
+}
+
+.experiencesDetails__leftArrowPopular {
+    width: 28px;
+    border: 1px solid lightgray;
+    border-radius: 50%;
+    padding: 6px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: transform 250ms;
+}
+
+.experiencesDetails__leftArrowPopular:hover {
+    transform: scale(1.10);
+}

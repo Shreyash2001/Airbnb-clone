@@ -1,0 +1,25 @@
+.experienceAroundWorld__image {
+    background-image: url("https://a0.muscache.com/im/pictures/ff79a19b-3a98-4b3f-87a3-4b4d4c2ce94b.jpg?im_w=1680");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 80vh;
+    width:100%;
+}
+
+.experienceAroundWorld__image > div {
+    padding: 180px 0 0 50px;
+}
+
+.experienceAroundWorld__image > div > h1 {
+    color: white;
+    font-size: 55px;
+    max-width: 400px;
+}
+
+.experienceAroundWorld__container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 92%;
+    padding-left: 80px;
+}
