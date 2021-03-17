@@ -321,16 +321,16 @@ function ExperiencesDetails() {
                                     <h3>Saturday</h3>
                                    <span> {arrOfDates[5].toString().substring(4,11)}</span>
                                 </div>
-                                    <Button onClick={handleClickBook}>Book</Button>
+                               {userInfo ?  <Button onClick={handleClickBook}>Book</Button> : <Button onClick={() => history.push("/login")}>Sign in to book</Button> }
                                 </div>
                                 <div style={{marginBottom:"50px"}} className="experiencesDetails__rightContentChoose">
                                 <div>
                                     <h3>Sunday</h3>
                                     <span> {arrOfDates[6].toString().substring(4,11)}</span>
                                 </div>
-                                    <Button onClick={handleClickBook}>Book</Button>
+                                {userInfo ?  <Button onClick={handleClickBook}>Book</Button> : <Button onClick={() => history.push("/login")}>Sign in to book</Button> }
                                 </div>
-                            </div>
+                            </div> 
                             :
                             experienceByIdResult?.availability === "Weekdays" 
                             ? 
@@ -340,35 +340,35 @@ function ExperiencesDetails() {
                                     <h3>Monday</h3>
                                     <span> {arrOfDates[0].toString().substring(4,11)}</span>
                                 </div>
-                                    <Button onClick={handleClickBook}>Book</Button>
+                                {userInfo ?  <Button onClick={handleClickBook}>Book</Button> : <Button onClick={() => history.push("/login")}>Sign in to book</Button> }
                                 </div>
                                 <div className="experiencesDetails__rightContentChoose">
                                 <div>
                                     <h3>Tuesday</h3>
                                     <span> {arrOfDates[1].toString().substring(4,11)}</span>
                                 </div>
-                                    <Button onClick={handleClickBook}>Book</Button>
+                                {userInfo ?  <Button onClick={handleClickBook}>Book</Button> : <Button onClick={() => history.push("/login")}>Sign in to book</Button> }
                                 </div>
                                 <div className="experiencesDetails__rightContentChoose">
                                 <div>
                                     <h3>Wednesday</h3>
                                     <span> {arrOfDates[2].toString().substring(4,11)}</span>
                                 </div>
-                                    <Button onClick={handleClickBook}>Book</Button>
+                                {userInfo ?  <Button onClick={handleClickBook}>Book</Button> : <Button onClick={() => history.push("/login")}>Sign in to book</Button> }
                                 </div>
                                 <div className="experiencesDetails__rightContentChoose">
                                 <div>
                                     <h3>Thursday</h3>
                                     <span> {arrOfDates[3].toString().substring(4,11)}</span>
                                 </div>
-                                    <Button onClick={handleClickBook}>Book</Button>
+                                {userInfo ?  <Button onClick={handleClickBook}>Book</Button> : <Button onClick={() => history.push("/login")}>Sign in to book</Button> }
                                 </div>
                                 <div className="experiencesDetails__rightContentChoose">
                                 <div>
                                     <h3>Friday</h3>
                                     <span> {arrOfDates[4].toString().substring(4,11)}</span>
                                 </div>
-                                    <Button onClick={handleClickBook}>Book</Button>
+                                {userInfo ?  <Button onClick={handleClickBook}>Book</Button> : <Button onClick={() => history.push("/login")}>Sign in to book</Button> }
                                 </div>
                             </div>
 
@@ -379,49 +379,49 @@ function ExperiencesDetails() {
                                     <h3>Monday</h3>
                                     <span> {arrOfDates[0].toString().substring(4,11)}</span>
                                 </div>
-                                    <Button onClick={handleClickBook}>Book</Button>
+                                    {userInfo ?  <Button onClick={handleClickBook}>Book</Button> : <Button onClick={() => history.push("/login")}>Sign in to book</Button> }
                                 </div>
                                 <div className="experiencesDetails__rightContentChoose">
                                 <div>
                                     <h3>Tuesday</h3>
                                     <span> {arrOfDates[1].toString().substring(4,11)}</span>
                                 </div>
-                                    <Button onClick={handleClickBook}>Book</Button>
+                                    {userInfo ?  <Button onClick={handleClickBook}>Book</Button> : <Button onClick={() => history.push("/login")}>Sign in to book</Button> }
                                 </div>
                                 <div className="experiencesDetails__rightContentChoose">
                                 <div>
                                     <h3>Wednesday</h3>
                                     <span> {arrOfDates[2].toString().substring(4,11)}</span>
                                 </div>
-                                    <Button onClick={handleClickBook}>Book</Button>
+                                    {userInfo ?  <Button onClick={handleClickBook}>Book</Button> : <Button onClick={() => history.push("/login")}>Sign in to book</Button> }
                                 </div>
                                 <div className="experiencesDetails__rightContentChoose">
                                 <div>
                                     <h3>Thursday</h3>
                                     <span> {arrOfDates[3].toString().substring(4,11)}</span>
                                 </div>
-                                    <Button onClick={handleClickBook}>Book</Button>
+                                    {userInfo ?  <Button onClick={handleClickBook}>Book</Button> : <Button onClick={() => history.push("/login")}>Sign in to book</Button> }
                                 </div>
                                 <div className="experiencesDetails__rightContentChoose">
                                 <div>
                                     <h3>Friday</h3>
                                     <span> {arrOfDates[4].toString().substring(4,11)}</span>
                                 </div>
-                                    <Button onClick={handleClickBook}>Book</Button>
+                                    {userInfo ?  <Button onClick={handleClickBook}>Book</Button> : <Button onClick={() => history.push("/login")}>Sign in to book</Button> }
                                 </div>
                                 <div className="experiencesDetails__rightContentChoose">
                                 <div>
                                     <h3>Saturday</h3>
                                    <span> {arrOfDates[5].toString().substring(4,11)}</span>
                                 </div>
-                                    <Button onClick={handleClickBook}>Book</Button>
+                                    {userInfo ?  <Button onClick={handleClickBook}>Book</Button> : <Button onClick={() => history.push("/login")}>Sign in to book</Button> }
                                 </div>
                                 <div className="experiencesDetails__rightContentChoose">
                                 <div>
                                     <h3>Sunday</h3>
                                    <span> {arrOfDates[6].toString().substring(4,11)}</span>
                                 </div>
-                                    <Button onClick={handleClickBook}>Book</Button>
+                                    {userInfo ?  <Button onClick={handleClickBook}>Book</Button> : <Button onClick={() => history.push("/login")}>Sign in to book</Button> }
                                 </div>
                             </div>
                             
@@ -532,7 +532,7 @@ function ExperiencesDetails() {
         <Fade in={openModal}>
           <div className={classes.paper}>
            <div style={{display:"flex", alignItems:"center", margin: "10px 200px 10px 300px"}}><CheckCircleIcon style={{color:"green", paddingRight:"10px"}}/> <h2 id="transition-modal-title">Booking Confirmed</h2></div>
-            <p id="transition-modal-description" style={{margin: "10px 200px 10px 300px", fontSize:"20px"}}>Host will mail you at <b>{userInfo.email}</b> all the details. 
+            <p id="transition-modal-description" style={{margin: "10px 200px 10px 300px", fontSize:"20px"}}>Host will mail you at <b>{userInfo && userInfo.email}</b> all the details. 
             {experienceByIdResult?.typeOfExperience === "Online" ? <p>Zoom Link will also be shared in the mail.</p> : <p>Host will send you the information on where to meet in the mail.</p>}</p>
             <h4 style={{fontWeight: "400", marginTop:"30px", marginBottom:"10px"}}>See Similar Experiences</h4>
             <div className="experiencesDetails__similarExperiences">

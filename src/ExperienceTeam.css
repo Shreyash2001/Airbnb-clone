@@ -1,0 +1,24 @@
+.experienceTeam__image {
+    background-image: url("https://a0.muscache.com/im/pictures/283ba16d-6e2f-4042-8ce8-aa963fd46516.jpg?im_w=1680");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 87vh;
+    width:100%;
+}
+
+
+.experienceTeam__imageSideInfo > h1 {
+    color: white;
+    font-size: 55px;
+    max-width: 550px;
+    padding-left: 80px;
+}
+
+
+.experienceTeam__container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 92%;
+    padding-left: 80px;
+}

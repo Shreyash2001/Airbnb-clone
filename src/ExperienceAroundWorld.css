@@ -6,14 +6,22 @@
     width:100%;
 }
 
-.experienceAroundWorld__image > div {
-    padding: 180px 0 0 50px;
+.experienceAroundWorld__imageSideInfo {
+    padding-left: 80px;
 }
 
-.experienceAroundWorld__image > div > h1 {
+.experienceAroundWorld__imageSideInfo > h1 {
     color: white;
     font-size: 55px;
     max-width: 400px;
+}
+
+.experienceAroundWorld__imageSideInfo > p {
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    max-width: 300px;
+    margin-top:10px;
 }
 
 .experienceAroundWorld__container {

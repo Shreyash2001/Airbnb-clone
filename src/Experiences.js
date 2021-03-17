@@ -5,7 +5,7 @@ import ArrowBackIosRoundedIcon from '@material-ui/icons/ArrowBackIosRounded';
 import { Button, CircularProgress, Dialog, DialogActions, DialogContent, DialogContentText, Radio } from '@material-ui/core';
 import ExperienceCard from './ExperienceCard';
 import { useDispatch, useSelector } from 'react-redux'
-import {useHistory} from "react-router-dom"
+import {Link, useHistory} from "react-router-dom"
 import { getCookingExperiences, getFilteredResultExperiences, getLastWeekExperiences, getMainFilteredResultExperiences, getNewExperiences, getPopularExperiences, getTopRatedExperience } from './actions/experienceActions';
 import Slider from '@material-ui/core/Slider';
 import InputLabel from '@material-ui/core/InputLabel';
@@ -204,7 +204,7 @@ function Experiences() {
                 </div>
             </div>
             <div id="d" className="experiences__container">
-            <div className="experiences__containerImages" onClick={() => history.push("/experiences/online/around-world")}>
+            <Link to="/experiences/online/around-world"> <div className="experiences__containerImages">
                 <div className="experiences__containerImagesImage1">
                 <div className="experiences__containerImagesImage1Info">
                     <p>Collection</p>
@@ -213,16 +213,20 @@ function Experiences() {
                 </div>
                 </div>
             </div>
-            <div className="experiences__containerImages">
+            </Link>
+
+          <Link to="/experiences/online/all-top-rated">  <div className="experiences__containerImages">
                 <div className="experiences__containerImagesImage2">
                 <div className="experiences__containerImagesImage1Info">
                     <p>Collection</p>
                     <h2>Most popular around the world</h2>
-                    <Button>Show all</Button>
+                    <Button onClick={() => history.push("/experiences/online/all-top-rated")}>Show all</Button>
                 </div>
                 </div>
             </div>
-            <div className="experiences__containerImages">
+            </Link>
+
+           <Link to="/experiences/online/team"> <div className="experiences__containerImages">
                 <div className="experiences__containerImagesImage3">
                 <div className="experiences__containerImagesImage1Info">
                     <p>Collection</p>
@@ -231,6 +235,7 @@ function Experiences() {
                 </div>
                 </div>
             </div>
+            </Link>
             <div className="experiences__containerImages">
                 <div className="experiences__containerImagesImage4">
                 <div className="experiences__containerImagesImage1Info">
