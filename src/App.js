@@ -35,6 +35,8 @@ import ExperiencesDetails from './ExperiencesDetails';
 import ExperienceAroundWorld from './ExperienceAroundWorld';
 import ExperienceAllTopRated from './ExperienceAllTopRated';
 import ExperienceTeam from './ExperienceTeam';
+import ExperienceFamily from './ExperienceFamily';
+import ExperienceAllHaveFun from './ExperienceAllHaveFun';
 
 
 function App() {
@@ -129,6 +131,16 @@ function App() {
 
       <Route path="/experiences/online/team">
       <ExperienceTeam />
+      <Footer />
+      </Route>
+
+      <Route path="/experiences/online/all-have-fun">
+      <ExperienceAllHaveFun />
+      <Footer />
+      </Route>
+
+      <Route path="/experiences/online/all-family-friendly">
+      <ExperienceFamily />
       <Footer />
       </Route>
 

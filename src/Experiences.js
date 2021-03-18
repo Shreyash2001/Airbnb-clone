@@ -236,7 +236,8 @@ function Experiences() {
                 </div>
             </div>
             </Link>
-            <div className="experiences__containerImages">
+
+            <Link to="/experiences/online/all-family-friendly"><div className="experiences__containerImages">
                 <div className="experiences__containerImagesImage4">
                 <div className="experiences__containerImagesImage1Info">
                     <p>Collection</p>
@@ -245,7 +246,9 @@ function Experiences() {
                 </div>
                 </div>
             </div>
-            <div className="experiences__containerImages">
+            </Link>
+
+            <Link to="/experiences/online/all-have-fun"><div className="experiences__containerImages">
                 <div className="experiences__containerImagesImage5">
                 <div className="experiences__containerImagesImage1Info">
                     <p>Collection</p>
@@ -254,7 +257,10 @@ function Experiences() {
                 </div>
                 </div>
             </div>
+            </Link>
             </div>
+            
+
             <div className="experiences__filters">
             <Button variant="outlined" onClick={handleClickOpen}>Filters</Button>
             <div className="experiences__filtersLine"></div>
