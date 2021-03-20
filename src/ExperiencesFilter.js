@@ -192,7 +192,9 @@ function ExperiencesFilter() {
             <Button variant="contained" onClick={handleNightlifeClick} >Nightlife</Button>
             </div>
             <hr style={{border:"none", height:"1px", backgroundColor:"lightgray", marginBottom:"50px"}} />
-            
+            <div style={{paddingLeft:"40px"}}>
+              <Button variant="outlined" onClick={() => history.push("/experiences/online")}>Go back</Button>
+            </div>
             <div className="experiences__heading">
             <div>
             <h1 style={{color:"#222222", textTransform:"capitalize"}}>{match[3]}</h1>

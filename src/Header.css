@@ -54,8 +54,8 @@
     margin-right: 10px;
 }
 .header__rightButton:hover {
-    color: #ff7779;
-    background-color: white;
+    color: #ff7779 !important;
+    background-color: white !important;
 }
 
 .header__rightButtonExpand {

@@ -121,7 +121,7 @@ function Home() {
                 </div>
                 </div>
                 <div className="home__experienceSectionFirst">
-                <div className="home__experienceSectionImage2" onClick={() => history.push("/experiences/inperson")}></div>
+                <div className="home__experienceSectionImage2" onClick={() => history.push("/experiences/in-person")}></div>
                 <div>
                   <div>
                     <h2 style={{marginTop:"10px"}}>Experiences</h2>
@@ -132,7 +132,7 @@ function Home() {
                 </div>
                 </div>
                 <div className="home__experienceSectionFirst">
-                <div className="home__experienceSectionImage3" onClick={() => history.push("/adventures")}></div>
+                <div className="home__experienceSectionImage3" onClick={() => history.push("/experiences/adventures")}></div>
                 <div>
                   <div>
                     <h2 style={{marginTop:"10px"}}>Adventures</h2>

@@ -1,15 +1,14 @@
 import React, { useState } from 'react'
 import "./Header.css"
 import LanguageIcon from '@material-ui/icons/Language'
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import AccountCircleIcon from '@material-ui/icons/AccountCircle'
 import PersonIcon from '@material-ui/icons/Person';
 import SearchIcon from '@material-ui/icons/Search'
 import { Link, useHistory } from 'react-router-dom'
-import { Button, ClickAwayListener, IconButton, makeStyles, Popover, Typography } from '@material-ui/core'
+import { Button, IconButton, makeStyles, Popover, Typography } from '@material-ui/core'
 import { useDispatch, useSelector } from 'react-redux'
 import { logout } from './actions/userActions'
-import { FavoriteBorderOutlined } from '@material-ui/icons'
+
 function Header() {
   const useStyles = makeStyles((theme) => ({
     root: {
@@ -30,7 +29,6 @@ function Header() {
 
     const classes = useStyles();
     const [anchorEl, setAnchorEl] = useState(null);
-    const [openExpandMore, setOpenExpandMore] = useState(false);
     const history = useHistory();
     const dispatch = useDispatch()
 
@@ -45,23 +43,28 @@ function Header() {
     const handleClose = () => {
         setAnchorEl(null);
       }
-      const handleClickAway = () => {
-        setOpenExpandMore(false);
-      };
+      
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
       }
 
-    const handleExpandMoreClick = () => {
-      setOpenExpandMore((prev) => !prev);
-    }
 
     const handleFavoriteClick = () => {
       history.push("/favorites")
-      setOpenExpandMore(false)
+      setAnchorEl(null);
+    }
+    const handleFavoriteClickExperience = () => {
+      history.push("/experiences/favorites")
+
+      setAnchorEl(null);
     }
     const handleHostOnboardingClick = () => {
       history.push("/experiences/hostonline")
+      setAnchorEl(null);
+    }
+
+    const handleClickHostPlace = () => {
+      history.push("/host")
       setAnchorEl(null);
     }
       const open = Boolean(anchorEl);
@@ -78,21 +81,9 @@ function Header() {
             </div>
             
             <div className="header__right">
-               {userInfo &&  <Button className="header__rightButton" onClick={() => history.push("/host")}>Host</Button>}
-                <LanguageIcon />
-                <ClickAwayListener onClickAway={handleClickAway}>
-      <div className={classes.root}>
-        
-        <IconButton onClick={handleExpandMoreClick}><ExpandMoreIcon /></IconButton>
-        {openExpandMore ? (
-          <div className={classes.dropdown}>
-          
-           <Button className="header__rightButtonExpand" onClick={handleFavoriteClick}><FavoriteBorderOutlined /> Favorites</Button>
-            
-          </div>
-        ) : null}
-      </div>
-    </ClickAwayListener>
+            {userInfo && <Button className="header__rightButton" onClick={() => history.push("/host")}>Host</Button>}
+            <LanguageIcon />
+                
              {userInfo ?  
              <>
              <Button aria-describedby={id} onClick={handleClick}>
@@ -116,11 +107,19 @@ function Header() {
         }}
       >
         <Typography>
+        <div>
+            <div style={{padding:"10px 20px 10px 30px", borderBottom:"1px solid lightgray", display:"flex", flexDirection:"column"}}>
+                <Button style={{textTransform: "inherit"}} onClick={handleFavoriteClick}>Favorite Places</Button>
+                <Button style={{textTransform: "inherit"}} onClick={handleFavoriteClickExperience}>Favorite Experiences</Button>
+            </div>
             <div style={{padding: "20px", display:"flex", flexDirection:"column"}}>
+            
+                <Button style={{textTransform: "inherit"}} onClick={handleClickHostPlace}>Host a Place</Button>
                 <Button style={{textTransform: "inherit"}} onClick={handleHostOnboardingClick}>Host an Experience</Button>
                 <Button style={{textTransform: "inherit"}} onClick={logoutHandler}>SignOut</Button>
                 
             </div>
+        </div>
         </Typography>
       </Popover>
       </>

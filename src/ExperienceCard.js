@@ -1,6 +1,6 @@
 import { IconButton, makeStyles, Popover, Typography } from '@material-ui/core'
 import { Favorite } from '@material-ui/icons'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router'
 import { Link } from 'react-router-dom'
@@ -8,7 +8,7 @@ import { saveAddExperience, removeExperiences } from './actions/saveActions'
 import "./ExperienceCard.css"
 import Rating from './Rating'
 
-function ExperienceCard({images, title, price, country, theme, typeOfExperience, id, value, like}) {
+function ExperienceCard({images, title, price, country, theme, typeOfExperience, id, value}) {
     const history = useHistory()
     const dispatch = useDispatch()
 
@@ -30,8 +30,6 @@ function ExperienceCard({images, title, price, country, theme, typeOfExperience,
         }
     }
 
-   {/* <IconButton disabled> <Favorite disabled style={{stroke:"rgb(255, 255, 255)", fontSize:"1.7rem"}} /> </IconButton>  */}
-
    const useStyles = makeStyles((theme) => ({
     popover: {
       pointerEvents: 'none',
@@ -50,7 +48,7 @@ function ExperienceCard({images, title, price, country, theme, typeOfExperience,
     setAnchorEl(null);
   };
 
-  const open = Boolean(anchorEl);
+  const open = Boolean(anchorEl)
     
     return (
         <>
@@ -67,7 +65,7 @@ function ExperienceCard({images, title, price, country, theme, typeOfExperience,
                 marginBottom:"8px",
                 border: "1px solid lightgray"
                 }}>
-                <div className="icon">
+                <div>
                 {userInfo ? found
                     ?
                     <IconButton onClick={handleClickRemove}> <Favorite style={{stroke:"rgb(255, 255, 255)", fontSize:"1.7rem", color:"#ff7779"}} /> </IconButton>

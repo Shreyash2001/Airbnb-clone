@@ -1,0 +1,33 @@
+.adventures__image {
+    background-image: url("https://a0.muscache.com/4ea/air/v2/pictures/4bfe5a0a-375d-4a63-8c0b-5de59949e7d1.jpg?t=c:w1131-h343,r:w1131-h343-sfit,e:fjpg-c75");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 57vh;
+    width:100%;
+}
+
+.adventures__imageSideInfo {
+    max-width: 400px;
+    padding-left: 80px;
+    padding-top: 80px;
+}
+
+.adventures__imageSideInfo > h1 {
+    color: white;
+    font-size: 55px; 
+}
+
+.adventures__imageSideInfo > p {
+    color: white;
+    font-size: 25px;
+    font-weight: 300;
+}
+
+
+.adventures__container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 92%;
+    padding-left: 80px;
+}

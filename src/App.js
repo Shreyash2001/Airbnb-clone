@@ -37,6 +37,9 @@ import ExperienceAllTopRated from './ExperienceAllTopRated';
 import ExperienceTeam from './ExperienceTeam';
 import ExperienceFamily from './ExperienceFamily';
 import ExperienceAllHaveFun from './ExperienceAllHaveFun';
+import ExperienceFavorites from './ExperienceFavorites';
+import ExperienceInPerson from './ExperienceInPerson';
+import Adventures from './Adventures';
 
 
 function App() {
@@ -154,6 +157,18 @@ function App() {
       <Footer />
       </Route>
 
+      <Route path="/experiences/adventures">
+      <Header />
+      <Adventures />
+      <Footer />
+      </Route>
+
+      <Route path="/experiences/in-person">
+      <Header />
+      <ExperienceInPerson />
+      <Footer />
+      </Route>
+
       <Route path="/experiences/online/mainfilter">
       <Header />
       <ExperiencesFilter />
@@ -231,9 +246,15 @@ function App() {
       <Footer />
       </Route>
 
-      <Route path="/date/search/">
+      <Route path="/date/search">
       <Header />
       <SearchByDate />
+      <Footer />
+      </Route>
+
+      <Route path="/experiences/favorites">
+      <Header />
+      <ExperienceFavorites />
       <Footer />
       </Route>
 

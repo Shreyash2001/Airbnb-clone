@@ -4,7 +4,7 @@ import { composeWithDevTools } from "redux-devtools-extension"
 import { userLoginReducer, userRegisterReducer } from "./reducers/userReducer";
 import { hostAddReducer, hostedPlaceBookingReducer, hostedPlaceDetailsReducer, hostedPlaceRatingReducer, hostedPlaceSearchResultsForDatesReducer, hostedPlaceTopRatedReducer, hostGetReducer } from "./reducers/hostReducers";
 import { saveExperienceReducer, saveReducer } from "./reducers/saveReducer";
-import { experienceTypeReducer, experienceSubmitReducer, experienceGetReducer, experienceGetPopularInIndiaReducer, experienceGetCookingReducer, experienceGetLastWeekReducer, experienceGetFilteredResultReducer, getExperienceByIdReducer, createReviewReducer, getSimilarExperienceReducer, getTopRatedExperienceReducer, getTeamExperienceReducer, getChildExperienceReducer, getEverydayExperienceReducer } from "./reducers/experienceReducers";
+import { experienceTypeReducer, experienceSubmitReducer, experienceGetReducer, experienceGetPopularInIndiaReducer, experienceGetCookingReducer, experienceGetLastWeekReducer, experienceGetFilteredResultReducer, getExperienceByIdReducer, createReviewReducer, getSimilarExperienceReducer, getTopRatedExperienceReducer, getTeamExperienceReducer, getChildExperienceReducer, getEverydayExperienceReducer, getInPersonExperienceReducer, getAdventureExperienceReducer } from "./reducers/experienceReducers";
 
 
 const reducer = combineReducers({
@@ -33,6 +33,8 @@ const reducer = combineReducers({
     getTeamExperience: getTeamExperienceReducer,
     getChildExperience: getChildExperienceReducer,
     getEverydayExperience: getEverydayExperienceReducer,
+    getInPersonExperience: getInPersonExperienceReducer,
+    getAdventure: getAdventureExperienceReducer, 
 
 });
 

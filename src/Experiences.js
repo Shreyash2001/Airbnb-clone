@@ -305,7 +305,6 @@ function Experiences() {
                     theme={topRated.theme}
                     typeOfExperience={topRated.typeOfExperience}
                     value={topRated.rating}
-                    like={topRated.like}
                 />
              ))}
             </div>
