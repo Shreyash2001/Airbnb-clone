@@ -1,5 +1,5 @@
 import axios from "axios";
-import { REMOVE_HOSTEDPLACE, SAVE_HOSTEDPLACE } from "../constants/saveConstants";
+import { REMOVE_EXPERIENCE, REMOVE_HOSTEDPLACE, SAVE_EXPERIENCE, SAVE_HOSTEDPLACE } from "../constants/saveConstants";
 
 export const saveAddPlace = (id) => async (dispatch, getState) => {
    const { data } = await axios.get(`/host/${id}`)
@@ -21,6 +21,29 @@ export const saveAddPlace = (id) => async (dispatch, getState) => {
    localStorage.setItem("saveHostedPlaceItems", JSON.stringify(getState().savePlace.saveHostedPlaceItems))
 }
 
+export const saveAddExperience = (id) => async (dispatch, getState) => {
+   const { data } = await axios.get(`/experience/${id}`)
+    
+   dispatch({
+       type:SAVE_EXPERIENCE,
+       payload: {
+           experienceId: data._id,
+           title: data.title,
+           image: data.image[0],
+           location: data.location,
+           theme: data.theme,
+           typeOfExperience: data.typeOfExperience,
+           rating: data.rating,
+           price: data.price
+       }
+   })
+
+   localStorage.setItem("saveExperiences", JSON.stringify(getState().saveExperience.saveExperiences))
+
+   
+}
+
+
 export const removePlace = (id) => async (dispatch, getState) => {
 
    dispatch({
@@ -29,5 +52,15 @@ export const removePlace = (id) => async (dispatch, getState) => {
    })
 
    localStorage.setItem("saveHostedPlaceItems", JSON.stringify(getState().savePlace.saveHostedPlaceItems))
+}
+
+export const removeExperiences = (id) => async (dispatch, getState) => {
+
+   dispatch({
+       type:REMOVE_EXPERIENCE,
+       payload: id
+   })
+
+   localStorage.setItem("saveExperiences", JSON.stringify(getState().saveExperience.saveExperiences))
 }
 

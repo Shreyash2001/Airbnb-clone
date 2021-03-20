@@ -82,6 +82,36 @@ function ExperiencesFilter() {
         dispatch(getFilteredResultExperiences(nightlife))
     }
 
+    useEffect(() => {
+      if(match[3] === "art") {
+        dispatch(getFilteredResultExperiences(art))
+      } 
+      else if (match[3] === "fireworks") {
+        dispatch(getFilteredResultExperiences(fireworks))
+      } 
+      else if (match[3] === "culture") {
+        dispatch(getFilteredResultExperiences(cultureTour))
+      }
+      else if (match[3] === "cultural-festival") {
+        dispatch(getFilteredResultExperiences(culture))
+      }
+      else if (match[3] === "food") {
+        dispatch(getFilteredResultExperiences(food))
+      }
+      else if (match[3] === "movies") {
+        dispatch(getFilteredResultExperiences(movies))
+      }
+      else if (match[3] === "dance") {
+        dispatch(getFilteredResultExperiences(dance))
+      }
+      else if (match[3] === "photoshoot") {
+        dispatch(getFilteredResultExperiences(photoshoot))
+      }
+      else if (match[3] === "nightlife") {
+        dispatch(getFilteredResultExperiences(nightlife))
+      }
+    }, [dispatch])
+
     const scrollOnClickRightContent = () => {
         sideScroll(document.getElementById("content"),'right',10,1500,20); 
     }
@@ -178,8 +208,9 @@ function ExperiencesFilter() {
                 </div>
                 </div>
             </div>
+            {loading ? <CircularProgress style={{width:"10%", height:"15%", margin:"10% 35% 10% 40%", color:"#ff7779"}} /> :
             <div id="content" className="experiencesFilter__contentContainer">
-            {loading && <CircularProgress />}
+            
             {error && <h1>{error}</h1>}
             {filteredResultExperiences?.map(filteredResultExperience => (
                <>
@@ -198,7 +229,7 @@ function ExperiencesFilter() {
             ))}
                 
             </div>
-
+            }
             <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
         <DialogContent>
           <DialogContentText>

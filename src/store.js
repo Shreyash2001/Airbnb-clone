@@ -3,7 +3,7 @@ import thunk from "redux-thunk"
 import { composeWithDevTools } from "redux-devtools-extension"
 import { userLoginReducer, userRegisterReducer } from "./reducers/userReducer";
 import { hostAddReducer, hostedPlaceBookingReducer, hostedPlaceDetailsReducer, hostedPlaceRatingReducer, hostedPlaceSearchResultsForDatesReducer, hostedPlaceTopRatedReducer, hostGetReducer } from "./reducers/hostReducers";
-import { saveReducer } from "./reducers/saveReducer";
+import { saveExperienceReducer, saveReducer } from "./reducers/saveReducer";
 import { experienceTypeReducer, experienceSubmitReducer, experienceGetReducer, experienceGetPopularInIndiaReducer, experienceGetCookingReducer, experienceGetLastWeekReducer, experienceGetFilteredResultReducer, getExperienceByIdReducer, createReviewReducer, getSimilarExperienceReducer, getTopRatedExperienceReducer, getTeamExperienceReducer, getChildExperienceReducer, getEverydayExperienceReducer } from "./reducers/experienceReducers";
 
 
@@ -18,6 +18,7 @@ const reducer = combineReducers({
     hostedPlaceTopRated: hostedPlaceTopRatedReducer,
     hostedPlaceSearch: hostedPlaceSearchResultsForDatesReducer,
     savePlace: saveReducer,
+    saveExperience: saveExperienceReducer,
     experience: experienceTypeReducer,
     experienceSubmit: experienceSubmitReducer,
     newExperiences: experienceGetReducer,
@@ -37,10 +38,12 @@ const reducer = combineReducers({
 
 const userInfoFromStorage = localStorage.getItem("userInfo") ? JSON.parse(localStorage.getItem("userInfo")) : null
 const savePlaceInfoFromStorage = localStorage.getItem("saveHostedPlaceItems") ? JSON.parse(localStorage.getItem("saveHostedPlaceItems")) : []
+const saveExperienceInfoFromStorage = localStorage.getItem("saveExperiences") ? JSON.parse(localStorage.getItem("saveExperiences")) : []
 
 const initialState = {
     userLogin: {userInfo: userInfoFromStorage},
-    savePlace: {saveHostedPlaceItems: savePlaceInfoFromStorage}
+    savePlace: {saveHostedPlaceItems: savePlaceInfoFromStorage},
+    saveExperience: {saveExperiences: saveExperienceInfoFromStorage},
 };
 
 const middleware = [thunk];

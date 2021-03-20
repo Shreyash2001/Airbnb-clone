@@ -1,6 +1,5 @@
 .experienceCard {
     max-width: 50%;
-    cursor: pointer;
     margin-right: 20px;
     flex: 1;
     min-width: 32.9%;
@@ -9,6 +8,7 @@
 .experienceCard__info {
     margin-top: 10px;
     max-width: 100%;
+    cursor: pointer;
 }
 
 .experienceCard__info > div > h3 {

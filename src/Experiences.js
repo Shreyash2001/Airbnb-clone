@@ -231,7 +231,7 @@ function Experiences() {
                 <div className="experiences__containerImagesImage1Info">
                     <p>Collection</p>
                     <h2>Great for team building</h2>
-                    <Button>Show all</Button>
+                    <Button onClick={() => history.push("/experiences/online/team")}>Show all</Button>
                 </div>
                 </div>
             </div>
@@ -242,7 +242,7 @@ function Experiences() {
                 <div className="experiences__containerImagesImage1Info">
                     <p>Collection</p>
                     <h2>Fun for the family & friends</h2>
-                    <Button>Show all</Button>
+                    <Button onClick={() => history.push("/experiences/online/all-family-friendly")}>Show all</Button>
                 </div>
                 </div>
             </div>
@@ -253,7 +253,7 @@ function Experiences() {
                 <div className="experiences__containerImagesImage1Info">
                     <p>Collection</p>
                     <h2>Experiences for All to have fun</h2>
-                    <Button>Show all</Button>
+                    <Button onClick={() => history.push("/experiences/online/all-have-fun")}>Show all</Button>
                 </div>
                 </div>
             </div>
@@ -305,6 +305,7 @@ function Experiences() {
                     theme={topRated.theme}
                     typeOfExperience={topRated.typeOfExperience}
                     value={topRated.rating}
+                    like={topRated.like}
                 />
              ))}
             </div>
