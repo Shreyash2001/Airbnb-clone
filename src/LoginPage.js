@@ -47,7 +47,6 @@ function LoginPage() {
                 <form onSubmit={submitHandler}>
                     <h2>Sign in & Host your Place</h2>
                     <div className="loginPage__content">
-                    {loading && <CircularProgress />}
                     {error && <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}><Alert severity="error">{error}</Alert></Snackbar>}
                     <label>Email</label>
                     <input type="email" placeholder="enter your email" onChange={(e) => setEmail(e.target.value)} />
@@ -55,6 +54,7 @@ function LoginPage() {
                     <input type="password" placeholder="enter your password" onChange={(e) => setPassword(e.target.value)} />
                     <Button type="submit">Login</Button>
                     <p>Don't have an account?{" "}<Link to="/register">Register here</Link></p>
+                    {loading && <CircularProgress style={{color:"#ff7779"}} />}
                     </div>
                 </form>
             </div>

@@ -1,0 +1,15 @@
+.cottages__imageSideInfo > h1 {
+    color: white;
+    font-size: 55px;
+    max-width: 400px;
+    padding-left: 80px;
+}
+
+
+.cottages__container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 92%;
+    padding-left: 80px;
+}

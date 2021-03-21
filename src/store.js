@@ -2,7 +2,7 @@ import { createStore, combineReducers, applyMiddleware } from "redux"
 import thunk from "redux-thunk"
 import { composeWithDevTools } from "redux-devtools-extension"
 import { userLoginReducer, userRegisterReducer } from "./reducers/userReducer";
-import { hostAddReducer, hostedPlaceBookingReducer, hostedPlaceDetailsReducer, hostedPlaceRatingReducer, hostedPlaceSearchResultsForDatesReducer, hostedPlaceTopRatedReducer, hostGetReducer } from "./reducers/hostReducers";
+import { hostAddReducer, hostCottagesReducer, hostedPlaceBookingReducer, hostedPlaceDetailsReducer, hostedPlaceRatingReducer, hostedPlaceSearchResultsForDatesReducer, hostedPlaceTopRatedReducer, hostEntireHomesReducer, hostGetReducer, hostGetSearchHeaderResultReducer, hostUniqueStaysReducer } from "./reducers/hostReducers";
 import { saveExperienceReducer, saveReducer } from "./reducers/saveReducer";
 import { experienceTypeReducer, experienceSubmitReducer, experienceGetReducer, experienceGetPopularInIndiaReducer, experienceGetCookingReducer, experienceGetLastWeekReducer, experienceGetFilteredResultReducer, getExperienceByIdReducer, createReviewReducer, getSimilarExperienceReducer, getTopRatedExperienceReducer, getTeamExperienceReducer, getChildExperienceReducer, getEverydayExperienceReducer, getInPersonExperienceReducer, getAdventureExperienceReducer } from "./reducers/experienceReducers";
 
@@ -12,11 +12,15 @@ const reducer = combineReducers({
     userRegister: userRegisterReducer,
     hostAdd: hostAddReducer,
     hostGet: hostGetReducer,
+    hostGetSearchHeader: hostGetSearchHeaderResultReducer,
     hostedPlaceDetails: hostedPlaceDetailsReducer,
     hostedPlaceSummary: hostedPlaceBookingReducer,
     hostedPlaceRating: hostedPlaceRatingReducer,
     hostedPlaceTopRated: hostedPlaceTopRatedReducer,
     hostedPlaceSearch: hostedPlaceSearchResultsForDatesReducer,
+    uniquePlacesResult: hostUniqueStaysReducer,
+    entireHomesResult: hostEntireHomesReducer,
+    cottagesResult: hostCottagesReducer,
     savePlace: saveReducer,
     saveExperience: saveExperienceReducer,
     experience: experienceTypeReducer,

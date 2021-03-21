@@ -5,7 +5,8 @@ import ReactReadMoreReadLess from "react-read-more-read-less";
 import "./Favorites.css"
 import Rating from './Rating'
 import { removePlace } from './actions/saveActions';
-import { Button } from '@material-ui/core';
+import { IconButton } from '@material-ui/core';
+import { Favorite } from '@material-ui/icons';
 
 function Favorites() {
     const savePlace = useSelector(state => state.savePlace)
@@ -16,11 +17,11 @@ function Favorites() {
 
     return (
         <>
-        {saveHostedPlaceItems && 
+        {saveHostedPlaceItems.length > 0 ?
             saveHostedPlaceItems.map(saveHostedPlaceItem => (
                 <div className="favorites" key={saveHostedPlaceItem.placeId}>
             <img src={saveHostedPlaceItem.image} alt="hotel" />
-             <Button className="favorites__removeButton"  style={{color:"#ff7779"}} onClick={ id => dispatch(removePlace(saveHostedPlaceItem.placeId))}>Remove from favorite</Button>
+             <IconButton onClick={ id => dispatch(removePlace(saveHostedPlaceItem.placeId))}> <Favorite style={{stroke:"rgb(255, 255, 255)", fontSize:"1.7rem", color:"#ff7779"}} /> </IconButton>
 
             <div className="favorites__info">
                 <div className="favorites__infoTop">
@@ -50,7 +51,10 @@ function Favorites() {
             </div>
         </div>
             ))
-        
+        : <div style={{display:"flex", alignItems:"center"}}>
+            <img src="https://res.cloudinary.com/cqn/image/upload/v1616324101/no-data-concept-illustration_114360-536_bz7o5n.jpg" alt="nothing" style={{width:"570px"}} /> 
+            <h1 style={{fontSize:"75px"}}>You have not added any favorites.</h1>
+        </div>
         }
         </>
     )

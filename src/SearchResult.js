@@ -46,27 +46,33 @@ function SearchResult({ img, location, title, description, price, selectedValue,
         dispatch(removePlace(id))
     }
 
+    var found = false;
+    for(var i = 0; i < saveHostedPlaceItems.length; i++) {
+        if (saveHostedPlaceItems[i].placeId === id) {
+          found = true;
+          break;
+      }
+  }
     
     return (
         <div className="searchResult">
             <img src={img} alt="hotel" />
-            {saveHostedPlaceItems?.map(saveHostedPlaceItem => (
-                id === saveHostedPlaceItem.placeId
-            ) &&  <><IconButton className="searchResult__heart"><Favorite style={{color:"#ff7779"}} /> </IconButton> <Button className="searchResult__removeButton" onClick={handleRemoveClick}>Remove from favorite</Button></>)}
             
-           {userInfo ?  
-           <IconButton className="searchResult__heart" onClick={handleClick}>
-           <FavoriteBorderOutlined  style={{color:"#ff7779"}} />
-           </IconButton> 
-           :  
-           <IconButton className="searchResult__heart" onClick={() => history.push("/login")}>
+            {userInfo ? found
+                    ?
+                    <IconButton onClick={handleRemoveClick}> <Favorite style={{stroke:"rgb(255, 255, 255)", fontSize:"1.7rem", color:"#ff7779"}} /> </IconButton>
+                    :
+                  <IconButton onClick={handleClick}> <Favorite style={{stroke:"rgb(255, 255, 255)", fontSize:"1.7rem"}} /> </IconButton> 
+                  :
+                  
+                  <IconButton onClick={() => history.push("/login")}>
            <Typography
                 aria-owns={open ? 'mouse-over-popover' : undefined}
                 aria-haspopup="true"
                 onMouseEnter={handlePopoverOpen}
                 onMouseLeave={handlePopoverClose}
             >
-                <FavoriteBorderOutlined style={{color:"#ff7779"}} />
+                <IconButton disabled> <Favorite disabled style={{stroke:"rgb(255, 255, 255)", fontSize:"1.7rem"}} /> </IconButton>
             </Typography>
             <Popover
         id="mouse-over-popover"
@@ -87,9 +93,10 @@ function SearchResult({ img, location, title, description, price, selectedValue,
         onClose={handlePopoverClose}
         disableRestoreFocus
       >
-        <Typography style={{color:"#f7779", width:"200px"}}>To save this place you need to Sign In. Click the heart icon and you will be redirected to login page.</Typography>
+        <Typography style={{color:"#f7779", width:"200px"}}>To save this experience you need to <b>Sign In</b>. Click the icon and you will be redirected to login page.</Typography>
       </Popover>
-           </IconButton>}
+           </IconButton>
+                }
 
             <div className="searchResult__info">
                 <div className="searchResult__infoTop">

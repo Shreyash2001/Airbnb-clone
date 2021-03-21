@@ -125,7 +125,10 @@ function HostedPlaceDetails() {
         {loading && <CircularProgress style={{width:"120px", height:"120px", margin:"300px", color:"#ff7779"}}/>}
             {error && <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}><Alert severity="error">{error}</Alert></Snackbar>}
             <div className="hostedPlaceDetails__image">
-                <img src={placeDetails?.image} alt={placeDetails?.title} />
+            {placeDetails?.images?.map(image => (
+                <img src={image} alt="title" />
+            ))}
+                
             </div>
             <div className="hostedPlaceDetails__content">
                 <div className="hostedPlaceDetails__left">

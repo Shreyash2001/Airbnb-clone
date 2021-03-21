@@ -8,6 +8,8 @@ import { Link, useHistory } from 'react-router-dom'
 import { Button, IconButton, makeStyles, Popover, Typography } from '@material-ui/core'
 import { useDispatch, useSelector } from 'react-redux'
 import { logout } from './actions/userActions'
+import { hostGetSearchHeaderPlaces } from './actions/hostActions';
+import { HOST_GET_SEARCH_HEADER_RESULTS_RESET } from './constants/hostConstants';
 
 function Header() {
   const useStyles = makeStyles((theme) => ({
@@ -69,24 +71,61 @@ function Header() {
     }
       const open = Boolean(anchorEl);
       const id = open ? 'simple-popover' : undefined;
+
+     const {searchResultPlaces} = useSelector(state => state.hostGetSearchHeader)
+
+     const [searchCountry, setSearchCountry] = useState("")
+
+      const handleChange = (e) => {
+        setSearchCountry(e.target.value)
+        if(searchCountry.length > 1 ) {
+          dispatch(hostGetSearchHeaderPlaces(searchCountry))
+        } else {
+          dispatch({type:HOST_GET_SEARCH_HEADER_RESULTS_RESET})
+        }
+      }
+
+      const handleClickSearch = () => {
+        if(searchCountry.length > 0 ) {
+          dispatch(hostGetSearchHeaderPlaces(searchCountry))
+        } else {
+          dispatch({type:HOST_GET_SEARCH_HEADER_RESULTS_RESET})
+        }
+      }
+
+      const handleLinkClick = () => {
+        dispatch({type:HOST_GET_SEARCH_HEADER_RESULTS_RESET})
+        setSearchCountry("")
+      }
       
 
     return (
         <div className="header">
            <Link to="/"> <img className="header__logo" src="https://i.pinimg.com/originals/3c/bf/be/3cbfbe148597341fa56f2f87ade90956.png" alt="header logo" /></Link>
 
+            <div>
             <div className="header__center">
-                <input type="text" />
-                <SearchIcon />
+                <input type="text" value={searchCountry} onChange={handleChange} />
+                <SearchIcon onClick={handleClickSearch} />
+            </div>
+            {searchResultPlaces?.length > 0 && 
+            <div style={{position:"absolute" ,backgroundColor:"white", width:"300px", height:"45vh", padding:"10px"}}>
+              {searchResultPlaces?.map(search => (
+                <div style={{padding:"10px"}}>
+                <Link to={`/host/${search._id}`} onClick={handleLinkClick} style={{fontSize:"20px"}}>{search.title},{search.country}</Link>
+                </div>
+              ))}
+            </div>
+            }
             </div>
             
             <div className="header__right">
             {userInfo && <Button className="header__rightButton" onClick={() => history.push("/host")}>Host</Button>}
-            <LanguageIcon />
+            <IconButton onClick={() => history.push("/experiences/online")}><LanguageIcon /></IconButton>
                 
              {userInfo ?  
              <>
-             <Button aria-describedby={id} onClick={handleClick}>
+             <Button style={{width:"100px"}} aria-describedby={id} onClick={handleClick}>
              <div style={{alignItems:"center", display:"flex"}}>
              <PersonIcon style={{color: "#ff7779"}} />
              <p style={{textTransform:"capitalize", fontSize:"21px", color:"#ff7779"}}>{userInfo.name}</p>

@@ -2,9 +2,11 @@ import { Button, CircularProgress, FormControl, InputLabel, makeStyles, MenuItem
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { hostedPlaceGetHighPriceDetails, hostedPlaceGetLowPriceDetails, hostedPlaceGetNumberOfBedroomsDetails, hostedPlaceGetSearchResultsDetails, hostedPlaceGetSuitedResultsDetails, hostedPlaceGetTopRatedDetails } from './actions/hostActions'
-import MuiAlert from '@material-ui/lab/Alert';
+import MuiAlert from '@material-ui/lab/Alert'
 import "./SearchPage.css"
 import SearchResult from './SearchResult'
+
+
 function SearchPage() {
   const useStyles = makeStyles((theme) => ({
     formControl: {
@@ -14,13 +16,16 @@ function SearchPage() {
     selectEmpty: {
       marginTop: theme.spacing(2),
     },
-  }));
+  }))
+
     const [open, setOpen] = useState(false);
     const [openSeason, setOpenSeason] = useState("");
     const classes = useStyles();
     const dispatch = useDispatch()
       const hostedPlaceTopRated = useSelector(state => state.hostedPlaceTopRated)
       const { loading, error, topRatedPlace } = hostedPlaceTopRated
+
+      const {saveHostedPlaceItems} = useSelector(state => state.savePlace)
 
       const handleClose = (event, reason) => {
         if (reason === 'clickaway') {
@@ -34,8 +39,6 @@ function SearchPage() {
         setOpenSeason(event.target.value);
       };
       
-      
-
       const handleClickClear = (event) => {
         dispatch(hostedPlaceGetTopRatedDetails())
         setOpenSeason("")
@@ -44,6 +47,8 @@ function SearchPage() {
       function Alert(props) {
         return <MuiAlert elevation={6} variant="filled" {...props} />;
       }
+
+    
 
       useEffect(() => {
           dispatch(hostedPlaceGetTopRatedDetails())
@@ -87,8 +92,8 @@ function SearchPage() {
             {error && <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}><Alert severity="error">{error}</Alert></Snackbar>}
            {topRatedPlace?.map(topRatedPlace => (
             <SearchResult 
-                key={topRatedPlace?._id}
-               img={topRatedPlace?.image}
+               key={topRatedPlace?._id}
+               img={topRatedPlace?.images[0]}
                title={topRatedPlace?.title}
                description={topRatedPlace?.description}
                value={topRatedPlace?.rating}

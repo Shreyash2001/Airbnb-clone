@@ -40,6 +40,9 @@ import ExperienceAllHaveFun from './ExperienceAllHaveFun';
 import ExperienceFavorites from './ExperienceFavorites';
 import ExperienceInPerson from './ExperienceInPerson';
 import Adventures from './Adventures';
+import UniqueStays from './UniqueStays';
+import EntireHomes from './EntireHomes';
+import Cottages from './Cottages';
 
 
 function App() {
@@ -261,6 +264,24 @@ function App() {
       <Route path="/favorites">
       <Header />
       <Favorites />
+      <Footer />
+      </Route>
+
+      <Route path="/entire-homes">
+      <Header />
+      <EntireHomes />
+      <Footer />
+      </Route>
+
+      <Route path="/unique-stays">
+      <Header />
+      <UniqueStays />
+      <Footer />
+      </Route>
+
+      <Route path="/cottages">
+      <Header />
+      <Cottages />
       <Footer />
       </Route>
 

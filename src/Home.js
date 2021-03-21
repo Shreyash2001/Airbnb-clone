@@ -7,6 +7,8 @@ import { hostGetPlaces } from './actions/hostActions'
 import { Button, CircularProgress, Snackbar } from '@material-ui/core'
 import MuiAlert from '@material-ui/lab/Alert';
 import { useHistory } from 'react-router'
+import ArrowForwardIosRoundedIcon from '@material-ui/icons/ArrowForwardIosRounded';
+import ArrowBackIosRoundedIcon from '@material-ui/icons/ArrowBackIosRounded';
 
 
 function Home() {
@@ -32,6 +34,28 @@ function Home() {
             return <MuiAlert elevation={6} variant="filled" {...props} />;
           }
 
+        function sideScroll(element,direction,speed,distance,step){
+          var scrollAmount = 0;
+           var slideTimer = setInterval(function(){
+               if(direction === 'left'){
+                   element.scrollLeft -= step;
+               } else {
+                   element.scrollLeft += step;
+               }
+               scrollAmount += step;
+               if(scrollAmount >= distance){
+                   window.clearInterval(slideTimer);
+               }
+           }, speed);
+       }
+
+       const scrollOnClickRightTopRated = () => {
+        sideScroll(document.getElementById("topRated"),'right',10,1500,20); 
+    }
+    const scrollOnClickLeftTopRated = () => { 
+        sideScroll(document.getElementById("topRated"),'left',10,1500,20);
+    }
+
       useEffect(() => {
             dispatch(hostGetPlaces())
             setOpen(true)
@@ -43,7 +67,7 @@ function Home() {
             <div className="home__experienceSection">
               <div className="home__experienceSectionImages">
               <div className="home__experienceSectionFirst">
-                <div className="home__experienceSectionImage4" onClick={() => history.push("/entirehomes")}></div>
+                <div className="home__experienceSectionImage4" onClick={() => history.push("/entire-homes")}></div>
                 <div>
                   <div>
                     <h2 style={{marginLeft:"120px", marginTop:"10px"}}>Entire Homes</h2>
@@ -51,7 +75,7 @@ function Home() {
                 </div>
                 </div>
                 <div className="home__experienceSectionFirst">
-                <div className="home__experienceSectionImage5" onClick={() => history.push("/uniquestays")}></div>
+                <div className="home__experienceSectionImage5" onClick={() => history.push("/unique-stays")}></div>
                 <div>
                   <div>
                     <h2 style={{marginLeft:"120px", marginTop:"10px"}}>Unique Stays</h2>
@@ -69,17 +93,31 @@ function Home() {
               </div>
             </div>
             
-            <h1 style={{paddingLeft:"100px", color:"#222222", fontSize:"32px", fontWeight:"700"}}>Top Stays</h1>
-            <div className="home__section">
+            <div className="home__heading">
+                <h1>Top Rated</h1>
+                <div style={{display:"flex"}}>
+            <div className="home__rightArrowPopular" onClick={scrollOnClickLeftTopRated}>
+            <ArrowBackIosRoundedIcon  style={{color:"#484848", marginLeft:"3px", marginTop:"2px"}} />
+            </div>
+           
+            <div className="home__leftArrowPopular" onClick={scrollOnClickRightTopRated}>
+            <ArrowForwardIosRoundedIcon  style={{color:"#484848", marginLeft:"3px", marginTop:"2px"}} />
+                </div>
+                </div>
+            </div>
+
+            <div id="topRated" className="home__section" style={{overflowX:"scroll"}}>
             {loading && <CircularProgress style={{width:"120px", height:"120px", margin:"100px 500px 400px 600px", color:"#ff7779"}}/>}
             {error && <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}><Alert severity="error">{error}</Alert></Snackbar>}
             {allHostPlaces && allHostPlaces.map(allHostPlace => (
               
-                  <Card key={allHostPlace._id} 
+                  <Card 
+                  key={allHostPlace._id} 
                   id={allHostPlace._id}
-                  src={allHostPlace.image} 
+                  images={allHostPlace.images[0]} 
                   title={allHostPlace.title} 
-                  description={allHostPlace.description.substring(0, 75)}
+                  season={allHostPlace.season}
+                  selectedValue={allHostPlace.selectedValue}
                   price={allHostPlace.price}
                   country={allHostPlace.country}
                   value={allHostPlace.rating} />
@@ -88,6 +126,7 @@ function Home() {
             
             </div>
             
+
             <div className="home__hostSection">
             <div className="home__hostSectionImage">
               <div className="home__hostInfo">
@@ -97,7 +136,7 @@ function Home() {
                 <h3>Turn your extra space into your next opportunity.</h3>
               </div>
               <div className="home__hostInfoButton">
-              {userInfo ?   <Button onClick={() => history.push("/host")}>Host a Place</Button> : <Button onClick={() => history.push("/login")}>Sign In to Become Host</Button>}
+              {userInfo ? <Button onClick={() => history.push("/host")}>Host a Place</Button> : <Button onClick={() => history.push("/login")}>Sign In to Become Host</Button>}
               </div>
             </div>
             

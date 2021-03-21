@@ -52,7 +52,6 @@ function Register() {
                 <form onSubmit={submitHandler}>
                     <h2>Book unique homes and experiences</h2>
                     <div className="register__content">
-                    {loading && <CircularProgress />}
                     {error && <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}><Alert severity="error">{error}</Alert></Snackbar>}
                     <label>Name</label>
                     <input type="text" placeholder="  Name" onChange={(e) => setName(e.target.value)} required/>
@@ -62,6 +61,7 @@ function Register() {
                     <input type="password" placeholder="  Password" onChange={(e) => setPassword(e.target.value)} required/>
                     <Button type="submit">Register</Button>
                     <p>Already have an account?{" "}<Link to="/login">Sign in</Link></p>
+                    {loading && <CircularProgress style={{color:"#ff7779"}} />}
                     </div>
                 </form>
             </div>

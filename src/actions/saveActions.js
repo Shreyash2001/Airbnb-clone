@@ -9,7 +9,7 @@ export const saveAddPlace = (id) => async (dispatch, getState) => {
        payload: {
            placeId: data._id,
            title: data.title,
-           image: data.image,
+           image: data.images[0],
            description: data.description,
            country: data.country,
            rating: data.rating,

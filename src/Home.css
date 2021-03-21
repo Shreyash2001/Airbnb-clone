@@ -1,8 +1,49 @@
 .home__section {
     display: flex;
     padding-left: 100px;
-    padding-top: 20px;
-    flex-wrap: wrap;
+    max-width: 87%;
+}
+
+.home__section::-webkit-scrollbar { 
+    display: none;  
+}
+
+.home__heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 100px;
+    margin-bottom: 30px;
+    max-width: 87%;
+}
+
+.home__rightArrowPopular {
+    width: 28px;
+    border: 1px solid lightgray;
+    border-radius: 50%;
+    padding: 6px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: transform 250ms;
+    margin-right: 20px;
+}
+
+.home__leftArrowPopular {
+    width: 28px;
+    border: 1px solid lightgray;
+    border-radius: 50%;
+    padding: 6px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: transform 250ms;
+}
+
+.home__rightArrowPopular:hover {
+    transform: scale(1.10);
+}
+
+.home__leftArrowPopular:hover {
+    transform: scale(1.10);
 }
 
 .home__hostSection {

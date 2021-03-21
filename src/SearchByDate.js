@@ -54,13 +54,13 @@ function SearchByDate() {
 
     return (
         <>
-        {searchedHostedPlaces.length === 0 ? <div style={{display:"flex", alignItems:"center"}}><img src ="https://res.cloudinary.com/cqn/image/upload/v1614774722/no-data-concept-illustration_114360-616_sikpoq.jpg" alt="not found data" /> <h1 style={{fontSize:"70px"}}>Sorry!! Result Not Found. Try Another Location</h1></div> :
+        {searchedHostedPlaces.length === 0 ? <div style={{display:"flex", alignItems:"center"}}><img src ="https://res.cloudinary.com/cqn/image/upload/v1614774722/no-data-concept-illustration_114360-616_sikpoq.jpg" alt="not data found" /> <h1 style={{fontSize:"70px"}}>Sorry!! Result Not Found. Try Another Location</h1></div> :
         
             <>
         {searchedHostedPlaces && 
             searchedHostedPlaces.map(searchedHostedPlace => (
                 <div className="searchByDate" key={searchedHostedPlace.placeId}>
-            <img src={searchedHostedPlace.image} alt="hotel" />
+            <img src={searchedHostedPlace.images[0]} alt="hotel" />
             {saveHostedPlaceItems?.map(saveHostedPlaceItem => (
                 searchedHostedPlace._id === saveHostedPlaceItem.placeId
             ) && <><IconButton className="searchByDate__heart"><Favorite style={{color:"#ff7779"}} /> </IconButton> <Button className="searchByDate__removeButton" onClick={() => dispatch(removePlace(searchedHostedPlace._id))}>Remove from favorite</Button></>)}

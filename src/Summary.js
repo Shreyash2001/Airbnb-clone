@@ -55,7 +55,7 @@ function Summary() {
              <div className="summaryLeft">
              
                 <div className="summaryLeft__placeInfo">
-                    <img src={summaryOfPlace?.image} alt={summaryOfPlace?.title} />
+                    <img src={summaryOfPlace?.images[0]} alt={summaryOfPlace?.title} />
                     <h2 style={{color:"#ff7779", marginBottom:"10px"}}>{summaryOfPlace?.title}</h2>
                     <div className="summaryLeft__placeBasicInfo">
                     <Cloud style={{ color: '#ff7779', marginRight:"5px" }}/>

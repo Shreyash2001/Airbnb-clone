@@ -3,8 +3,7 @@
 }
 
 .host__form {
-    flex: 0.4;
-    padding: 30px;
+    padding-left: 70px;
     padding-bottom: 35px;
     left: 90px;
 }
@@ -39,11 +38,23 @@
 }
 
 .host__content > input {
-    height: 39px;
+    height: 30px;
     border: 1px solid lightgray;
     margin-bottom: 10px;
     outline-width: 0;
-    width: 72%;
+    width: 42%;
+    border-radius: 12px;
+    padding: 8px;
+    font-size:18px;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+}
+
+.host__content > input[type=text]:focus {
+    border: 1px solid rgb(0, 132, 137);
+}
+
+.host__content > input[type=number]:focus {
+    border: 1px solid rgb(0, 132, 137);
 }
 
 .host__content > label {
@@ -73,97 +84,70 @@
 }
 
 
-.host__cards {
-    display: flex;
-}
-
-.host__cards > .MuiTouchRipple-root {
-    position: unset !important;
-}
-
-.host__cardsRadioVacation {
-    position: absolute !important;
-    top: 47% !important;
-    right: 47% !important;
-    color: #ff7779 !important;
-}
-
-
-.host__cardsRadioBussiness {
-    position: absolute !important;
-    top: 47% !important;
-    right: 30% !important;
-    color: #ff7779 !important;
-}
-
-.host__cardsRadioParty {
-    position: absolute !important;
-    top: 47% !important;
-    right: 12% !important;
-    color: #ff7779 !important;
-}
-
-
-.host__cardsVacation {
-    object-fit: fill;
-    width: 28%;
-    min-width: 83px;
-    min-height: 200px;
-    padding: 10px;
-    border-radius: 62px;
-    height: 33vh;
-}
-.host__cardsBussiness {
-    object-fit: fill;
-    width: 28%;
-    min-width: 83px;
-    min-height: 200px;
-    padding: 10px;
-    border-radius: 62px;
-    height: 33vh;
-}
-.host__cardsParty {
-    object-fit: fill;
-    width: 28%;
-    min-width: 83px;
-    min-height: 200px;
-    padding: 10px;
-    border-radius: 62px;
-    height: 33vh;
-}
-
-.host__cardsVacation {
-    transition: transform 100ms ease-in;
-    cursor: pointer;
-}
-
-.host__cardsVacation:hover {
-    transform: scale(1.07);
-    opacity: 0.6;
-}
-.host__cardsBussiness {
-    transition: transform 100ms ease-in;
-    cursor: pointer;
-}
-
-.host__cardsBussiness:hover {
-    transform: scale(1.07);
-    opacity: 0.6;
-}
-.host__cardsParty {
-    transition: transform 100ms ease-in;
-    cursor: pointer;
-}
-
-.host__cardsParty:hover {
-    transform: scale(1.07);
-    opacity: 0.6;
-}
-
 .host__bedroomInfo {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+}
+
+.host__SuitedFor > div > label {
+    font-size: 20px;
+    color: #222222;
+}
+
+
+.host__description {
+    margin-left: 40px;
+    margin-bottom: 30vh;
+}
+
+.host__description > textarea {
+    width: 50%;
+    height: 20vh;
+    border-radius: 12px;
+    padding: 12px;
+    outline-width: 0;
+    font-size:20px;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    
+}
+
+.host__numberOfBed > input {
+    height: 30px;
+    border: 1px solid lightgray;
+    margin-bottom: 30px;
+    outline-width: 0;
+    width: 42%;
+    border-radius: 12px;
+    padding: 8px;
+    font-size:18px;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    
+}
+
+.host__numberOfBed > input[type=number]:focus {
+    border: 1px solid rgb(0, 132, 137);
+}
+
+.host__button {
+    background-color: #ff7779 !important;
+    color: white !important;
+    text-transform: inherit !important;
+    width: 100px;
+}
+
+.host__button:hover {
+    background-color: white !important;
+    color: #ff7779 !important;
+    text-transform: inherit !important;
+    width: 100px;
+}
+
+.MuiStepIcon-root.MuiStepIcon-active {
+    color: #ff7779 !important;
+}
+.MuiStepIcon-root.MuiStepIcon-completed {
+    color: #ff7779 !important;
 }
 
 
