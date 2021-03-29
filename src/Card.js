@@ -2,13 +2,20 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import "./Card.css"
 import Rating from './Rating'
-import { Button, IconButton, makeStyles, Popover, Typography } from '@material-ui/core';
-import { Favorite, FavoriteBorderOutlined } from '@material-ui/icons'
+import { IconButton, makeStyles, Popover, Typography } from '@material-ui/core';
+import { Favorite } from '@material-ui/icons'
 import { useHistory } from 'react-router-dom';
 import {useDispatch, useSelector} from "react-redux"
 import { removePlace, saveAddPlace } from './actions/saveActions';
+import Label from './Label';
 
-function Card({images, title, price, country, season, id, value, selectedValue}) {
+function Card({images, title, price, country, season, id, value, selectedValue, created, recommended}) {
+
+  const first = created?.toString().split("-")[2]
+    const second = new Date()
+
+    const month = Number(created?.toString().split("-")[1]) - Number(second.toLocaleDateString("en-GB", { month: "2-digit", day:"2-digit" }).toString().split("/")[1])
+    const day = Number(second.toLocaleDateString("en-GB", { month: "2-digit", day:"2-digit" }).toString().split("/")[0]) - Number(first?.toString().split("T")[0])
   
     const dispatch = useDispatch()
     const useStyles = makeStyles((theme) => ({
@@ -69,6 +76,8 @@ function Card({images, title, price, country, season, id, value, selectedValue})
                 marginBottom:"8px",
                 border: "1px solid lightgray"
                 }}>
+                <div style={{display:"flex", justifyContent:"space-between"}}>
+                <div>
                 {userInfo ? found
                     ?
                     <IconButton onClick={handleRemoveClick}> <Favorite style={{stroke:"rgb(255, 255, 255)", fontSize:"1.7rem", color:"#ff7779"}} /> </IconButton>
@@ -108,6 +117,14 @@ function Card({images, title, price, country, season, id, value, selectedValue})
       </Popover>
            </IconButton>
                 }
+                </div>
+                <div style={{marginRight:"10px", marginTop:"8px"}}>
+                <div style={{display:"flex"}}>
+                {month === 0 && day < 3 &&  <Label isNew={true} />}
+                {value >= 4 && recommended >= 6 && <Label isRecommended={true} />}
+                </div>
+                </div>
+                </div>
                 </div>
             </div>
 

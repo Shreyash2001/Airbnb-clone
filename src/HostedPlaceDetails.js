@@ -189,12 +189,12 @@ function HostedPlaceDetails() {
                     <h4 style={{marginBottom:"20px"}}>Cancellations</h4>
                     <p>Strict</p>
                     <p>There is a strict policy for Cancellations. People can cancel before checking in the hotel. Refund will be done within 24 hours</p>
-                    <h5>Get More Details</h5>
+                    <h5></h5>
                     </div>
                    
                     <div>
                             <div className="hostedPlaceDetails__leftCustomerReviews">
-                                <h2>Write Customer Review</h2>
+                                <h2>Customer Review & Comment</h2>
                                 {userInfo ? (
                                         <>
                                         <InputLabel id="demo-simple-select-filled-label">Rate the Place</InputLabel>
@@ -217,7 +217,7 @@ function HostedPlaceDetails() {
                                         </Select>
                                     <label>Comment</label>
                                     <input type="text" placeholder="  Add Your Comment" value={comment} onChange={e => setComment(e.target.value)} />
-                                    <Button onClick={handleClick}>Submit review</Button>
+                                 {rating.length > 0 && comment.length > 0 ? <Button className="hostedPlaceDetails__leftCustomerReviewsButton" onClick={handleClick}>Submit</Button> : <Button className="hostedPlaceDetails__leftCustomerReviewsDisabledButton" disabled>Submit</Button> }
                                     {hostedPlaceRateLoder && <CircularProgress style={{width:"85px", height:"85px", margin:"100px", color:"#ff7779"}}/>}
                                     {hostedPlaceRateError && <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}><Alert severity="error">{hostedPlaceRateError}</Alert></Snackbar>}
                                     </>

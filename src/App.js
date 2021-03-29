@@ -43,6 +43,7 @@ import Adventures from './Adventures';
 import UniqueStays from './UniqueStays';
 import EntireHomes from './EntireHomes';
 import Cottages from './Cottages';
+import Profile from './Profile';
 
 
 function App() {
@@ -59,6 +60,11 @@ function App() {
 
       <Route path="/login">
       <LoginPage />
+      </Route>
+
+      <Route path="/profile">
+      <Profile />
+      <Footer />
       </Route>
 
       <Route path="/experiences/about-me/images">

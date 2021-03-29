@@ -69,7 +69,10 @@
 .experiencesDetails__leftCustomerReviews {
     display: flex;
     flex-direction: column;
-    padding-top: 30px;
+    margin-top: 30px;
+    border: 1px solid lightgray;
+    padding: 20px;
+    margin-bottom: 25px;
 }
 
 .experiencesDetails__leftCustomerReviews > h2 {
@@ -97,7 +100,7 @@
 }
 
 
-.experiencesDetails__leftCustomerReviews > button {
+.experiencesDetails__leftCustomerReviewsButton {
     color: white !important;
     background-color: #ff7779 !important;
     text-transform: inherit !important;
@@ -106,9 +109,19 @@
     align-self: center;
 }
 
-.experiencesDetails__leftCustomerReviews > button:hover {
+.experiencesDetails__leftCustomerReviewsButton:hover {
     color: #ff7779 !important;
     background-color: white !important;
+}
+
+.experiencesDetails__leftCustomerReviewsDisabledButton {
+    color: white !important;
+    text-transform: inherit !important;
+    background-color: #565353 !important;
+    width: 25%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    align-self: center;
 }
 
 .experiencesDetails__leftRules {

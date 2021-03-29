@@ -6,11 +6,21 @@ import { useHistory } from 'react-router'
 import { Link } from 'react-router-dom'
 import { saveAddExperience, removeExperiences } from './actions/saveActions'
 import "./ExperienceCard.css"
+import Label from './Label'
 import Rating from './Rating'
 
-function ExperienceCard({images, title, price, country, theme, typeOfExperience, id, value}) {
+function ExperienceCard({images, title, price, country, theme, typeOfExperience, id, value, created, recommended}) {
     const history = useHistory()
     const dispatch = useDispatch()
+
+   
+    const first = created?.toString().split("-")[2]
+    const second = new Date()
+
+    const month = Number(created?.toString().split("-")[1]) - Number(second.toLocaleDateString("en-GB", { month: "2-digit", day:"2-digit" }).toString().split("/")[1])
+    const day = Number(second.toLocaleDateString("en-GB", { month: "2-digit", day:"2-digit" }).toString().split("/")[0]) - Number(first?.toString().split("T")[0])
+
+    
 
     const handleClick = () => {
         dispatch(saveAddExperience(id))
@@ -65,6 +75,7 @@ function ExperienceCard({images, title, price, country, theme, typeOfExperience,
                 marginBottom:"8px",
                 border: "1px solid lightgray"
                 }}>
+                <div style={{display:"flex", justifyContent:"space-between", alignItems:"center"}}>
                 <div>
                 {userInfo ? found
                     ?
@@ -105,8 +116,15 @@ function ExperienceCard({images, title, price, country, theme, typeOfExperience,
       </Popover>
            </IconButton>
                 }
-                
                 </div>
+                <div style={{marginRight:"10px", marginTop:"8px"}}>
+                <div style={{display:"flex"}}>
+                {month === 0 && day < 3 &&  <Label isNew={true} />}
+                {value >= 4 && recommended >= 6 && <Label isRecommended={true} />}
+                </div>
+                </div>
+                </div>
+
                 </div>
             </div>
                 <div style={{display:"flex", alignItems:"center"}}>

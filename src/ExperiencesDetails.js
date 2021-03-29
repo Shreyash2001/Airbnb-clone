@@ -81,8 +81,6 @@ function ExperiencesDetails() {
     const dispatch = useDispatch()
     const match = useParams()
 
-    const details = useSelector(state => state.hostedPlaceDetails)
-    const {loading, error, placeDetails} = details
 
     const userLogin = useSelector(state => state.userLogin)
     const {userInfo} = userLogin
@@ -439,7 +437,7 @@ function ExperiencesDetails() {
                 
             <div style={{borderBottom:"1px solid lightgray", padding:"30px 50px 10px 50px", marginBottom:"40px"}}>
                             <div className="experiencesDetails__leftCustomerReviews">
-                                <h2>Write Customer Review</h2>
+                                <h2>Customer Review & Comment</h2>
                                 {userInfo ? (
                                         <>
                                         <InputLabel id="demo-simple-select-filled-label">Rate the Experience</InputLabel>
@@ -462,7 +460,7 @@ function ExperiencesDetails() {
                                         </Select>
                                     <label>Comment</label>
                                     <input type="text" placeholder="  Add Your Comment" value={comment} onChange={e => setComment(e.target.value)} />
-                                    <Button onClick={handleClick}>Submit review</Button>
+                                   {rating.length > 0 && comment.length > 0 ? <Button className="experiencesDetails__leftCustomerReviewsButton" onClick={handleClick}>Submit</Button> : <Button className="experiencesDetails__leftCustomerReviewsDisabledButton" disabled>Submit</Button> }
                                     {loadingReview && <CircularProgress style={{width:"85px", height:"85px", margin:"100px", color:"#ff7779"}}/>}
                                     {errorReview && <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}><Alert severity="error">{errorReview}</Alert></Snackbar>}
                                     </>

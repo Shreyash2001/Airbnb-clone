@@ -62,6 +62,10 @@
 .hostedPlaceDetails__leftCustomerReviews {
     display: flex;
     flex-direction: column;
+    padding: 20px;
+    border: 1px solid lightgray;
+    margin-bottom: 30px;
+    margin-top: 30px;
 }
 
 .hostedPlaceDetails__leftCustomerReviews > h2 {
@@ -80,6 +84,7 @@
     margin-bottom: 10px;
     margin-top: 10px;
     outline-width: 0;
+    border-radius: 12px;
 }
 
 .hostedPlaceDetails__leftCustomerReviews > p {
@@ -88,7 +93,7 @@
 }
 
 
-.hostedPlaceDetails__leftCustomerReviews > button {
+.hostedPlaceDetails__leftCustomerReviewsButton {
     color: white !important;
     background-color: #ff7779 !important;
     text-transform: inherit !important;
@@ -97,7 +102,7 @@
     align-self: center;
 }
 
-.hostedPlaceDetails__leftCustomerReviews > button:hover {
+.hostedPlaceDetails__leftCustomerReviewsButton:hover {
     color: #ff7779 !important;
     background-color: white !important;
 }
@@ -247,4 +252,13 @@
 .read-more-less--more,
 .read-more-less--less {
   color: rgb(90 195 183);;
+}
+
+.hostedPlaceDetails__leftCustomerReviewsDisabledButton {
+    background-color: #565353 !important;
+    color: white !important;
+    text-transform: inherit !important;
+    width: 25%;
+    margin-bottom: 20px;
+    align-self: center;
 }

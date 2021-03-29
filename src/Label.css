@@ -1,0 +1,24 @@
+.label {
+    padding: 13px;
+    border-radius: 20px;
+    background-color: rgb(0 92 228 / 81%);
+    max-width: 39px;
+    margin-right: 4px;
+}
+
+.label > span {
+    color: white;
+    font-size: 16px;
+}
+
+.label__recommended {
+    padding: 13px;
+    border-radius: 20px;
+    background-color: rgb(240 25 25 / 79%);
+    max-width: 100px;
+}
+
+.label__recommended > span {
+    color: white;
+    font-size: 16px;
+}

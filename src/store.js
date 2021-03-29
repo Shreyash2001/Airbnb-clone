@@ -1,15 +1,16 @@
 import { createStore, combineReducers, applyMiddleware } from "redux"
 import thunk from "redux-thunk"
 import { composeWithDevTools } from "redux-devtools-extension"
-import { userLoginReducer, userRegisterReducer } from "./reducers/userReducer";
-import { hostAddReducer, hostCottagesReducer, hostedPlaceBookingReducer, hostedPlaceDetailsReducer, hostedPlaceRatingReducer, hostedPlaceSearchResultsForDatesReducer, hostedPlaceTopRatedReducer, hostEntireHomesReducer, hostGetReducer, hostGetSearchHeaderResultReducer, hostUniqueStaysReducer } from "./reducers/hostReducers";
+import { userLoginReducer, userRegisterReducer, userUpdateDetailsReducer } from "./reducers/userReducer";
+import { hostAddReducer, hostCottagesReducer, hostedPlaceBookingReducer, hostedPlaceCreatedByReducer, hostedPlaceDeleteReducer, hostedPlaceDetailsReducer, hostedPlaceRatingReducer, hostedPlaceSearchResultsForDatesReducer, hostedPlaceTopRatedReducer, hostedPlaceUpdateDetailsReducer, hostEntireHomesReducer, hostGetReducer, hostGetSearchHeaderResultReducer, hostUniqueStaysReducer } from "./reducers/hostReducers";
 import { saveExperienceReducer, saveReducer } from "./reducers/saveReducer";
-import { experienceTypeReducer, experienceSubmitReducer, experienceGetReducer, experienceGetPopularInIndiaReducer, experienceGetCookingReducer, experienceGetLastWeekReducer, experienceGetFilteredResultReducer, getExperienceByIdReducer, createReviewReducer, getSimilarExperienceReducer, getTopRatedExperienceReducer, getTeamExperienceReducer, getChildExperienceReducer, getEverydayExperienceReducer, getInPersonExperienceReducer, getAdventureExperienceReducer } from "./reducers/experienceReducers";
+import { experienceTypeReducer, experienceSubmitReducer, experienceGetReducer, experienceGetPopularInIndiaReducer, experienceGetCookingReducer, experienceGetLastWeekReducer, experienceGetFilteredResultReducer, getExperienceByIdReducer, createReviewReducer, getSimilarExperienceReducer, getTopRatedExperienceReducer, getTeamExperienceReducer, getChildExperienceReducer, getEverydayExperienceReducer, getInPersonExperienceReducer, getAdventureExperienceReducer, getCreatedByUserExperienceReducer, getUpdatedExperienceReducer, deleteExperienceReducer } from "./reducers/experienceReducers";
 
 
 const reducer = combineReducers({
     userLogin: userLoginReducer,
     userRegister: userRegisterReducer,
+    userUpdateDetails: userUpdateDetailsReducer,
     hostAdd: hostAddReducer,
     hostGet: hostGetReducer,
     hostGetSearchHeader: hostGetSearchHeaderResultReducer,
@@ -21,6 +22,9 @@ const reducer = combineReducers({
     uniquePlacesResult: hostUniqueStaysReducer,
     entireHomesResult: hostEntireHomesReducer,
     cottagesResult: hostCottagesReducer,
+    hostedPlaceCreatedByUser: hostedPlaceCreatedByReducer,
+    updatedHostedPlace: hostedPlaceUpdateDetailsReducer,
+    deletedHostedPlace: hostedPlaceDeleteReducer,
     savePlace: saveReducer,
     saveExperience: saveExperienceReducer,
     experience: experienceTypeReducer,
@@ -38,8 +42,10 @@ const reducer = combineReducers({
     getChildExperience: getChildExperienceReducer,
     getEverydayExperience: getEverydayExperienceReducer,
     getInPersonExperience: getInPersonExperienceReducer,
-    getAdventure: getAdventureExperienceReducer, 
-
+    getAdventure: getAdventureExperienceReducer,
+    getCreatedByUserResult: getCreatedByUserExperienceReducer, 
+    updatedExperienceResult: getUpdatedExperienceReducer,
+    deletedExperience: deleteExperienceReducer,
 });
 
 const userInfoFromStorage = localStorage.getItem("userInfo") ? JSON.parse(localStorage.getItem("userInfo")) : null

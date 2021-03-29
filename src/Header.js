@@ -78,6 +78,7 @@ function Header() {
 
       const handleChange = (e) => {
         setSearchCountry(e.target.value)
+        
         if(searchCountry.length > 1 ) {
           dispatch(hostGetSearchHeaderPlaces(searchCountry))
         } else {
@@ -105,7 +106,7 @@ function Header() {
 
             <div>
             <div className="header__center">
-                <input type="text" value={searchCountry} onChange={handleChange} />
+                <input type="text" defaultValue={searchCountry} onChange={handleChange} />
                 <SearchIcon onClick={handleClickSearch} />
             </div>
             {searchResultPlaces?.length > 0 && 
@@ -121,16 +122,16 @@ function Header() {
             
             <div className="header__right">
             {userInfo && <Button className="header__rightButton" onClick={() => history.push("/host")}>Host</Button>}
-            <IconButton onClick={() => history.push("/experiences/online")}><LanguageIcon /></IconButton>
+            <IconButton onClick={() => history.push("/experiences/online")}><LanguageIcon style={{color:"#ff7779"}} /></IconButton>
                 
              {userInfo ?  
              <>
-             <Button style={{width:"100px"}} aria-describedby={id} onClick={handleClick}>
+             <div className="header__rightUserInfo" onClick={handleClick}>
              <div style={{alignItems:"center", display:"flex"}}>
              <PersonIcon style={{color: "#ff7779"}} />
              <p style={{textTransform:"capitalize", fontSize:"21px", color:"#ff7779"}}>{userInfo.name}</p>
              </div>
-             </Button>
+             </div>
              <Popover
                 id={id}
                 open={open}
@@ -148,6 +149,7 @@ function Header() {
         <Typography>
         <div>
             <div style={{padding:"10px 20px 10px 30px", borderBottom:"1px solid lightgray", display:"flex", flexDirection:"column"}}>
+                <Button style={{textTransform: "inherit"}} onClick={() => history.push("/profile")}>Profile</Button>
                 <Button style={{textTransform: "inherit"}} onClick={handleFavoriteClick}>Favorite Places</Button>
                 <Button style={{textTransform: "inherit"}} onClick={handleFavoriteClickExperience}>Favorite Experiences</Button>
             </div>

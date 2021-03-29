@@ -305,6 +305,8 @@ function Experiences() {
                     theme={topRated.theme}
                     typeOfExperience={topRated.typeOfExperience}
                     value={topRated.rating}
+                    created={topRated.createdAt}
+                    recommended={topRated.numReviews}
                 />
              ))}
             </div>
@@ -337,6 +339,7 @@ function Experiences() {
                     theme={newExperience.theme}
                     typeOfExperience={newExperience.typeOfExperience}
                     value={newExperience.rating}
+                    created={newExperience.createdAt}
                 />
              ))}
             </div>
@@ -369,6 +372,8 @@ function Experiences() {
                     theme={popularExperience.theme}
                     typeOfExperience={popularExperience.typeOfExperience}
                     value={popularExperience.rating}
+                    created={popularExperience.createdAt}
+                    recommended={popularExperience.numReviews}
                 />
              ))}
             </div>
@@ -401,6 +406,8 @@ function Experiences() {
                     theme={cookingExperience.theme}
                     typeOfExperience={cookingExperience.typeOfExperience}
                     value={cookingExperience.rating}
+                    created={cookingExperience.createdAt}
+                    recommended={cookingExperience.numReviews}
                 />
              ))}
                 
@@ -433,6 +440,8 @@ function Experiences() {
                     theme={lastWeekExperience.theme}
                     typeOfExperience={lastWeekExperience.typeOfExperience}
                     value={lastWeekExperience.rating}
+                    created={lastWeekExperience.createdAt}
+                    recommended={lastWeekExperience.numReviews}
                 />
              ))}
                 

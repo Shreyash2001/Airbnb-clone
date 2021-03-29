@@ -1,7 +1,9 @@
 .experiences__container {
     display: flex;
-    padding: 30px 40px 20px 40px;
+    padding: 30px 40px 20px 0px;
+    margin-left: 40px;
     overflow-x: scroll;
+    max-width: 92%;
 }
 
 .experiences__container::-webkit-scrollbar { 
@@ -15,7 +17,7 @@
     padding: 6px;
     position: absolute;
     top: 106px;
-    right: 10px;
+    right: 45px;
     background-color: #fff;
     cursor: pointer;
     transition: transform 250ms;
@@ -28,7 +30,7 @@
     padding: 6px;
     position: absolute;
     top: 106px;
-    right: 80px;
+    right: 110px;
     background-color: #fff;
     cursor: pointer;
     transition: transform 250ms;
@@ -158,9 +160,11 @@
 }
 
 .experiences__ContentContainer {
-    padding: 30px 40px 20px 40px;
+    padding: 30px 40px 20px 0px;
+    margin-left: 40px;
     display: flex;
     overflow-x: scroll;
+    max-width: 92%;
 }
 
 .experiences__ContentContainer::-webkit-scrollbar { 

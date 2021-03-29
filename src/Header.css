@@ -47,6 +47,18 @@
     font-size: 24px;
 }
 
+.header__rightUserInfo {
+    text-transform: capitalize;
+    font-size: 24px;
+    width: auto;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.header__rightUserInfo:hover {
+    background-color: #e8e8e899;
+}
+
 .header__rightButton {
     color: white !important;
     background-color: #ff7779 !important;

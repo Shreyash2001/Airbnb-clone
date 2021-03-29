@@ -109,7 +109,7 @@ function Home() {
             <div id="topRated" className="home__section" style={{overflowX:"scroll"}}>
             {loading && <CircularProgress style={{width:"120px", height:"120px", margin:"100px 500px 400px 600px", color:"#ff7779"}}/>}
             {error && <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}><Alert severity="error">{error}</Alert></Snackbar>}
-            {allHostPlaces && allHostPlaces.map(allHostPlace => (
+            {allHostPlaces && allHostPlaces?.map(allHostPlace => (
               
                   <Card 
                   key={allHostPlace._id} 
@@ -120,7 +120,12 @@ function Home() {
                   selectedValue={allHostPlace.selectedValue}
                   price={allHostPlace.price}
                   country={allHostPlace.country}
-                  value={allHostPlace.rating} />
+                  value={allHostPlace.rating} 
+                  created={allHostPlace.createdAt}
+                  recommended={allHostPlace.numReviews}
+                  />
+                  
+
                   
             ))}
             
